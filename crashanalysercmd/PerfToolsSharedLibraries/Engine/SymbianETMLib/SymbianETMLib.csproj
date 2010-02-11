@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4F251D40-F9D0-4807-80AA-81A66A648D56}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SymbianETMLib</RootNamespace>
+    <AssemblyName>SymbianETMLib</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkSubset>
+    </TargetFrameworkSubset>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\BranchDecoder\ETMBranchDecoderAlternative.cs" />
+    <Compile Include="Common\Buffer\ETBufferBase.cs" />
+    <Compile Include="Common\Config\ETConfigBase.cs" />
+    <Compile Include="Common\Engine\ETEngineBase.cs" />
+    <Compile Include="Common\Exception\ETMException.cs" />
+    <Compile Include="Common\Packets\Implementations\ETMPcktNormalData.cs" />
+    <Compile Include="Common\Packets\Implementations\ETMPcktOutOfOrderData.cs" />
+    <Compile Include="Common\Packets\Implementations\ETMPcktExceptionExit.cs" />
+    <Compile Include="Common\Packets\Implementations\ETMPcktExceptionEntry.cs" />
+    <Compile Include="Common\Packets\Implementations\ETMPcktStoreFailed.cs" />
+    <Compile Include="Common\Packets\Implementations\ETMPcktOutOfOrderPlaceholder.cs" />
+    <Compile Include="Common\Packets\Implementations\ETMPcktFiveByteRunBase.cs" />
+    <Compile Include="Common\Packets\Implementations\ETMPcktASync.cs" />
+    <Compile Include="Common\Packets\Implementations\ETMPcktISyncInformation.cs" />
+    <Compile Include="Common\Types\ETMBranch.cs" />
+    <Compile Include="ETB\Buffer\ETBBuffer.cs" />
+    <Compile Include="ETB\Config\ETBConfig.cs" />
+    <Compile Include="ETB\StackRecon\ETBStack.cs" />
+    <Compile Include="ETB\StackRecon\ETBStackReconManager.cs" />
+    <Compile Include="Common\State\Implementations\ETMDecodeStateOutOfOrderData.cs" />
+    <Compile Include="Common\State\Implementations\ETMDecodeStateBranch.cs" />
+    <Compile Include="Common\State\Implementations\ETMDecodeStateContextID.cs" />
+    <Compile Include="Common\State\Implementations\ETMDecodeStateCycleCount.cs" />
+    <Compile Include="Common\State\Implementations\ETMDecodeStateASync.cs" />
+    <Compile Include="Common\State\Implementations\ETMDecodeStateIgnore.cs" />
+    <Compile Include="Common\State\Implementations\ETMDecodeStateISync.cs" />
+    <Compile Include="Common\Types\ETMInstruction.cs" />
+    <Compile Include="Common\Types\ETMBranchType.cs" />
+    <Compile Include="ETB\Engine\ETMEngine.cs" />
+    <Compile Include="Common\Packets\Factory\ETMPacketFactory.cs" />
+    <Compile Include="Common\Packets\Implementations\ETMPcktPHeaderFormat2.cs" />
+    <Compile Include="Common\Packets\Implementations\ETMPcktPHeaderBase.cs" />
+    <Compile Include="Common\Packets\Implementations\ETMPcktUnknown.cs" />
+    <Compile Include="Common\Packets\Implementations\ETMPcktBranch.cs" />
+    <Compile Include="Common\Packets\Implementations\ETMPcktPHeaderFormat1.cs" />
+    <Compile Include="Common\Packets\Implementations\ETMPcktContextID.cs" />
+    <Compile Include="Common\Packets\Implementations\ETMPcktIgnore.cs" />
+    <Compile Include="Common\Packets\Implementations\ETMPcktCycleCount.cs" />
+    <Compile Include="Common\Packets\Implementations\ETMPcktISync.cs" />
+    <Compile Include="Common\Packets\Base\ETMPcktBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Common\State\Base\ETMDecodeState.cs" />
+    <Compile Include="Common\State\Implementations\ETMDecodeStatePHeader.cs" />
+    <Compile Include="Common\State\Implementations\ETMDecodeStateSynchronized.cs" />
+    <Compile Include="Common\State\Implementations\ETMDecodeStateUnsynchronized.cs" />
+    <Compile Include="Common\State\Data\ETMStateData.cs" />
+    <Compile Include="Common\BranchDecoder\ETMBranchDecoderOriginal.cs" />
+    <Compile Include="Common\BranchDecoder\ETMBranchDecoder.cs" />
+    <Compile Include="Common\Utilities\ETMTextToEnumConverter.cs" />
+    <Compile Include="Common\Utilities\ETMEnumToTextConverter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SymbianCodeLib\SymbianCodeLib.csproj">
+      <Project>{A041EDFE-A120-4100-A0A6-FB1984D80815}</Project>
+      <Name>SymbianCodeLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SymbianDebugLib\SymbianDebugLib.csproj">
+      <Project>{796DD82D-9E7D-476D-B700-086CD9A893DA}</Project>
+      <Name>SymbianDebugLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SymbianStructuresLib\SymbianStructuresLib.csproj">
+      <Project>{D3BDEB23-43DA-4534-986B-F6B3DD05EBF6}</Project>
+      <Name>SymbianStructuresLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SymbianUtils\SymbianUtils.csproj">
+      <Project>{F6F4CE69-E73A-4917-97ED-B114DE90C92E}</Project>
+      <Name>SymbianUtils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ETM\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

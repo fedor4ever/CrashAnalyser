@@ -1,0 +1,94 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SymbianSymbolLib", "..\SymbianSymbolLib.csproj", "{6054A36B-F8A9-406F-B6CE-B531CC2AEADC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SymbianUtils", "..\..\SymbianUtils\SymbianUtils.csproj", "{F6F4CE69-E73A-4917-97ED-B114DE90C92E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SymbianStructuresLib", "..\..\SymbianStructuresLib\SymbianStructuresLib.csproj", "{D3BDEB23-43DA-4534-986B-F6B3DD05EBF6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Symbol Lib Plugins", "Symbol Lib Plugins", "{D16A3C1B-5404-4EAD-A3D3-6CB7A9F76B4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLPluginObey", "..\Plugins\SLPluginObey\SLPluginObey.csproj", "{4C6F0ECF-A5DC-47D0-BB11-F06E1C86A6C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLPluginMap", "..\Plugins\SLPluginMap\SLPluginMap.csproj", "{2E619377-8639-49F9-9494-4FAD25CBC05E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SymbolLib", "..\..\SymbolLib\SymbolLib.csproj", "{C657DF4B-FA67-47DD-89FC-A45583646184}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLPluginSymbol", "..\Plugins\SLPluginSymbol\SLPluginSymbol.csproj", "{E921F00D-5F82-454E-9CBE-59381C48781C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SymbolTestGUI", "..\Tests\SymbolTestGUI\SymbolTestGUI.csproj", "{8463DC4C-3E8C-4EE3-864C-E65CCC0FC025}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SymbolProgressUiLib", "..\..\..\UI\SymbolProgressUiLib\SymbolProgressUiLib.csproj", "{4235D183-5242-4DE1-9DEA-BB6AB03C42B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SymbianSymbolLibTest", "..\Tests\SymbianSymbolLibTest\SymbianSymbolLibTest.csproj", "{CD291641-4350-4E6D-949D-F877CF08A295}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLPluginZip", "..\Plugins\SLPluginZip\SLPluginZip.csproj", "{BDD4E602-AC36-473A-98D0-FE062213548A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SymbianZipLib", "..\..\SymbianZipLib\SymbianZipLib.csproj", "{0B246F3F-62D3-4732-86D2-3EC1F3ADBD71}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6054A36B-F8A9-406F-B6CE-B531CC2AEADC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6054A36B-F8A9-406F-B6CE-B531CC2AEADC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6054A36B-F8A9-406F-B6CE-B531CC2AEADC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6054A36B-F8A9-406F-B6CE-B531CC2AEADC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6F4CE69-E73A-4917-97ED-B114DE90C92E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6F4CE69-E73A-4917-97ED-B114DE90C92E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6F4CE69-E73A-4917-97ED-B114DE90C92E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6F4CE69-E73A-4917-97ED-B114DE90C92E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3BDEB23-43DA-4534-986B-F6B3DD05EBF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3BDEB23-43DA-4534-986B-F6B3DD05EBF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3BDEB23-43DA-4534-986B-F6B3DD05EBF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3BDEB23-43DA-4534-986B-F6B3DD05EBF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C6F0ECF-A5DC-47D0-BB11-F06E1C86A6C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C6F0ECF-A5DC-47D0-BB11-F06E1C86A6C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C6F0ECF-A5DC-47D0-BB11-F06E1C86A6C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C6F0ECF-A5DC-47D0-BB11-F06E1C86A6C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E619377-8639-49F9-9494-4FAD25CBC05E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E619377-8639-49F9-9494-4FAD25CBC05E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E619377-8639-49F9-9494-4FAD25CBC05E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E619377-8639-49F9-9494-4FAD25CBC05E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C657DF4B-FA67-47DD-89FC-A45583646184}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C657DF4B-FA67-47DD-89FC-A45583646184}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C657DF4B-FA67-47DD-89FC-A45583646184}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C657DF4B-FA67-47DD-89FC-A45583646184}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E921F00D-5F82-454E-9CBE-59381C48781C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E921F00D-5F82-454E-9CBE-59381C48781C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E921F00D-5F82-454E-9CBE-59381C48781C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E921F00D-5F82-454E-9CBE-59381C48781C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8463DC4C-3E8C-4EE3-864C-E65CCC0FC025}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8463DC4C-3E8C-4EE3-864C-E65CCC0FC025}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8463DC4C-3E8C-4EE3-864C-E65CCC0FC025}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8463DC4C-3E8C-4EE3-864C-E65CCC0FC025}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4235D183-5242-4DE1-9DEA-BB6AB03C42B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4235D183-5242-4DE1-9DEA-BB6AB03C42B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4235D183-5242-4DE1-9DEA-BB6AB03C42B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4235D183-5242-4DE1-9DEA-BB6AB03C42B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD291641-4350-4E6D-949D-F877CF08A295}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD291641-4350-4E6D-949D-F877CF08A295}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD291641-4350-4E6D-949D-F877CF08A295}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD291641-4350-4E6D-949D-F877CF08A295}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDD4E602-AC36-473A-98D0-FE062213548A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDD4E602-AC36-473A-98D0-FE062213548A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDD4E602-AC36-473A-98D0-FE062213548A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDD4E602-AC36-473A-98D0-FE062213548A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B246F3F-62D3-4732-86D2-3EC1F3ADBD71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B246F3F-62D3-4732-86D2-3EC1F3ADBD71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B246F3F-62D3-4732-86D2-3EC1F3ADBD71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B246F3F-62D3-4732-86D2-3EC1F3ADBD71}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4C6F0ECF-A5DC-47D0-BB11-F06E1C86A6C8} = {D16A3C1B-5404-4EAD-A3D3-6CB7A9F76B4E}
+		{2E619377-8639-49F9-9494-4FAD25CBC05E} = {D16A3C1B-5404-4EAD-A3D3-6CB7A9F76B4E}
+		{E921F00D-5F82-454E-9CBE-59381C48781C} = {D16A3C1B-5404-4EAD-A3D3-6CB7A9F76B4E}
+		{BDD4E602-AC36-473A-98D0-FE062213548A} = {D16A3C1B-5404-4EAD-A3D3-6CB7A9F76B4E}
+	EndGlobalSection
+EndGlobal

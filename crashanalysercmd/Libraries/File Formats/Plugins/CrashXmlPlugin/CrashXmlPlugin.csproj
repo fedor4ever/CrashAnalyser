@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{284BC871-EAE3-4D8F-8DFF-6C953E1B119D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CrashXmlPlugin</RootNamespace>
+    <AssemblyName>CrashXml.plugin</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FileFormat\CrashAnalyser\CXmlNodeCrashAnalyserRuntime.cs" />
+    <Compile Include="FileFormat\CrashAnalyser\CXmlNodeCrashAnalyserFileFormat.cs" />
+    <Compile Include="FileFormat\CrashAnalyser\CXmlNodeCrashAnalyser.cs" />
+    <Compile Include="FileFormat\Document\CXmlDocumentRoot.cs" />
+    <Compile Include="FileFormat\Segment\CXmlNodeSegmentDictionary.cs" />
+    <Compile Include="FileFormat\Segment\Entries\BinaryData\CXmlBlob.cs" />
+    <Compile Include="FileFormat\Segment\Entries\BinaryData\CXmlSegBinaryData.cs" />
+    <Compile Include="FileFormat\Segment\Entries\CodeSegs\CXmlCodeSeg.cs" />
+    <Compile Include="FileFormat\Segment\Entries\CodeSegs\CXmlSegCodeSegs.cs" />
+    <Compile Include="FileFormat\Segment\Entries\Events\CXmlEvent.cs" />
+    <Compile Include="FileFormat\Segment\Entries\Events\CXmlSegEventLog.cs" />
+    <Compile Include="FileFormat\Segment\Entries\InfoHW\CXmlSegInfoHW.cs" />
+    <Compile Include="FileFormat\Segment\Entries\InfoSW\CXmlSegInfoSW.cs" />
+    <Compile Include="FileFormat\Segment\Entries\Memory\CXmlMemoryInfo.cs" />
+    <Compile Include="FileFormat\Segment\Entries\Memory\CXmlSegMemoryInfo.cs" />
+    <Compile Include="FileFormat\Segment\Entries\Messages\CXmlMessage.cs" />
+    <Compile Include="FileFormat\Segment\Entries\Messages\CXmlSegMessages.cs" />
+    <Compile Include="FileFormat\Segment\Entries\Processes\CXmlSegProcesses.cs" />
+    <Compile Include="FileFormat\Segment\Entries\Processes\CXmlProcess.cs" />
+    <Compile Include="FileFormat\Segment\Entries\Registers\CXmlSegRegisters.cs" />
+    <Compile Include="FileFormat\Segment\Entries\Registers\CXmlRegisterSet.cs" />
+    <Compile Include="FileFormat\Segment\Entries\Registers\CXmlRegister.cs" />
+    <Compile Include="FileFormat\Segment\Entries\Stacks\CXmlStackEntry.cs" />
+    <Compile Include="FileFormat\Segment\Entries\Stacks\CXmlSegStacks.cs" />
+    <Compile Include="FileFormat\Segment\Entries\Symbols\CXmlSymbolSet.cs" />
+    <Compile Include="FileFormat\Segment\Entries\Symbols\CXmlSymbol.cs" />
+    <Compile Include="FileFormat\Segment\Entries\Stacks\CXmlStack.cs" />
+    <Compile Include="FileFormat\Segment\Entries\Telephony\CXmlSegTelephony.cs" />
+    <Compile Include="FileFormat\Segment\Entries\Threads\CXmlThread.cs" />
+    <Compile Include="FileFormat\Segment\Entries\Threads\CXmlSegThreads.cs" />
+    <Compile Include="FileFormat\Segment\Entries\Traces\CXmlSegTraces.cs" />
+    <Compile Include="FileFormat\Segment\Entries\ValueInterpretations\CXmlValueInterpretation.cs" />
+    <Compile Include="FileFormat\Segment\Entries\ValueInterpretations\CXmlSegValueInterpretations.cs" />
+    <Compile Include="FileFormat\Segment\Utilities\CXmlExitInfo.cs" />
+    <Compile Include="FileFormat\Utiltities\Utilities.cs" />
+    <Compile Include="FileFormat\Versions\CXmlVersionText.cs" />
+    <Compile Include="FileFormat\Versions\CXmlVersion.cs" />
+    <Compile Include="FileFormat\SourceInfo\CXmlNodeSourceInfo.cs" />
+    <Compile Include="FileFormat\Utiltities\Constants.cs" />
+    <Compile Include="PluginImplementations\Sink\CIXmlSink.cs" />
+    <Compile Include="FileFormat\Document\CXmlDocumentSerializationParameters.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FileFormat\Segment\Entries\Base\CXmlSegBase.cs" />
+    <Compile Include="FileFormat\Segment\Entries\Header\CXmlSegHeader.cs" />
+    <Compile Include="FileFormat\Segment\Entries\Symbols\CXmlSegSymbols.cs" />
+    <Compile Include="FileFormat\Segment\CXmlNodeSegmentTable.cs" />
+    <Compile Include="FileFormat\Node\CXmlNode.cs" />
+    <Compile Include="FileFormat\Segment\Utilities\SegConstants.cs" />
+    <Compile Include="FileFormat\Versions\CXmlVersionExtended.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\PerfToolsSharedLibraries\Engine\SymbianStructuresLib\SymbianStructuresLib.csproj">
+      <Project>{D3BDEB23-43DA-4534-986B-F6B3DD05EBF6}</Project>
+      <Name>SymbianStructuresLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\PerfToolsSharedLibraries\Engine\SymbianTree\SymbianTree.csproj">
+      <Project>{2BE440C1-E5F6-4F5D-B533-0F745CAA65A8}</Project>
+      <Name>SymbianTree</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\PerfToolsSharedLibraries\Engine\SymbianUtils\SymbianUtils.csproj">
+      <Project>{F6F4CE69-E73A-4917-97ED-B114DE90C92E}</Project>
+      <Name>SymbianUtils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Engine\CrashItemLib\CrashItemLib.csproj">
+      <Project>{A5B87D2F-E351-4B03-8BD0-9C8C91EDF1CC}</Project>
+      <Name>CrashItemLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>set path_out="$(SolutionDir)$(OutDir)"
+if not exist %25path_out%25 (
+    mkdir %25path_out%25
+) 
+copy "$(TargetDir)\*.*" "$(SolutionDir)$(OutDir)"
+</PostBuildEvent>
+  </PropertyGroup>
+</Project>

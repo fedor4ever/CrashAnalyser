@@ -1,0 +1,159 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{796DD82D-9E7D-476D-B700-086CD9A893DA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SymbianDebugLib</RootNamespace>
+    <AssemblyName>SymbianDebugLib</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entity\BuiltIn\Missing\MissingDescriptor.cs" />
+    <Compile Include="Entity\BuiltIn\Missing\MissingEntity.cs" />
+    <Compile Include="Entity\BuiltIn\Unsupported\UnsupportedDescriptor.cs" />
+    <Compile Include="Entity\BuiltIn\Unsupported\UnsupportedEntity.cs" />
+    <Compile Include="Engine\DbgEngineView.cs" />
+    <Compile Include="Engine\DbgEngine.cs" />
+    <Compile Include="Entity\Configurations\DbgEntityConfig.cs" />
+    <Compile Include="Entity\Configurations\DbgEntityConfigManager.cs" />
+    <Compile Include="Entity\Configurations\DbgEntityConfigIdentifier.cs" />
+    <Compile Include="Entity\List\DbgEntityListCategorised.cs" />
+    <Compile Include="Entity\List\DbgEntityList.cs" />
+    <Compile Include="Entity\DbgEntity.cs" />
+    <Compile Include="Entity\Descriptor\DbgEntityDescriptor.cs" />
+    <Compile Include="Entity\Manager\DbgEntityManager.cs" />
+    <Compile Include="Entity\Descriptor\DbgEntityDescriptorManager.cs" />
+    <Compile Include="Entity\Primer\DbgEntityPrimerNull.cs" />
+    <Compile Include="Entity\Primer\IDbgEntityPrimer.cs" />
+    <Compile Include="Entity\Primer\DbgEntityPrimerSilent.cs" />
+    <Compile Include="Entity\Primer\DbgEntityPrimerResult.cs" />
+    <Compile Include="Entity\Primer\DbgEntityPrimerUi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Entity\Primer\DbgEntityPrimerUi.Designer.cs">
+      <DependentUpon>DbgEntityPrimerUi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Engine\DbgPluginManager.cs" />
+    <Compile Include="PluginAPI\KeyBindings\DbgEngineKeyBindings.cs" />
+    <Compile Include="PluginAPI\KeyBindings\DbgEngineKeyBindingsStub.cs" />
+    <Compile Include="PluginAPI\DbgPluginEngine.cs" />
+    <Compile Include="PluginAPI\DbgPluginPrimer.cs" />
+    <Compile Include="PluginAPI\Code\DbgEngineCode.cs" />
+    <Compile Include="PluginAPI\MetaDataConfig\DbgEngineMetaDataConfigStub.cs" />
+    <Compile Include="PluginAPI\MetaDataConfig\DbgEngineMetaDataConfig.cs" />
+    <Compile Include="PluginAPI\Symbol\DbgEngineSymbol.cs" />
+    <Compile Include="PluginAPI\Code\DbgEngineCodeStub.cs" />
+    <Compile Include="PluginAPI\Symbol\DbgEngineSymbolStub.cs" />
+    <Compile Include="PluginAPI\DbgPluginView.cs" />
+    <Compile Include="PluginAPI\Code\DbgViewCode.cs" />
+    <Compile Include="PluginAPI\Symbol\DbgViewSymbol.cs" />
+    <Compile Include="PluginAPI\Trace\DbgEngineTrace.cs" />
+    <Compile Include="PluginAPI\Trace\DbgEngineTraceStub.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Types\DbgViewDeactivationType.cs" />
+    <Compile Include="Types\DbgUiMode.cs" />
+    <Compile Include="Utilities\DbgDirectoryScanner.cs" />
+    <Compile Include="ValidationRules\DbgValidationManager.cs" />
+    <Compile Include="ValidationRules\DbgValidationRule.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Entity\BuiltIn\Unsupported\Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SymbianStructuresLib\SymbianStructuresLib.csproj">
+      <Project>{D3BDEB23-43DA-4534-986B-F6B3DD05EBF6}</Project>
+      <Name>SymbianStructuresLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SymbianUtils\SymbianUtils.csproj">
+      <Project>{F6F4CE69-E73A-4917-97ED-B114DE90C92E}</Project>
+      <Name>SymbianUtils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Entity\BuiltIn\Missing\Icon.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

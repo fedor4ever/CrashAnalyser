@@ -1,0 +1,81 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{925A4DB0-85BD-4157-933F-5BFB93FB4DA1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SymbianParserLib</RootNamespace>
+    <AssemblyName>SymbianParserLib</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseStructures\ParserResponse.cs" />
+    <Compile Include="Exceptions\ParserExceptions.cs" />
+    <Compile Include="BaseStructures\ParserFieldName.cs" />
+    <Compile Include="BaseStructures\ParserElementBaseWithValueStore.cs" />
+    <Compile Include="Elements\ParserElementParagraph.cs" />
+    <Compile Include="Enums\ParserValueType.cs" />
+    <Compile Include="BaseStructures\ParserElementBase.cs" />
+    <Compile Include="Elements\ParserElementField.cs" />
+    <Compile Include="Elements\ParserElementLine.cs" />
+    <Compile Include="Engine\ParserEngine.cs" />
+    <Compile Include="Elements\SubFields\ParserFieldFormatSpecifier.cs" />
+    <Compile Include="Enums\ValueStoreMethodArguments.cs" />
+    <Compile Include="RegExTranslators\Base\RegExTranslatorBase.cs" />
+    <Compile Include="RegExTranslators\Cache\RegExTranslatorCacheEntry.cs" />
+    <Compile Include="RegExTranslators\Cache\RegExTranslatorCache.cs" />
+    <Compile Include="RegExTranslators\Info\RegExTranslatorExtractionInfo.cs" />
+    <Compile Include="RegExTranslators\RegExTranslatorManager.cs" />
+    <Compile Include="RegExTranslators\Types\RegExTranslatorDecimal.cs" />
+    <Compile Include="RegExTranslators\Types\RegExTranslatorHex.cs" />
+    <Compile Include="RegExTranslators\Types\RegExTranslatorString.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Elements\SubFields\ParserFieldFormatValue.cs" />
+    <Compile Include="TypeConverters\EnumTypeConverter.cs" />
+    <Compile Include="Utilities\ParserUtils.cs" />
+    <Compile Include="ValueStores\ValueStore.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SymbianUtils\SymbianUtils.csproj">
+      <Project>{F6F4CE69-E73A-4917-97ED-B114DE90C92E}</Project>
+      <Name>SymbianUtils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

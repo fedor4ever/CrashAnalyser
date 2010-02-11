@@ -1,0 +1,179 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F852F144-7AFC-4F56-A8F1-D7E85E25C9AA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CrashDebuggerLib</RootNamespace>
+    <AssemblyName>CrashDebuggerLib</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\PropCat.cs" />
+    <Compile Include="Structures\Register\RegisterSet.cs" />
+    <Compile Include="Structures\Register\RegisterEntryCPSR.cs" />
+    <Compile Include="Structures\Thread\ThreadStackBuilder.cs" />
+    <Compile Include="Structures\UserContextTable\UserContextTableManager.cs" />
+    <Compile Include="Structures\UserContextTable\UserContextType.cs" />
+    <Compile Include="Structures\UserContextTable\UserContextTableEntry.cs" />
+    <Compile Include="Structures\UserContextTable\UserContextTable.cs" />
+    <Compile Include="CrashDebuggerInfo.cs" />
+    <Compile Include="Parsers\State\Implementation\Helpers\HelperStack.cs" />
+    <Compile Include="Parsers\State\Implementation\Helpers\HelperDMsgQueue.cs" />
+    <Compile Include="Parsers\State\Implementation\Containers\StateContainerMessageQueues.cs" />
+    <Compile Include="Parsers\State\Implementation\Containers\StateContainerConditionalVariables.cs" />
+    <Compile Include="Parsers\State\Implementation\Containers\StateContainerPropertyRefs.cs" />
+    <Compile Include="Parsers\State\Implementation\Containers\StateContainerUndertakers.cs" />
+    <Compile Include="Parsers\State\Implementation\Containers\StateContainerChangeNotifiers.cs" />
+    <Compile Include="Parsers\State\Implementation\Containers\StateContainerLogicalChannels.cs" />
+    <Compile Include="Parsers\State\Implementation\Containers\StateContainerPhysicalDevices.cs" />
+    <Compile Include="Parsers\State\Implementation\Containers\StateContainerLogicalDevices.cs" />
+    <Compile Include="Parsers\State\Implementation\Containers\StateContainerSessions.cs" />
+    <Compile Include="Parsers\State\Implementation\Containers\StateContainerServers.cs" />
+    <Compile Include="Parsers\State\Implementation\Containers\StateContainerTimers.cs" />
+    <Compile Include="Parsers\State\Implementation\Containers\StateContainerMutexes.cs" />
+    <Compile Include="Parsers\State\Implementation\Containers\StateContainerSemaphores.cs" />
+    <Compile Include="Parsers\State\Implementation\Containers\StateContainerLibraries.cs" />
+    <Compile Include="Parsers\State\Implementation\Containers\StateContainerBase.cs" />
+    <Compile Include="Parsers\State\Implementation\Containers\StateContainerChunks.cs" />
+    <Compile Include="Parsers\State\Implementation\Helpers\HelperDChunk.cs" />
+    <Compile Include="Parsers\State\Implementation\Containers\StateContainerProcesses.cs" />
+    <Compile Include="Parsers\State\Implementation\Containers\StateContainerThreads.cs" />
+    <Compile Include="Parsers\State\Implementation\Containers\StateContainerCodeSegs.cs" />
+    <Compile Include="Parsers\State\Implementation\Helpers\HelperNThread.cs" />
+    <Compile Include="Parsers\State\Implementation\Info\StateInfoUserContextTable.cs" />
+    <Compile Include="Parsers\State\Implementation\Stacks\StateThreadStacks.cs">
+    </Compile>
+    <Compile Include="Parsers\State\Implementation\TheCurrentXXX\StateTheCurrentThread.cs" />
+    <Compile Include="Parsers\State\Implementation\Helpers\HelperDThread.cs" />
+    <Compile Include="Parsers\State\Implementation\Helpers\HelperDObject.cs" />
+    <Compile Include="Parsers\State\Implementation\Helpers\HelperDProcess.cs" />
+    <Compile Include="Parsers\State\Implementation\TheCurrentXXX\StateTheCurrentProcess.cs" />
+    <Compile Include="Parsers\State\Implementation\Info\StateInfoCpu.cs" />
+    <Compile Include="Parsers\State\Implementation\Info\StateInfoDebugMask.cs" />
+    <Compile Include="Parsers\State\Implementation\Info\StateInfoFault.cs" />
+    <Compile Include="Parsers\State\Implementation\Info\StateInfoScheduler.cs" />
+    <Compile Include="Parsers\State\StateTypes.cs" />
+    <Compile Include="Parsers\CrashDebuggerParser.cs" />
+    <Compile Include="Parsers\State\StateFactory.cs" />
+    <Compile Include="Parsers\State\StateBase.cs" />
+    <Compile Include="Platform\Constants.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Structures\ChangeNotifier\DChangeNotifier.cs" />
+    <Compile Include="Structures\Chunk\DChunk.cs" />
+    <Compile Include="Structures\Chunk\ChunkPermissions.cs" />
+    <Compile Include="Structures\Chunk\ChunkCollection.cs" />
+    <Compile Include="Structures\CodeSeg\CodeSegEntry.cs" />
+    <Compile Include="Structures\CodeSeg\CodeSegCollection.cs" />
+    <Compile Include="Structures\Common\CrashDebuggerAware.cs" />
+    <Compile Include="Structures\Common\RequestStatus.cs" />
+    <Compile Include="Structures\ConditionalVariable\DCondVar.cs" />
+    <Compile Include="Structures\Cpu\CpuInfo.cs" />
+    <Compile Include="Structures\DebugMask\DebugMaskInfo.cs" />
+    <Compile Include="Structures\Fault\FaultInfo.cs" />
+    <Compile Include="Structures\KernelObjects\DBase.cs" />
+    <Compile Include="Structures\KernelObjects\DObject.cs" />
+    <Compile Include="Structures\KernelObjects\DObjectCon.cs" />
+    <Compile Include="Structures\Library\DLibrary.cs" />
+    <Compile Include="Structures\LogicalChannel\DLogicalChannel.cs" />
+    <Compile Include="Structures\LogicalDevice\DLogicalDevice.cs" />
+    <Compile Include="Structures\MessageQueue\MsgQueueWaitInfo.cs" />
+    <Compile Include="Structures\MessageQueue\MsgQueueSlotInfo.cs" />
+    <Compile Include="Structures\MessageQueue\DMsgQueue.cs" />
+    <Compile Include="Structures\Common\Capability.cs" />
+    <Compile Include="Structures\Common\LinkedListInfo.cs" />
+    <Compile Include="Structures\MessageQueue\MsgQueuePoolInfo.cs" />
+    <Compile Include="Structures\Mutex\DMutex.cs" />
+    <Compile Include="Structures\NThread\NThreadExtraContextInfo.cs" />
+    <Compile Include="Structures\NThread\NThreadCountInfo.cs" />
+    <Compile Include="Structures\NThread\NThreadTimeInfo.cs" />
+    <Compile Include="Structures\NThread\NThreadMutexInfo.cs" />
+    <Compile Include="Structures\NThread\NThread.cs" />
+    <Compile Include="Structures\PhysicalDevice\DPhysicalDevice.cs" />
+    <Compile Include="Structures\Process\ProcessCodeSeg.cs" />
+    <Compile Include="Structures\Process\ProcessChunk.cs" />
+    <Compile Include="Structures\Process\ProcessPageDir.cs" />
+    <Compile Include="Structures\Process\DProcess.cs" />
+    <Compile Include="Structures\Process\ProcessLockInfo.cs" />
+    <Compile Include="Structures\PropertyRef\DPropertyRef.cs" />
+    <Compile Include="Structures\Register\RegisterCollection.cs" />
+    <Compile Include="Structures\Register\RegisterEntry.cs" />
+    <Compile Include="Structures\Scheduler\SchedulerSysLockInfo.cs" />
+    <Compile Include="Structures\Scheduler\SchedulerInfo.cs" />
+    <Compile Include="Structures\Semaphore\DSemaphore.cs" />
+    <Compile Include="Structures\Server\DServer.cs" />
+    <Compile Include="Structures\Session\DSession.cs" />
+    <Compile Include="Structures\Thread\ThreadStackData.cs" />
+    <Compile Include="Structures\Thread\ThreadPriorities.cs" />
+    <Compile Include="Structures\Thread\ThreadTemporaries.cs" />
+    <Compile Include="Structures\Thread\ThreadHandlers.cs" />
+    <Compile Include="Structures\Thread\ThreadAllocatorInfo.cs" />
+    <Compile Include="Structures\Thread\ThreadStackInfo.cs" />
+    <Compile Include="Structures\Common\ExitInfo.cs" />
+    <Compile Include="Structures\Thread\DThread.cs" />
+    <Compile Include="Structures\Timer\DTimer.cs" />
+    <Compile Include="Structures\Undertaker\DUndertaker.cs" />
+    <Compile Include="Threading\AsyncOperationManager.cs" />
+    <Compile Include="Threading\AsyncOperation.cs">
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\PerfToolsSharedLibraries\Engine\SymbianParserLib\SymbianParserLib.csproj">
+      <Project>{925A4DB0-85BD-4157-933F-5BFB93FB4DA1}</Project>
+      <Name>SymbianParserLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\PerfToolsSharedLibraries\Engine\SymbianStackLib\SymbianStackLib.csproj">
+      <Project>{3E11A9E3-3D9B-46CC-BF1D-F4AB0D6A34C3}</Project>
+      <Name>SymbianStackLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\PerfToolsSharedLibraries\Engine\SymbianStructuresLib\SymbianStructuresLib.csproj">
+      <Project>{D3BDEB23-43DA-4534-986B-F6B3DD05EBF6}</Project>
+      <Name>SymbianStructuresLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\PerfToolsSharedLibraries\Engine\SymbianUtils\SymbianUtils.csproj">
+      <Project>{F6F4CE69-E73A-4917-97ED-B114DE90C92E}</Project>
+      <Name>SymbianUtils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\PerfToolsSharedLibraries\Engine\SymbianDebugLib\SymbianDebugLib.csproj">
+      <Project>{796DD82D-9E7D-476D-B700-086CD9A893DA}</Project>
+      <Name>SymbianDebugLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

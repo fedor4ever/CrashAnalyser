@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A9B6DAEB-B3B8-4A73-9200-6C1FCDE3E3AB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SymbianImageLib</RootNamespace>
+    <AssemblyName>SymbianImageLib</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Factory\SIFactory.cs" />
+    <Compile Include="Common\Content\SIContentList.cs" />
+    <Compile Include="Common\Content\SIContent.cs" />
+    <Compile Include="E32Image\Factory\SIFactoryE32Image.cs" />
+    <Compile Include="E32Image\Content\SIContentE32Image.cs" />
+    <Compile Include="E32Image\Header\SIHeaderE32Image.cs" />
+    <Compile Include="E32Image\Image\SymbianE32Image.cs" />
+    <Compile Include="E32Image\Exceptions\SIExceptionsE32Image.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Common\Header\SIHeader.cs" />
+    <Compile Include="Common\Image\SIImage.cs" />
+    <Compile Include="Common\Streams\SIMemoryStream.cs" />
+    <Compile Include="Common\Streams\SIStream.cs" />
+    <Compile Include="ROFS\Factory\SIFactoryROFS.cs" />
+    <Compile Include="ROFS\Content\SIContentFactoryROFS.cs" />
+    <Compile Include="ROFS\Content\Types\SIContentROFSCode.cs" />
+    <Compile Include="ROFS\Header\SIHeaderROF.cs" />
+    <Compile Include="ROFS\Header\Types\SIHeaderROFX.cs" />
+    <Compile Include="ROFS\Header\Types\SIHeaderROFS.cs" />
+    <Compile Include="ROFS\Image\SIROFS.cs" />
+    <Compile Include="ROFS\Content\Types\SIContentROFSData.cs" />
+    <Compile Include="ROFS\Structures\TRofsDir.cs" />
+    <Compile Include="ROFS\Structures\TRofsEntry.cs" />
+    <Compile Include="ROFS\Structures\TRofsHeader.cs" />
+    <Compile Include="ROM\Factory\SIFactoryROM.cs" />
+    <Compile Include="ROM\Content\SIContentROM.cs" />
+    <Compile Include="ROM\Image\SIROM.cs" />
+    <Compile Include="ROM\Structures\SDemandPagingConfig.cs" />
+    <Compile Include="ROM\Structures\SRomPageInfo.cs" />
+    <Compile Include="ROM\Structures\TExtensionRomHeader.cs" />
+    <Compile Include="ROM\Structures\TRomHeader.cs" />
+    <Compile Include="ROM\Structures\TRomLoad.cs" />
+    <Compile Include="ROM\Structures\TRomLoaderHeader.cs" />
+    <Compile Include="ROM\Header\SIHeaderROM.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SymbianStructuresLib\SymbianStructuresLib.csproj">
+      <Project>{D3BDEB23-43DA-4534-986B-F6B3DD05EBF6}</Project>
+      <Name>SymbianStructuresLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SymbianUtils\SymbianUtils.csproj">
+      <Project>{F6F4CE69-E73A-4917-97ED-B114DE90C92E}</Project>
+      <Name>SymbianUtils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

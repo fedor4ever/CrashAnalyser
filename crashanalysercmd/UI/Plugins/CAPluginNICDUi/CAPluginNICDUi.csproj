@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A349F611-7ADE-48FD-AC31-726878FD6052}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CAPluginNICDUi</RootNamespace>
+    <AssemblyName>CAPluginNICDUi.plugin</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="XPTable, Version=1.1.13.21130, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\PerfToolsSharedLibraries\3rd Party\XPTable\bin\Debug\XPTable.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Plugin\CAPluginNICDUi.cs" />
+    <Compile Include="Tabs\CATabNICDViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tabs\CATabNICDViewer.Designer.cs">
+      <DependentUpon>CATabNICDViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizards\CAWizardNICD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wizards\CAWizardNICD.Designer.cs">
+      <DependentUpon>CAWizardNICD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Tabs\CATabNICDViewer.resx">
+      <DependentUpon>CATabNICDViewer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizards\CAWizardNICD.resx">
+      <DependentUpon>CAWizardNICD.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\PerfToolsSharedLibraries\Engine\SymbianUtils\SymbianUtils.csproj">
+      <Project>{F6F4CE69-E73A-4917-97ED-B114DE90C92E}</Project>
+      <Name>SymbianUtils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\PerfToolsSharedLibraries\UI\SymbianTabStripLib\SymbianTabStripLib.csproj">
+      <Project>{14175109-E40C-4BBA-9691-498EF118C8A0}</Project>
+      <Name>SymbianTabStripLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\PerfToolsSharedLibraries\UI\SymbianUtilsUi\SymbianUtilsUi.csproj">
+      <Project>{48F86FA3-3B42-4826-8D06-E8F2E0E7B822}</Project>
+      <Name>SymbianUtilsUi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\PerfToolsSharedLibraries\UI\SymbianWizardLib\SymbianWizardLib.csproj">
+      <Project>{AC323F51-47D6-46BE-8E06-7A75F4C5348D}</Project>
+      <Name>SymbianWizardLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\PerfToolsSharedLibraries\Engine\SymbianDebugLib\SymbianDebugLib.csproj">
+      <Project>{796DD82D-9E7D-476D-B700-086CD9A893DA}</Project>
+      <Name>SymbianDebugLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\PerfToolsSharedLibraries\UI\SymbianDebugUiLib\SymbianDebugLibUi.csproj">
+      <Project>{6C30B8C1-BF87-4626-8125-D5681B22347C}</Project>
+      <Name>SymbianDebugLibUi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Engine\CrashDebuggerLib\CrashDebuggerLib.csproj">
+      <Project>{F852F144-7AFC-4F56-A8F1-D7E85E25C9AA}</Project>
+      <Name>CrashDebuggerLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\UI\CrashDebuggerUiLib\CrashDebuggerUiLib.csproj">
+      <Project>{76242EA7-92DF-4926-8789-2C718B5D9A66}</Project>
+      <Name>CrashDebuggerUiLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\Engine\CrashAnalyserEngine.csproj">
+      <Project>{F9BFDB22-A976-43AD-BD9D-8495C6CCFD80}</Project>
+      <Name>CrashAnalyserEngine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CAPluginNICD\CAPluginNICD.csproj">
+      <Project>{860BF3C3-FF86-4C35-9325-137886AC7FD6}</Project>
+      <Name>CAPluginNICD</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>set path_out="$(SolutionDir)$(OutDir)"
+if not exist %25path_out%25 (
+    mkdir %25path_out%25
+) 
+copy "$(TargetDir)\*.*" "$(SolutionDir)$(OutDir)"
+</PostBuildEvent>
+  </PropertyGroup>
+</Project>

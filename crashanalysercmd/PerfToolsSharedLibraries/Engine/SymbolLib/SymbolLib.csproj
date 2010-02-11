@@ -1,0 +1,215 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C657DF4B-FA67-47DD-89FC-A45583646184}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>SymbolLib</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SymbolLib</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CodeSeg\CodeSegDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeSeg\CodeSegDefinitionCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeSeg\CodeSegDefinitionCollectionEnumerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeSeg\CodeSegDefinitionCollectionComparers.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeSeg\CodeSegDefinitionParser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeSeg\Resolver\CodeSegResolver.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeSeg\Resolver\CodeSegResolverEntry.cs" />
+    <Compile Include="CodeSeg\Resolver\CodeSegResolverEntryCollection.cs" />
+    <Compile Include="CodeSeg\Resolver\Operations\CSROpScanSymbol.cs" />
+    <Compile Include="CodeSeg\Resolver\Operations\CSROpScanDirectory.cs" />
+    <Compile Include="CodeSeg\Resolver\Operations\CSROpScanObey.cs" />
+    <Compile Include="CodeSeg\Resolver\CodeSegResolverOperation.cs" />
+    <Compile Include="CodeSeg\Resolver\Primer\CodeSegDefinitionPrimer.cs" />
+    <Compile Include="Engines\Base\SymbolEngineBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engines\TFileType.cs" />
+    <Compile Include="Engines\ROFS\ROFSEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engines\ROM\ROMEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engines\SymbolManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generic\Collection\GenericSymbolCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generic\Collection\GenericSymbolCollectionList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generic\Collection\GenericSymbolCollectionLookupInterface.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generic\Collection\GenericSymbolCollectionStatisticsInterface.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generic\Comparer\GenericSymbolComparer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generic\Engine\GenericSymbolEngineEnumerator.cs" />
+    <Compile Include="Generic\Engine\GenericSymbolEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generic\Symbol\GenericSymbol.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SearchAndReplace\SymbolicSearchAndReplaceParser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sources\Map\Comparison\MapFileAddressRangeComparer.cs" />
+    <Compile Include="Sources\Map\Engine\MapFileEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sources\Map\Engine\MapFileEngineCollection.cs" />
+    <Compile Include="Sources\Map\File\MapFile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sources\Map\File\MapFileEnumerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sources\Map\Parser\MapFileParser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sources\Map\Symbol\MapSymbol.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sources\Symbol\Collection\SymbolsForBinaryCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sources\Symbol\Collection\SymbolsForBinaryCollectionEnumerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sources\Symbol\Comparison\SymbolCollectionAddressRangeComparer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sources\Symbol\Engine\SymbolFileEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sources\Symbol\Engine\SymbolFileEngineCollection.cs" />
+    <Compile Include="Sources\Symbol\File\SymbolsForBinary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sources\Symbol\Parser\SymbolFileParser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sources\Symbol\Symbol\SymbolSymbol.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utils\SymbolAddressRange.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SymbianUtils\SymbianUtils.csproj">
+      <Project>{F6F4CE69-E73A-4917-97ED-B114DE90C92E}</Project>
+      <Name>SymbianUtils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

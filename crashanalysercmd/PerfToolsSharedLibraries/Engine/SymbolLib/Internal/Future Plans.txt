@@ -1,0 +1,58 @@
+Requirements
+============
+
+1) Unified GenericSymbol class - not virtual 
+   - represents individual symbol
+   - must support dynamic relocation by way of GenericSymbolCollection
+
+2) Unified GenericSymbolCollection class - not virtual
+   - represents collection of symbols
+   - must have a PC-side underlying source file name (e.g. .symbol, .map)
+   - must have a PC-side underlying binary file (e.g. \epoc32\release\armv5\urel\Sysstart.exe, \epoc32\release\armv5\urel\euser.dll)
+   - must have an address range, which is sorted and easily indexable in order to find corresponding GenericSymbol
+   - must support dynamic relocation
+   - collection and CodeSeg will have 1:1 mapping
+   - must be able to tag a collection as "in use" so that it's contents can be serialized
+   - must be able to mark a collection is permanent, i.e. it does not need or support relocation
+
+
+3) Unified SymbolEngine class - not virtual
+   - represents a set of 'collections'
+   - must be able to discard unused collections
+   - must be able to serialize tagged collections
+   - SymbolEngines can be layered - so that one symbol engine can build upon another
+   - must be able to list all collections. If layered, then that means providing iteration on the underlying child symbol engines.
+   - must be able to load and unload specific collections.
+   - an unloaded collection does not necessarily mean totally discarded. It may just mean that it cannot be used to provide
+     symbol lookups. 
+
+4) Separation of symbol sources (map/symbol/sym/zip) from actual symbol & collection content
+
+5) Must be able to easily plug in new symbol sources without impacting other parsers/sources.
+
+6) Once symbol source data is in memory, then must be able to obtain different views on the data without needing to reparse/reload
+   the symbol source.
+
+   For example, in the case of NICD/System CoreDump stack reconstruction, we need to create call stacks for multiple thread
+   simultaneously. Currently we must serialize access to the symbol engine so that only one stack is reconstructed at any given
+   time because we cannot dynamically load and unload multiple relocatable symbol sources simultaneously.
+
+7) "Resolving" a dynamically-loaded symbol source needs to be a common operation for all source types. We must somehow support a number
+   of resolution methods and all sources should be able to provide resolver implementation that allows 'resolution meta-data' to be
+   created for any symbol sources that they have loaded.
+
+
+Use Cases
+=========
+
+a) Need to be able to zip up all the symbol source files.
+
+b) Asked to read a core rom symbol file, two rofs symbols and 3 map files.
+   
+c) Parsing NICD/CoreDump style crash data where serveral stacks all require reconstruction.
+
+
+
+
+
+1) Reading a symbol file fully populates a source

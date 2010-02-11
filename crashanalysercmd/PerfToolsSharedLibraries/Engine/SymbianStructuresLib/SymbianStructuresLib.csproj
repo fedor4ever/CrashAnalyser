@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D3BDEB23-43DA-4534-986B-F6B3DD05EBF6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SymbianStructuresLib</RootNamespace>
+    <AssemblyName>SymbianStructuresLib</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Arm\Registers\General\ArmRegisterMachine.cs" />
+    <Compile Include="Arm\Registers\General\ArmRegister.cs" />
+    <Compile Include="Arm\Registers\General\ArmRegisterBank.cs" />
+    <Compile Include="Arm\Registers\General\ArmRegisterCollection.cs" />
+    <Compile Include="Arm\Registers\General\ArmRegisterType.cs" />
+    <Compile Include="Arm\Instructions\ArmInstructionSet.cs" />
+    <Compile Include="Arm\Instructions\ArmInstructionCondition.cs" />
+    <Compile Include="Arm\Instructions\ArmInstructionAddressingMode.cs" />
+    <Compile Include="Arm\Instructions\ArmInstructionGrouping.cs" />
+    <Compile Include="Arm\Instructions\ArmInstructionTarget.cs" />
+    <Compile Include="Arm\Instructions\ArmDataTransferType.cs" />
+    <Compile Include="Arm\Instructions\IArmInstructionProvider.cs" />
+    <Compile Include="Arm\Instructions\IArmInstruction.cs" />
+    <Compile Include="Arm\Instructions\ArmDataProcessingType.cs" />
+    <Compile Include="Arm\Registers\CoProcessor\ArmCoProSystemControlRegisterCollection.cs" />
+    <Compile Include="Arm\Registers\EmbeddedTrace\ArmETRegisterCollection.cs" />
+    <Compile Include="Arm\Registers\VFP\ArmVectorFloatingPointRegisters.cs" />
+    <Compile Include="Arm\Registers\VFP\ArmVectorFloatingPointUtils.cs" />
+    <Compile Include="Arm\Security\ArmSecurityMode.cs" />
+    <Compile Include="Compression\BytePair\SymbianDecompressorBytePair.cs" />
+    <Compile Include="CodeSegments\CodeSegDefinition.cs" />
+    <Compile Include="CodeSegments\CodeSegDefinitionCollection.cs" />
+    <Compile Include="CodeSegments\CodeSegDefinitionParser.cs" />
+    <Compile Include="CodeSegments\Internal\Comparers.cs" />
+    <Compile Include="Compression\Common\SymbianCompressionType.cs" />
+    <Compile Include="Compression\Common\SymbianDecompressor.cs" />
+    <Compile Include="Compression\Deflate\SymbianDecompressorInflate.cs" />
+    <Compile Include="Debug\Code\Code\CodeCollection.cs" />
+    <Compile Include="Debug\Code\Code\CodeCollectionList.cs" />
+    <Compile Include="Debug\Code\Interfaces\ICodeCollectionInstructionConverter.cs" />
+    <Compile Include="Debug\Code\Interfaces\ICodeCollectionCodeSegmentResolver.cs" />
+    <Compile Include="Debug\Code\Interfaces\ICodeCollectionRelocationHandler.cs" />
+    <Compile Include="Arm\Exceptions\ArmExceptions.cs" />
+    <Compile Include="Arm\Disassembly\IArmDisassemblyTool.cs" />
+    <Compile Include="Debug\Common\FileName\PlatformFileNameConstants.cs" />
+    <Compile Include="Debug\Common\Id\PlatformlId.cs" />
+    <Compile Include="Debug\Common\Interfaces\IPlatformIdAllocator.cs" />
+    <Compile Include="Debug\Common\Id\PlatformIdAllocator.cs" />
+    <Compile Include="Debug\Symbols\Constants\SymbolConstants.cs" />
+    <Compile Include="Debug\Common\FileName\PlatformFileName.cs" />
+    <Compile Include="Debug\Symbols\Interfaces\ISymbolCodeSegmentResolver.cs" />
+    <Compile Include="Debug\Symbols\Interfaces\ISymbolCollectionRelocationHandler.cs" />
+    <Compile Include="Debug\Symbols\Symbols\InternedName.cs" />
+    <Compile Include="Debug\Symbols\Symbols\Symbol.cs" />
+    <Compile Include="Debug\Symbols\Symbols\SymbolCollection.cs" />
+    <Compile Include="Debug\Symbols\Symbols\SymbolCollectionList.cs" />
+    <Compile Include="Debug\Symbols\Types\SymbolSource.cs" />
+    <Compile Include="Debug\Symbols\Types\SymbolType.cs" />
+    <Compile Include="Debug\Symbols\Utilities\SymbolCollectionHarmoniser.cs" />
+    <Compile Include="Debug\Trace\TraceLocation.cs" />
+    <Compile Include="Debug\Trace\TraceIdentifier.cs" />
+    <Compile Include="Debug\Trace\TraceLine.cs" />
+    <Compile Include="Debug\Trace\TraceTimeStamp.cs" />
+    <Compile Include="MemoryModel\TMemoryModelRegion.cs" />
+    <Compile Include="MemoryModel\MMUtilities.cs" />
+    <Compile Include="MemoryModel\TMemoryModelType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\CapabilitySet.cs" />
+    <Compile Include="Security\Capability.cs" />
+    <Compile Include="Security\SecurityInfo.cs" />
+    <Compile Include="Uids\TCheckedUid.cs" />
+    <Compile Include="Version\TVersion.cs" />
+    <Compile Include="Uids\UidType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SymbianUtils\SymbianUtils.csproj">
+      <Project>{F6F4CE69-E73A-4917-97ED-B114DE90C92E}</Project>
+      <Name>SymbianUtils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

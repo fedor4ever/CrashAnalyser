@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{29D6410E-E739-4810-A582-501C807D12F0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CAPAnalysis</RootNamespace>
+    <AssemblyName>CACrashAnalysis.plugin</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommandLine\CACmdLineEngine.cs" />
+    <Compile Include="CommandLine\Files\CACmdLineFileSource.cs" />
+    <Compile Include="CommandLine\Inputs\CACmdLineInputParameters.cs" />
+    <Compile Include="CommandLine\Exceptions\CACmdLineException.cs" />
+    <Compile Include="CommandLine\Files\CACmdLineFSEntity.cs" />
+    <Compile Include="CommandLine\Files\CACmdLineFSEntityList.cs" />
+    <Compile Include="CommandLine\Messages\CACmdLineMessageList.cs" />
+    <Compile Include="CommandLine\Messages\CACmdLineMessage.cs" />
+    <Compile Include="CommandLine\Outputs\CACmdLineManifestWriter.cs" />
+    <Compile Include="CommandLine\Progress\CACmdLineProgressReporter.cs" />
+    <Compile Include="CommandLine\Source\CACmdLineSource.cs" />
+    <Compile Include="Plugin\CAPluginCrashAnalysis.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\PerfToolsSharedLibraries\Engine\SymbianDebugLib\SymbianDebugLib.csproj">
+      <Project>{796DD82D-9E7D-476D-B700-086CD9A893DA}</Project>
+      <Name>SymbianDebugLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\PerfToolsSharedLibraries\Engine\SymbianTree\SymbianTree.csproj">
+      <Project>{2BE440C1-E5F6-4F5D-B533-0F745CAA65A8}</Project>
+      <Name>SymbianTree</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\PerfToolsSharedLibraries\Engine\SymbianUtils\SymbianUtils.csproj">
+      <Project>{F6F4CE69-E73A-4917-97ED-B114DE90C92E}</Project>
+      <Name>SymbianUtils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\PerfToolsSharedLibraries\Engine\SymbianXmlInputLib\SymbianXmlInputLib.csproj">
+      <Project>{56ECA873-7D1D-45E7-A583-A5388D753321}</Project>
+      <Name>SymbianXmlInputLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Engine\CrashItemLib\CrashItemLib.csproj">
+      <Project>{A5B87D2F-E351-4B03-8BD0-9C8C91EDF1CC}</Project>
+      <Name>CrashItemLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\Engine\CrashAnalyserEngine.csproj">
+      <Project>{F9BFDB22-A976-43AD-BD9D-8495C6CCFD80}</Project>
+      <Name>CrashAnalyserEngine</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>set path_out="$(SolutionDir)$(OutDir)"
+if not exist %25path_out%25 (
+    mkdir %25path_out%25
+) 
+copy "$(TargetDir)\*.*" "$(SolutionDir)$(OutDir)"
+</PostBuildEvent>
+  </PropertyGroup>
+</Project>

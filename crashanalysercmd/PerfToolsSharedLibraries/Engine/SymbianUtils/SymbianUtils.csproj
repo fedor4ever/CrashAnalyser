@@ -1,0 +1,268 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F6F4CE69-E73A-4917-97ED-B114DE90C92E}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>SymbianUtils</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SymbianUtils</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assemblies\AssemblyHelper.cs" />
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasicTypes\SymUInt.cs" />
+    <Compile Include="BasicTypes\SymBit.cs" />
+    <Compile Include="BasicTypes\SymAddress.cs" />
+    <Compile Include="BasicTypes\SymAddressWithKnownBits.cs" />
+    <Compile Include="BasicTypes\SymByte.cs" />
+    <Compile Include="BasicTypes\SymMask.cs" />
+    <Compile Include="Threading\BlockingQueue.cs" />
+    <Compile Include="Collections\SymbianSortedListByValue.cs" />
+    <Compile Include="Colour\ColourGenerationUtil.cs" />
+    <Compile Include="Colour\ColourUtils.cs" />
+    <Compile Include="DataBuffer\DataBuffer.cs" />
+    <Compile Include="DataBuffer\Entry\DataBufferByte.cs" />
+    <Compile Include="DataBuffer\Entry\DataBufferUint.cs" />
+    <Compile Include="DataBuffer\Primer\DataBufferPrimer.cs" />
+    <Compile Include="Debug\SymDebugger.cs" />
+    <Compile Include="Enum\EnumUtils.cs" />
+    <Compile Include="Environment\EnvEntry.cs" />
+    <Compile Include="Environment\EnvEntryNull.cs" />
+    <Compile Include="Environment\SymbianCommandLineEnvValidator.cs" />
+    <Compile Include="Environment\EnvEntryBase.cs" />
+    <Compile Include="FileSystem\FilePair\FileNamePair.cs" />
+    <Compile Include="FileSystem\FilePair\FileNamePairCollection.cs" />
+    <Compile Include="FileSystem\FSDeletableResource.cs" />
+    <Compile Include="FileSystem\FSDirectoryScanner.cs" />
+    <Compile Include="FileSystem\FSLog.cs" />
+    <Compile Include="FileSystem\FSExtensionList.cs" />
+    <Compile Include="FileSystem\FSExtensionDescriptor.cs" />
+    <Compile Include="FileTypes\SymFileType.cs" />
+    <Compile Include="FileTypes\SymFileTypeList.cs" />
+    <Compile Include="Graphics\ScreenCopyUtil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Graphics\SymRect.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MarshallingUtils\MarshalHelper.cs" />
+    <Compile Include="Mmp\MmpFileInfo.cs" />
+    <Compile Include="Mmp\MmpFileReader.cs" />
+    <Compile Include="SerializedOperations\SerializedOperation.cs" />
+    <Compile Include="SerializedOperations\SerializedOperationManager.cs" />
+    <Compile Include="PluginManager\PluginAssemblyAttribute.cs" />
+    <Compile Include="PluginManager\PluginManager.cs" />
+    <Compile Include="ProcessAndThread\ProcessInformation.cs" />
+    <Compile Include="ProcessAndThread\ProcessLauncher.cs" />
+    <Compile Include="ProcessAndThread\SecurityAttributes.cs" />
+    <Compile Include="ProcessAndThread\StartupInformation.cs" />
+    <Compile Include="Range\AddressRange.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Range\AddressRangeCollection.cs" />
+    <Compile Include="RawItems\RawItemCollectionEnumerator.cs" />
+    <Compile Include="RawItems\RawItemCollection.cs" />
+    <Compile Include="RawItems\RawItem.cs" />
+    <Compile Include="Settings\XmlSettingsValueConverter.cs" />
+    <Compile Include="Settings\XmlSettingsValue.cs" />
+    <Compile Include="Settings\XmlSettingsInterfaces.cs" />
+    <Compile Include="Settings\XmlSettings.cs" />
+    <Compile Include="Settings\XmlSettingsBoundedList.cs" />
+    <Compile Include="Settings\XmlSettingsCategory.cs" />
+    <Compile Include="SourceParser\Objects\SrcMethodModifier.cs" />
+    <Compile Include="SourceParser\Objects\SrcClass.cs" />
+    <Compile Include="SourceParser\Objects\SrcMethodParameter.cs" />
+    <Compile Include="SourceParser\Objects\SrcMethod.cs" />
+    <Compile Include="SourceParser\Parsers\ParserSrcClass.cs" />
+    <Compile Include="SourceParser\Parsers\ParserSrcMethod.cs" />
+    <Compile Include="SourceParser\Parsers\ParserSrcMethodModifier.cs" />
+    <Compile Include="SourceParser\Parsers\ParserSrcMethodParameter.cs" />
+    <Compile Include="SourceParser\SourceParser.cs" />
+    <Compile Include="FileSystem\FSEntity.cs" />
+    <Compile Include="FileSystem\FSEntityDirectory.cs" />
+    <Compile Include="FileSystem\FSEntityFile.cs" />
+    <Compile Include="BasicTypes\SymBitUtils.cs" />
+    <Compile Include="Streams\SymbianStreamReaderLE.cs" />
+    <Compile Include="Strings\StringUtils.cs" />
+    <Compile Include="Strings\StringCaser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Strings\StringParsingUtils.cs" />
+    <Compile Include="Synchronicity\TSynchronicity.cs" />
+    <Compile Include="TextUtilities\Readers\Base\AsyncReaderBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TextUtilities\Readers\Filters\AsyncTextReaderFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TextUtilities\Readers\Filters\AsyncTextReaderFilterCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TextUtilities\Readers\Filters\AsyncTextReaderFilterCollectionEnumerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TextUtilities\Readers\Prefix\AsyncTextReaderPrefix.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TextUtilities\Readers\Types\Array\AsyncArrayReader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TextUtilities\Readers\Types\Array\AsyncQueueReader.cs" />
+    <Compile Include="TextUtilities\Readers\Types\Array\AsyncEnumerableReader.cs" />
+    <Compile Include="TextUtilities\Readers\Types\Binary\AsyncBinaryFileReader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TextUtilities\Readers\Types\Binary\AsyncBinaryReaderBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TextUtilities\Readers\Types\Text\AsyncTextDataReader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TextUtilities\Readers\Types\Text\AsyncTextFileReader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TextUtilities\Readers\Types\Text\AsyncTextReader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TextUtilities\Readers\Types\Text\AsyncTextReaderBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TextUtilities\Writers\AsyncTextWriters.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Threading\MultiThreadedProcessor.cs" />
+    <Compile Include="Tracer\ISymTracer.cs" />
+    <Compile Include="Utilities\CRC32Checksum.cs" />
+    <Compile Include="Utilities\DisposableObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FileSystem\Utilities\FSUtilities.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utilities\HTMLEntityUtility.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utilities\MemoryModelUtils.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utilities\NumberBaseUtils.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utilities\NumberFormattingUtils.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utilities\PrefixParser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utilities\RawByteToTextConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Environment\EnvLocator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utilities\TracePrefixAnalyser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Settings\XmlUtilities.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XRef\XRefEngine.cs" />
+    <Compile Include="XRef\XRefIdentifer.cs" />
+    <Compile Include="XRef\XRefIdentiferExtractor.cs" />
+    <Compile Include="XRef\XRefLauncher.cs" />
+    <Compile Include="XRef\XRefSettings.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

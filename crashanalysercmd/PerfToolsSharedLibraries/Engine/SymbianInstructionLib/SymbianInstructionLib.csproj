@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EB93FD74-17C6-44B2-8384-4D58DC210F77}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SymbianInstructionLib</RootNamespace>
+    <AssemblyName>SymbianInstructionLib</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Arm\Instructions\Arm\DataTransfer\Arm_FSTMS.cs" />
+    <Compile Include="Arm\Instructions\Arm\DataTransfer\Bases\Arm_LoadOrStoreMultiple_GP.cs" />
+    <Compile Include="Arm\Instructions\Arm\DataTransfer\Bases\Arm_LoadOrStoreMultiple_VFP.cs" />
+    <Compile Include="Arm\Instructions\Arm\DataTransfer\Bases\Arm_LoadOrStore.cs" />
+    <Compile Include="Arm\Instructions\Thumb\DataTransfer\Bases\Thumb_LoadOrStoreMultiple.cs" />
+    <Compile Include="Arm\Instructions\Thumb\DataTransfer\Thumb_LDR_RelativeToSP.cs" />
+    <Compile Include="Arm\Library\ArmLibrary.cs" />
+    <Compile Include="Arm\Instructions\Arm\ArchitecturallyUndefined\Arm_ArchitecturallyUndefined.cs" />
+    <Compile Include="Arm\Instructions\Arm\Branching\Arm_BL.cs" />
+    <Compile Include="Arm\Instructions\Arm\Branching\Bases\Arm_Branch.cs" />
+    <Compile Include="Arm\Instructions\Arm\DataProcessing\Arm_DataProcessing_Shift_Immediate.cs" />
+    <Compile Include="Arm\Instructions\Arm\DataProcessing\Arm_DataProcessing_Shift_Register.cs" />
+    <Compile Include="Arm\Instructions\Arm\DataTransfer\Bases\Arm_LoadOrStoreMultiple.cs" />
+    <Compile Include="Arm\Instructions\Arm\SWI\Arm_SWI.cs" />
+    <Compile Include="Arm\Instructions\Arm\Branching\Bases\Arm_Branch_Immediate.cs" />
+    <Compile Include="Arm\Instructions\Arm\Branching\Arm_BX.cs" />
+    <Compile Include="Arm\Instructions\Arm\Branching\Arm_BXJ.cs" />
+    <Compile Include="Arm\Instructions\Arm\Branching\Bases\Arm_Branch_Register.cs" />
+    <Compile Include="Arm\Instructions\Arm\Branching\Arm_BLX_Immediate.cs" />
+    <Compile Include="Arm\Instructions\Arm\Branching\Arm_BLX_Register.cs" />
+    <Compile Include="Arm\Instructions\Arm\DataProcessing\Bases\Arm_DataProcessing.cs" />
+    <Compile Include="Arm\Instructions\Arm\DataProcessing\Arm_DataProcessing_32BitImmediate.cs" />
+    <Compile Include="Arm\Instructions\Arm\DataProcessing\Bases\Arm_DataProcessing_Shift.cs" />
+    <Compile Include="Arm\Instructions\Common\ArmBaseInstruction.cs" />
+    <Compile Include="Arm\Instructions\Common\ArmRefAttribute.cs" />
+    <Compile Include="Arm\Instructions\Arm\ArmInstruction.cs" />
+    <Compile Include="Arm\Instructions\Arm\Branching\Arm_B.cs" />
+    <Compile Include="Arm\Instructions\Arm\DataTransfer\Arm_LDM.cs" />
+    <Compile Include="Arm\Instructions\Arm\DataTransfer\Arm_FSTMD.cs" />
+    <Compile Include="Arm\Instructions\Arm\DataTransfer\Arm_STM.cs" />
+    <Compile Include="Arm\Instructions\Arm\Arm_Unknown.cs" />
+    <Compile Include="Arm\Instructions\Common\ArmInstructionUtils.cs" />
+    <Compile Include="Arm\Instructions\Thumb\DataProcessing\Thumb_Add_2Regs_High.cs" />
+    <Compile Include="Arm\Instructions\Thumb\DataProcessing\Thumb_Add_SPOrPC.cs" />
+    <Compile Include="Arm\Instructions\Thumb\DataProcessing\Thumb_AddOrSubtract_SP.cs" />
+    <Compile Include="Arm\Instructions\Thumb\DataProcessing\Thumb_AddOrSubtract_Large.cs" />
+    <Compile Include="Arm\Instructions\Thumb\DataProcessing\Bases\Thumb_AddOrSubtract_2Regs.cs" />
+    <Compile Include="Arm\Instructions\Thumb\DataProcessing\Thumb_AddOrSubtract_Register.cs" />
+    <Compile Include="Arm\Instructions\Thumb\DataProcessing\Thumb_AddOrSubtract_Immediate.cs" />
+    <Compile Include="Arm\Instructions\Thumb\DataProcessing\Bases\Thumb_AddOrSubtract.cs" />
+    <Compile Include="Arm\Instructions\Thumb\Branching\Bases\Thumb_Branch_Immediate.cs" />
+    <Compile Include="Arm\Instructions\Thumb\Branching\Thumb_Branch_WithExchange.cs" />
+    <Compile Include="Arm\Instructions\Thumb\Branching\Thumb_Branch_Unconditional.cs" />
+    <Compile Include="Arm\Instructions\Thumb\Branching\Thumb_Branch_Conditional.cs" />
+    <Compile Include="Arm\Instructions\Thumb\Branching\Bases\Thumb_Branch.cs" />
+    <Compile Include="Arm\Instructions\Thumb\DataTransfer\Thumb_LoadOrStore_Register.cs" />
+    <Compile Include="Arm\Instructions\Thumb\DataTransfer\Thumb_LDR_RelativeToPC.cs" />
+    <Compile Include="Arm\Instructions\Thumb\DataTransfer\Thumb_STR_RelativeToSP.cs" />
+    <Compile Include="Arm\Instructions\Thumb\DataTransfer\Bases\Thumb_LoadOrStore_Immediate8.cs" />
+    <Compile Include="Arm\Instructions\Thumb\DataTransfer\Thumb_LoadOrStore_Immediate5.cs" />
+    <Compile Include="Arm\Instructions\Thumb\DataTransfer\Bases\Thumb_LoadOrStore.cs" />
+    <Compile Include="Arm\Instructions\Thumb\DataTransfer\Thumb_PushOrPop.cs" />
+    <Compile Include="Arm\Instructions\Thumb\ThumbInstruction.cs" />
+    <Compile Include="Arm\Instructions\Thumb\Thumb_Unknown.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SymbianStructuresLib\SymbianStructuresLib.csproj">
+      <Project>{D3BDEB23-43DA-4534-986B-F6B3DD05EBF6}</Project>
+      <Name>SymbianStructuresLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SymbianUtils\SymbianUtils.csproj">
+      <Project>{F6F4CE69-E73A-4917-97ED-B114DE90C92E}</Project>
+      <Name>SymbianUtils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Arm\Common\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

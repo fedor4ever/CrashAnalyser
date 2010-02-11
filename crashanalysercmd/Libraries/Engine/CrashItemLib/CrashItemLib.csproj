@@ -1,0 +1,276 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A5B87D2F-E351-4B03-8BD0-9C8C91EDF1CC}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>CrashItemLib</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>CrashItemLib</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <ProjectReference Include="..\..\..\..\PerfToolsSharedLibraries\Engine\SymbianDebugLib\SymbianDebugLib.csproj">
+      <Project>{796DD82D-9E7D-476D-B700-086CD9A893DA}</Project>
+      <Name>SymbianDebugLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\PerfToolsSharedLibraries\Engine\SymbianStackLib\SymbianStackLib.csproj">
+      <Project>{3E11A9E3-3D9B-46CC-BF1D-F4AB0D6A34C3}</Project>
+      <Name>SymbianStackLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\PerfToolsSharedLibraries\Engine\SymbianStructuresLib\SymbianStructuresLib.csproj">
+      <Project>{D3BDEB23-43DA-4534-986B-F6B3DD05EBF6}</Project>
+      <Name>SymbianStructuresLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\PerfToolsSharedLibraries\Engine\SymbianUtils\SymbianUtils.csproj">
+      <Project>{F6F4CE69-E73A-4917-97ED-B114DE90C92E}</Project>
+      <Name>SymbianUtils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Crash\Base\CIElementFinalizationParameters.cs" />
+    <Compile Include="Crash\Container\CIContainerIndex.cs" />
+    <Compile Include="Crash\Container\CIContainerFinalizer.cs" />
+    <Compile Include="Crash\Container\CIContainerIndexProcessor.cs" />
+    <Compile Include="Crash\InfoEnvironment\CIInfoEnvironment.cs" />
+    <Compile Include="Crash\Reports\CIReportInfo.cs" />
+    <Compile Include="Crash\Reports\CIReportParameter.cs" />
+    <Compile Include="Crash\Symbols\ICISymbolManager.cs" />
+    <Compile Include="Crash\Registers\Visualization\CIRegisterVisualization.cs" />
+    <Compile Include="Crash\Registers\Visualization\Bits\CIRegisterVisBit.cs" />
+    <Compile Include="Crash\Registers\Visualization\Bits\CIRegisterVisBitList.cs" />
+    <Compile Include="Crash\Registers\Visualization\Bits\CIRegisterVisBitRange.cs" />
+    <Compile Include="Crash\Registers\Visualization\Bits\CIRegisterVisBitGroup.cs" />
+    <Compile Include="Crash\Registers\Visualization\ICIRegisterVisualizerVisitor.cs" />
+    <Compile Include="Crash\Registers\Visualization\TBit.cs" />
+    <Compile Include="Crash\Registers\Visualization\Utilities\VisUtilities.cs" />
+    <Compile Include="Crash\Source\CISource.cs" />
+    <Compile Include="Crash\Base\CIElementAttributes.cs" />
+    <Compile Include="Crash\Base\CIElementList.cs" />
+    <Compile Include="Crash\Base\DataBinding\CIDBColumn.cs" />
+    <Compile Include="Crash\Base\DataBinding\CIDBRow.cs" />
+    <Compile Include="Crash\Base\DataBinding\CIDBCell.cs" />
+    <Compile Include="Crash\Base\DataBinding\CIDBModel.cs" />
+    <Compile Include="Crash\Base\DataBinding\CIDBAttributes.cs" />
+    <Compile Include="Crash\CodeSegs\CICodeSegList.cs" />
+    <Compile Include="Crash\Events\CIEventList.cs" />
+    <Compile Include="Crash\Registers\CIRegisterListCollection.cs" />
+    <Compile Include="Crash\Registers\Factory\CIRegisterFactory.cs" />
+    <Compile Include="Crash\Registers\Special\CIRegisterCPSR.cs" />
+    <Compile Include="Crash\Registers\Special\CIRegisterFSR.cs" />
+    <Compile Include="Crash\Registers\Special\CIRegisterExcCode.cs" />
+    <Compile Include="Crash\Stacks\CIStackBuilder.cs" />
+    <Compile Include="Crash\Summarisable\CISummarisableEntityList.cs" />
+    <Compile Include="Crash\Traces\CITrace.cs" />
+    <Compile Include="Crash\Traces\CITraceData.cs" />
+    <Compile Include="Engine\Interfaces\ICIEngineUI.cs" />
+    <Compile Include="Engine\Operations\CIEngineOperation.cs" />
+    <Compile Include="Engine\Operations\CIEngineOperationManager.cs" />
+    <Compile Include="Engine\Primer\CIEnginePrimerWorkingSet.cs" />
+    <Compile Include="Engine\CIEngine.cs" />
+    <Compile Include="Engine\Primer\CIEnginePrimer.cs" />
+    <Compile Include="Engine\Sources\CIEngineSourceProcessor.cs" />
+    <Compile Include="Engine\Sources\Types\CIEngineSourceReaderTrace.cs" />
+    <Compile Include="Engine\Sources\Types\CIEngineSourceReader.cs" />
+    <Compile Include="Engine\Sources\Types\CIEngineSourceReaderNative.cs" />
+    <Compile Include="LibResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LibResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PluginAPI\FW\CFFFileList.cs" />
+    <Compile Include="Engine\ProblemDetectors\CIProblemDetectorManager.cs" />
+    <Compile Include="Engine\ProblemDetectors\Base\CIProblemDetector.cs" />
+    <Compile Include="Engine\ProblemDetectors\CodeSeg\CIPDCodeSegAvailability.cs" />
+    <Compile Include="Engine\ProblemDetectors\Stack\CIPDStackBoundaryValidator.cs" />
+    <Compile Include="Engine\ProblemDetectors\Registers\CIPDRegAvailability.cs" />
+    <Compile Include="Engine\ProblemDetectors\Stack\CIPDStackDataValidator.cs" />
+    <Compile Include="Engine\ProblemDetectors\Stack\CIPDStackRegisterAvailability.cs" />
+    <Compile Include="Engine\ProblemDetectors\Thread\CIPDThreadValidity.cs" />
+    <Compile Include="Engine\Sources\CIEngineSource.cs" />
+    <Compile Include="Crash\Base\CIElementId.cs" />
+    <Compile Include="Crash\Base\CIElementDictionary.cs" />
+    <Compile Include="Crash\Base\CIElementIdProvider.cs" />
+    <Compile Include="Crash\Summarisable\CISummarisableEntity.cs" />
+    <Compile Include="Crash\Events\CIEvent.cs" />
+    <Compile Include="Crash\Header\CIHeader.cs" />
+    <Compile Include="Crash\InfoSW\CIInfoSW.cs" />
+    <Compile Include="Crash\InfoHW\CIInfoHW.cs" />
+    <Compile Include="Crash\Registers\CIRegisterList.cs" />
+    <Compile Include="Crash\Source\CISourceElement.cs" />
+    <Compile Include="Crash\Stacks\CIStackEntry.cs" />
+    <Compile Include="Crash\Symbols\CISymbol.cs" />
+    <Compile Include="Crash\Symbols\CISymbolDictionary.cs" />
+    <Compile Include="Crash\Telephony\CITelephonyNetworkInfo.cs" />
+    <Compile Include="Crash\Threads\CIThreadRegisterListCollection.cs" />
+    <Compile Include="Crash\Utils\CIFullNameUtils.cs" />
+    <Compile Include="Crash\Utils\CIVersionInfo.cs" />
+    <Compile Include="PluginAPI\FW\CFFFileSpecification.cs" />
+    <Compile Include="PluginAPI\Internal\CFFPluginRegistry.cs" />
+    <Compile Include="Crash\Container\CIContainerCollection.cs" />
+    <Compile Include="Crash\Base\CIElement.cs" />
+    <Compile Include="Crash\BinaryData\CIBinaryData.cs" />
+    <Compile Include="Crash\CodeSegs\CICodeSeg.cs" />
+    <Compile Include="Crash\Container\CIContainer.cs" />
+    <Compile Include="Crash\Memory\CIMemoryInfoCollection.cs" />
+    <Compile Include="Crash\Memory\CIMemoryInfo.cs" />
+    <Compile Include="Crash\ExitInfo\CIExitInfo.cs" />
+    <Compile Include="Crash\Messages\CIMessageDictionary.cs" />
+    <Compile Include="Crash\Messages\CIMessage.cs" />
+    <Compile Include="Crash\Messages\CIMessageWarning.cs" />
+    <Compile Include="Crash\Messages\CIMessageError.cs" />
+    <Compile Include="Crash\Processes\CIProcess.cs" />
+    <Compile Include="Crash\Registers\CIRegister.cs" />
+    <Compile Include="Crash\Stacks\CIStack.cs" />
+    <Compile Include="Crash\Telephony\CITelephony.cs" />
+    <Compile Include="Crash\Threads\CIThread.cs" />
+    <Compile Include="PluginAPI\Source\CFFSourceAndConfidence.cs" />
+    <Compile Include="PluginAPI\FW\CFFDataProvider.cs" />
+    <Compile Include="PluginAPI\FW\CFFPlugin.cs" />
+    <Compile Include="PluginAPI\FW\CFFReader.cs" />
+    <Compile Include="PluginAPI\Source\CFFSource.cs" />
+    <Compile Include="PluginAPI\FW\CFFTraceLine.cs" />
+    <Compile Include="Engine\Sources\CIEngineSourceCollection.cs" />
+    <Compile Include="Sink\CISinkManager.cs" />
+    <Compile Include="Sink\CISink.cs" />
+    <Compile Include="Sink\CISinkSerializationParameters.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="LibResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LibResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

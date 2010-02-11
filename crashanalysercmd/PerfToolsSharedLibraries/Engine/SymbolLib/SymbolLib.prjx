@@ -1,0 +1,35 @@
+<Project name="SymbolLib" standardNamespace="SymbolLib" description="" newfilesearch="None" enableviewstate="True" version="1.1" projecttype="C#">
+  <Contents>
+    <File name=".\AssemblyInfo.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\StackElement.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\StackReconstructor.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\SymbolCollection.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\SymbolEntry.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\SymbolFile.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\LogFileParser.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\HeapCell.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\ParsedDataItems.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\HeapReconstructor.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+  </Contents>
+  <References>
+    <Reference type="Project" refto="SymbianUtils" localcopy="True" />
+  </References>
+  <DeploymentInformation target="" script="" strategy="File" />
+  <Configuration runwithwarnings="True" name="Debug">
+    <CodeGeneration runtime="MsNet" compiler="Csc" compilerversion="" warninglevel="4" nowarn="" includedebuginformation="True" optimize="False" unsafecodeallowed="False" generateoverflowchecks="False" mainclass="" target="Library" definesymbols="DEBUG;TRACE" generatexmldocumentation="False" win32Icon="" noconfig="False" nostdlib="False" />
+    <Execution commandlineparameters="" consolepause="True" />
+    <Output directory=".\bin\Debug" assembly="SymbolLib" executeScript="" executeBeforeBuild="" executeAfterBuild="" executeBeforeBuildArguments="" executeAfterBuildArguments="" />
+  </Configuration>
+  <Configurations active="Debug">
+    <Configuration runwithwarnings="True" name="Debug">
+      <CodeGeneration runtime="MsNet" compiler="Csc" compilerversion="" warninglevel="4" nowarn="" includedebuginformation="True" optimize="False" unsafecodeallowed="False" generateoverflowchecks="False" mainclass="" target="Library" definesymbols="DEBUG;TRACE" generatexmldocumentation="False" win32Icon="" noconfig="False" nostdlib="False" />
+      <Execution commandlineparameters="" consolepause="True" />
+      <Output directory=".\bin\Debug" assembly="SymbolLib" executeScript="" executeBeforeBuild="" executeAfterBuild="" executeBeforeBuildArguments="" executeAfterBuildArguments="" />
+    </Configuration>
+    <Configuration runwithwarnings="True" name="Release">
+      <CodeGeneration runtime="MsNet" compiler="Csc" compilerversion="" warninglevel="4" nowarn="" includedebuginformation="False" optimize="True" unsafecodeallowed="False" generateoverflowchecks="False" mainclass="" target="Library" definesymbols="TRACE" generatexmldocumentation="False" win32Icon="" noconfig="False" nostdlib="False" />
+      <Execution commandlineparameters="" consolepause="True" />
+      <Output directory=".\bin\Release" assembly="SymbolLib" executeScript="" executeBeforeBuild="" executeAfterBuild="" executeBeforeBuildArguments="" executeAfterBuildArguments="" />
+    </Configuration>
+  </Configurations>
+</Project>
