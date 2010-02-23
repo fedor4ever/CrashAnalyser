@@ -26,7 +26,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration( "" )]
 [assembly: AssemblyCompany( "Nokia Corporation" )]
 [assembly: AssemblyProduct( "" )]
-[assembly: AssemblyCopyright( "Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies). All rights reserved. License: http://www.symbianfoundation.org/legal/sfl-v10.html." )]
+[assembly: AssemblyCopyright("Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies). All rights reserved. License: http://www.eclipse.org/legal/epl-v10.html.")]
 [assembly: AssemblyTrademark( "" )]
 [assembly: AssemblyCulture( "" )]	
 
