@@ -1,0 +1,259 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<panic_category>
+  <category_name>WSERV</category_name>
+  <category_description> &lt;p&gt; The window server runs continuously and brings the machine down if it crashes, so it cannot panic its own thread when it detects an error in one of its client&amp;#8217;s requests. Instead it panics the client&amp;#8217;s thread using &lt;code class="ApiItem"&gt;CSession::Panic()&lt;/code&gt;. These panics have a category of WSERV. &lt;/p&gt; &lt;p&gt; These panics are defined in the enumeration &lt;code&gt;TClientPanic&lt;/code&gt; in &lt;code class="filename"&gt;w32cmd.h&lt;/code&gt;. &lt;/p&gt; &lt;p&gt; Note that some panics are raised in debug builds only. &lt;/p&gt;</category_description>
+  <panics>
+    <panic>
+      <panic_id>1</panic_id>
+      <panic_description>&lt;p&gt; Out of range opcode. &lt;/p&gt; &lt;p&gt; The client has sent a request opcode that wasn&amp;#8217;t recognised. Each server-side object can only handle some of the requests defined in the window server, and if the request isn&amp;#8217;t recognised, this panic is raised. &lt;/p&gt; &lt;p&gt; Clients would normally only get this is if they bypass the normal Window Server API. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>2</panic_id>
+      <panic_description>&lt;p&gt; Invalid command buffer. &lt;/p&gt; &lt;p&gt; A corrupt buffer of requests was discovered by the server. This is raised when the buffer itself is noticeably broken, and not when the commands in it are wrong. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>3</panic_id>
+      <panic_description>&lt;p&gt; Invalid handle. &lt;/p&gt; &lt;p&gt; The server couldn&amp;#8217;t find the target object for a request in the handle index. This can be raised when a command is sent to the handle for a window that has been closed, for example. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>4</panic_id>
+      <panic_description>&lt;p&gt; A handle whose value was NULL was detected. &lt;/p&gt; &lt;p&gt; For example, when Constructing one of the subclasses of the client-side &lt;code class="ApiItem"&gt;RWindowBase&lt;/code&gt; with a client handle argument of NULL. &lt;/p&gt; &lt;p&gt; On the server side, a &lt;code&gt;TWsClCmdCreateWindow&lt;/code&gt; with a client handle field of &lt;code&gt;NULL&lt;/code&gt; passed as argument to &lt;code&gt;CWsClientWindow::ConstructL()&lt;/code&gt; will raise this error. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>5</panic_id>
+      <panic_description>&lt;p&gt; A single drawing command was too big to fit into the client-side buffer. &lt;/p&gt; &lt;p&gt; The size of the buffer may be increased. See &lt;code class="ApiItem"&gt;RWsSession::SetBufferSizeL()&lt;/code&gt; and &lt;code class="ApiItem"&gt;RWsSession::SetMaxBufferSizeL()&lt;/code&gt;. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>6</panic_id>
+      <panic_description>&lt;p&gt; Invalid window handle. &lt;/p&gt; &lt;p&gt; A handle which should have referred to a window of a particular type referred to a window of another type, or the object index didn&amp;#8217;t recognise the handle. &lt;/p&gt; &lt;p&gt; On the server side, this panic is ultimately raised by &lt;code&gt;CWsClient::HandleToWindow()&lt;/code&gt; and &lt;code&gt;CWsClient::HandleToClientWindow()&lt;/code&gt; during handle conversions. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>7</panic_id>
+      <panic_description>&lt;p&gt; Invalid bitmap handle. &lt;/p&gt; &lt;p&gt; A corrupt bitmap handle was encountered. This is a common panic uncovered when a bitmap handle refers to nothing, or to a server-side object that isn&amp;#8217;t a bitmap. &lt;/p&gt; &lt;p&gt; Also: &lt;/p&gt; &lt;p&gt; In response to an &lt;code&gt;EWsGcOpUseBrushPattern&lt;/code&gt; request if the bitmap parameter couldn&amp;#8217;t be used. On the client side, &lt;code class="ApiItem"&gt;CWindowGc::UseBrushPattern()&lt;/code&gt; sends this request. &lt;/p&gt; &lt;p&gt; In response to an &lt;code&gt;EWsSpriteOpAppendMember&lt;/code&gt; request when the bitmaps for the sprite member can't be created on the server side. On the client side, &lt;code class="ApiItem"&gt;RWsSpriteBase::AppendMember()&lt;/code&gt; sends this request. &lt;/p&gt; &lt;p&gt; Any failed attempt to duplicate a supplied bitmap. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>8</panic_id>
+      <panic_description>&lt;p&gt; Event read already outstanding. &lt;/p&gt; &lt;p&gt; &lt;code class="ApiItem"&gt;RWsSession::EventReady()&lt;/code&gt;, &lt;code class="ApiItem"&gt;RWsSession::RedrawReady()&lt;/code&gt;, or &lt;code class="ApiItem"&gt;RWsSession::PriorityKeyReady()&lt;/code&gt; was called again when an event read was already outstanding, i.e.. when an event was waiting to be delivered by the window server. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>9</panic_id>
+      <panic_description>&lt;p&gt; Attempted to use a non-active graphics context. &lt;/p&gt; &lt;p&gt; A drawing request was sent to a graphics context when the context was not active. &lt;/p&gt; &lt;p&gt; On the server side, this panic is raised by &lt;code&gt;CWsGc::CommandL()&lt;/code&gt; on all requests received when the context isn&amp;#8217;t active except &lt;code&gt;EWsGcOpActivate&lt;/code&gt;, &lt;code&gt;EWsGcOpDeactivate&lt;/code&gt;, &lt;code&gt;EWsGcOpFree&lt;/code&gt;, and &lt;code&gt;EWsGcOpTestInvariant&lt;/code&gt;. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>10</panic_id>
+      <panic_description>&lt;p&gt; Attempted to activate an already active graphics context. &lt;/p&gt; &lt;p&gt; On the server side, this is raised by &lt;code&gt;CWsGc::Activate()&lt;/code&gt; as a response to a &lt;code&gt;EWsGcOpActivate &lt;/code&gt; request. &lt;/p&gt; &lt;p&gt; The request is sent by the client-side method &lt;code class="ApiItem"&gt;CWindowGc::Activate()&lt;/code&gt;. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>11</panic_id>
+      <panic_description>&lt;p&gt; Window already active. &lt;/p&gt; &lt;p&gt; An attempt was made to reactivate an active window. The request is sent by the client-side method &lt;code class="ApiItem"&gt;RWindowBase::Activate()&lt;/code&gt;. &lt;/p&gt; &lt;p&gt; On the server side, this panic is raised by &lt;code&gt;CWsClientWindow::Activate()&lt;/code&gt; in response to an &lt;code&gt;EWsWinOpActivate&lt;/code&gt; request. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>12</panic_id>
+      <panic_description>&lt;p&gt; Already inside a begin/end redraw pair. &lt;/p&gt; &lt;p&gt; A begin-redraw window request was made when the window had already begun redrawing. Begin-redraw messages are paired with end-redraw messages, and ordering is important. Invoking &lt;code class="ApiItem"&gt;RWindow::BeginRedraw()&lt;/code&gt;, then &lt;code&gt;RWindow::BeginRedraw()&lt;/code&gt; again before the corresponding &lt;code class="ApiItem"&gt;RWindow::EndRedraw()&lt;/code&gt; raises this panic. &lt;/p&gt; &lt;p&gt; On the server side, this panic is raised if an &lt;code&gt;EWsWinOpBeginRedraw&lt;/code&gt; request is sent twice before the closing &lt;code&gt;EWsWinOpEndRedraw &lt;/code&gt;. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>13</panic_id>
+      <panic_description>&lt;p&gt; Invalid font handle. &lt;/p&gt; &lt;p&gt; On the client-side is raised if &lt;code class="ApiItem"&gt;CWindowGc::UseFont()&lt;/code&gt; is called with an invalid font handle. &lt;/p&gt; &lt;p&gt; On the server side, &lt;code&gt;CWsGc::SetGcAttribute()&lt;/code&gt; raises this error in response to an &lt;code&gt;EWsGcOpUseFont&lt;/code&gt; request. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>14</panic_id>
+      <panic_description>&lt;p&gt; Printing with no active font. &lt;/p&gt; &lt;p&gt; A command to draw text to a window was sent to a graphics context when no font was set. Any of the overloads of &lt;code class="ApiItem"&gt;CWindowGc::DrawTextVertical()&lt;/code&gt; or &lt;code class="ApiItem"&gt;CWindowGc::DrawText()&lt;/code&gt; might cause the panic to be raised; the font should be set using &lt;code class="ApiItem"&gt;CWindowGc::UseFont()&lt;/code&gt; first. &lt;/p&gt; &lt;p&gt; On the server side, this panic is raised by &lt;code&gt;CWsGc::DoDrawCommand()&lt;/code&gt; in response to any of the requests to display text defined in &lt;code&gt;TWsGcOpcodes&lt;/code&gt;. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>15</panic_id>
+      <panic_description>&lt;p&gt; Attempted to set an invalid text cursor type, see &lt;code class="ApiItem"&gt;RWindowGroup::SetTextCursor()&lt;/code&gt;. &lt;/p&gt; &lt;p&gt; Valid types are defined in the &lt;code class="ApiItem"&gt;TTextCursor&lt;/code&gt; struct. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>16</panic_id>
+      <panic_description>&lt;p&gt; A drawing command was sent to a graphics context active on a group window. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>17</panic_id>
+      <panic_description>&lt;p&gt; Not used. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>18</panic_id>
+      <panic_description>&lt;p&gt; Not used. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>19</panic_id>
+      <panic_description>&lt;p&gt; Attempted to use a patterned brush when the pattern bitmap has not yet been set&amp;#0160;&amp;#8212;  &lt;code&gt;UseBrushPattern()&lt;/code&gt;. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>20</panic_id>
+      <panic_description>&lt;p&gt; Not used. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>21</panic_id>
+      <panic_description>&lt;p&gt; Attempted to do a client destroy function on an illegal handle. &lt;/p&gt; &lt;p&gt; A client tried to destroy or cancel a server-side object by its handle on an unrecognised handle, or on a handle of the wrong type for the operation. &lt;/p&gt; &lt;p&gt; This panic may be caused by the &lt;code class="ApiItem"&gt;RWindowGroup::CancelCaptureKeyUpAndDowns()&lt;/code&gt; or &lt;code class="ApiItem"&gt;RWindowGroup::CancelCaptureKey()&lt;/code&gt; methods. These correspond to the &lt;code&gt;EWsWinOpCancelCaptureKeyUpsAndDowns&lt;/code&gt; and &lt;code&gt;EWsWinOpCancelCaptureKey&lt;/code&gt; server requests. In this case, the panic means that there is no such capture key object in existence in the target window group. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>22</panic_id>
+      <panic_description>&lt;p&gt; Panic from the Anim DLL. &lt;/p&gt; &lt;p&gt; An animation DLL tried either changing its default or next timing interval when its timing mode was set to &lt;code&gt;ESyncNone&lt;/code&gt;, or activating a graphics context when the context was already activated. &lt;/p&gt; &lt;p&gt; There are a variety of other reasons why this panic might be raised, all which are Anim DLL related. The Animation writer can also cause functions raise this panic. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>23</panic_id>
+      <panic_description>&lt;p&gt; Invalid Anim object handle. &lt;/p&gt; &lt;p&gt; A null animation handle was detected in the server on receipt of an animation command, possibly because the relevant animation has been deleted. This panic may be raised by a subclass of &lt;code class="ApiItem"&gt;RAnim&lt;/code&gt; calling &lt;code class="ApiItem"&gt;RAnim::Command()&lt;/code&gt; or &lt;code class="ApiItem"&gt;RAnim::CommandReply()&lt;/code&gt;. &lt;/p&gt; &lt;p&gt; On the server side, the &lt;code&gt;EWsAnimDllOpCommandReply&lt;/code&gt; and &lt;code&gt;EWsAnimDllOpCommand&lt;/code&gt; requests can raise this panic in &lt;code&gt;CWsAnimDll &lt;/code&gt;. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>24</panic_id>
+      <panic_description>&lt;p&gt; Leave from a non-leaving animation function. &lt;/p&gt; &lt;p&gt; Code in an animated DLL called by the server invoked &lt;code&gt;Leave()&lt;/code&gt;. Animated DLL code is provided by the client and run by the server, so unhandled leaves are trapped and the notification is passed on as a client panic. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>25</panic_id>
+      <panic_description>&lt;p&gt; Not used. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>26</panic_id>
+      <panic_description>&lt;p&gt; Not used. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>27</panic_id>
+      <panic_description>&lt;p&gt; Not used. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>28</panic_id>
+      <panic_description>&lt;p&gt; Inconsistent polygon or polyline data was supplied. For example when restarting without finishing an old polygon. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>29</panic_id>
+      <panic_description>&lt;p&gt; A client attempted to set a negative shadow height. &lt;/p&gt; &lt;p&gt; This panic is caused by a call to &lt;code class="ApiItem"&gt;RWindowBase::SetShadowHeight()&lt;/code&gt; with a negative argument. &lt;/p&gt; &lt;p&gt; On the server side, &lt;code&gt;CWsClientWindow::CommandL()&lt;/code&gt; raises the panic in response to an invalid &lt;code&gt;EWsWinOpSetShadowHeight&lt;/code&gt; request. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>30</panic_id>
+      <panic_description>&lt;p&gt; Not used. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>31</panic_id>
+      <panic_description>&lt;p&gt; The client tried to construct a window with an invalid redraw type. The valid redraw types defined in the enumeration &lt;code&gt;TWinTypes&lt;/code&gt; of &lt;code class="filename"&gt;w32cmd.h &lt;/code&gt;. &lt;/p&gt; &lt;p&gt; On the server side, this panic is raised by &lt;code&gt;CWsClientWindow::ConstructL()&lt;/code&gt; in response to an initialisation message containing an invalid redraw type. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>32</panic_id>
+      <panic_description>&lt;p&gt; A server-side redraw region is almost certainly corrupt. &lt;/p&gt; &lt;p&gt; This panic is raised when an &lt;code&gt;EWsWinOpGetInvalidRegion&lt;/code&gt; is received by a &lt;code&gt;CWsRedrawMsgWindow&lt;/code&gt; with a &lt;code&gt;TInt&lt;/code&gt; parameter of zero or less. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>33</panic_id>
+      <panic_description>&lt;p&gt; The client failed to provide a reply buffer to a server-side function when one was needed. &lt;/p&gt; &lt;p&gt; All server-side functions that need more space for their reply than a &lt;code&gt;TInt&lt;/code&gt; use the client&amp;#8217;s reply buffer. If the client fails to provide space for such replies, this panic will be emitted. &lt;/p&gt; &lt;p&gt; This panic is raised by &lt;code&gt;CWsClient::ReplyBuf()&lt;/code&gt; when &lt;code&gt;CWsClient&lt;/code&gt;&amp;#8217;s reply buffer is null. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>34</panic_id>
+      <panic_description>&lt;p&gt; Not used. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>35</panic_id>
+      <panic_description>&lt;p&gt; A client passed an invalid or unrecognised corner type or flag. &lt;/p&gt; &lt;p&gt; This panic is raised in response to a client call to &lt;code class="ApiItem"&gt;RWindowBase::SetCornerType()&lt;/code&gt; when specifying inconsistent or non-existent flags. &lt;/p&gt; &lt;p&gt; Valid flags are masked by &lt;code class="ApiItem"&gt;ECornerTypeMask&lt;/code&gt;, and recognised types are defined in &lt;code class="ApiItem"&gt;TCornerType&lt;/code&gt;. These are all defined in &lt;code class="filename"&gt;w32std.h&lt;/code&gt;. &lt;/p&gt; &lt;p&gt; The server raises this panic as a response to &lt;code&gt;EWsWinOpSetCornerType&lt;/code&gt; request with an undefined corner type or an unrecognised flag in its parameters. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>36</panic_id>
+      <panic_description>&lt;p&gt; The server was asked to update a region of a backed-up window which has not had MaintainBackup called on it. &lt;/p&gt; &lt;p&gt; A client-side call to either form of &lt;code class="ApiItem"&gt;RBackedUpWindow::UpdateScreen()&lt;/code&gt; may raise this panic. &lt;/p&gt; &lt;p&gt; On the server side, the panic is raised in response to an &lt;code&gt;EWsWinOpUpdateScreenRegion&lt;/code&gt; or &lt;code&gt;EWsWinOpUpdateScreen &lt;/code&gt; request when not maintaining a full backup of a backed-up window. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>37</panic_id>
+      <panic_description>&lt;p&gt; Panic raised when it was not possible to read or write data to the client thread. The data is usually contained in a descriptor. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>38</panic_id>
+      <panic_description>&lt;p&gt; The client attempted to access a sprite after the sprite's window was destroyed. Note that pointer cursors are implemented as sprites. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>39</panic_id>
+      <panic_description>&lt;p&gt; A client requested event data without having received an event telling it that the data was ready. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>40</panic_id>
+      <panic_description>&lt;p&gt; The mask for a sprite is smaller than the sprite&amp;#8217;s bitmap. A mask is permitted to be larger than its bitmap. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>41</panic_id>
+      <panic_description>&lt;p&gt; Bad sprite handle. &lt;/p&gt; &lt;p&gt; A null sprite handle was encountered, or a handle which was supposed to refer to a sprite referred to something else. &lt;/p&gt; &lt;p&gt; The client-side methods &lt;code class="ApiItem"&gt;RWindowTreeNode::SetCustomPointerCursor()&lt;/code&gt; and &lt;code class="ApiItem"&gt;RWsSession::SetSystemPointerCursor()&lt;/code&gt;, amongst others, can cause this panic to be raised; they correspond to the server requests &lt;code&gt;EWsWinOpSetCustomPointerCursor&lt;/code&gt; and &lt;code&gt;EWsClOpSetSystemPointerCursor&lt;/code&gt;. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>42</panic_id>
+      <panic_description>&lt;p&gt; A client attempted to set or clear a system pointer cursor without first owning the list of system pointer cursors. &lt;/p&gt; &lt;p&gt; &lt;code class="ApiItem"&gt;RWsSession::SetSystemPointerCursor()&lt;/code&gt; and &lt;code class="ApiItem"&gt;RWsSession::ClearSystemPointerCursor()&lt;/code&gt; can raise this panic. See also &lt;code class="ApiItem"&gt;RWsSession::ClaimSystemPointerCursorList()&lt;/code&gt; and &lt;code class="ApiItem"&gt;RWsSession::FreeSystemPointerCursorList()&lt;/code&gt;. &lt;/p&gt; &lt;p&gt; The server requests which can raise this panic are &lt;code&gt;EWsClOpSetSystemPointerCursor&lt;/code&gt; and &lt;code&gt;EWsClOpClearSystemPointerCursor&lt;/code&gt;. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>43</panic_id>
+      <panic_description>&lt;p&gt; A client attempted to enable a pointer move buffer when none was allocated. &lt;/p&gt; &lt;p&gt; &lt;code class="ApiItem"&gt;RWindowBase::EnablePointerMoveBuffer()&lt;/code&gt; can cause this panic to be emitted; the corresponding server request is &lt;code&gt;EWsWinOpEnablePointerMoveBuffer&lt;/code&gt;. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>44</panic_id>
+      <panic_description>&lt;p&gt; Raised in response to commands that send a string, when the string has been incorrectly stored in the command buffer. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>45</panic_id>
+      <panic_description>&lt;p&gt; Not used. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>46</panic_id>
+      <panic_description>&lt;p&gt; An invalid call or request parameter was detected by &lt;code&gt;CWsPassword&lt;/code&gt;. This can be caused: &lt;/p&gt; &lt;p&gt; By &lt;code class="ApiItem"&gt;RWindowBase::PasswordWindow()&lt;/code&gt; sending an &lt;code&gt;EWsWinOpPasswordWindow&lt;/code&gt; server request whose password mode parameter is not recognised. &lt;/p&gt; &lt;p&gt; By an attempt to cancel the password window by a client which doesn&amp;#8217;t own the window. &lt;/p&gt; &lt;p&gt; By &lt;code class="ApiItem"&gt;RWsSession::PasswordEntered()&lt;/code&gt; sending a &lt;code&gt;EWsClOpPasswordEntered&lt;/code&gt; server request when no password window has been set, or when the client does not own the password window. &lt;/p&gt; &lt;p&gt; Valid password modes are defined in &lt;code class="ApiItem"&gt;TPasswordMode&lt;/code&gt; of &lt;code class="filename"&gt;w32std.h&lt;/code&gt;. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>47</panic_id>
+      <panic_description>&lt;p&gt; An invalid compute mode was sent to the window server. On the client side, &lt;code class="ApiItem"&gt;RWsSession::ComputeMode()&lt;/code&gt; can do this, the window server request is &lt;code&gt;EWsClOpComputeMode&lt;/code&gt;. Valid compute modes are defined in the enumeration &lt;code class="ApiItem"&gt;RWsSession::TComputeMode&lt;/code&gt;, which is declared in &lt;code class="filename"&gt;w32std.h&lt;/code&gt;. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>48</panic_id>
+      <panic_description>&lt;p&gt; A client attempted to set the display mode of a backed-up window. This can be done with &lt;code class="ApiItem"&gt;RWindowBase::SetRequiredDisplayMode()&lt;/code&gt; or the &lt;code&gt;EWsWinOpRequiredDisplayMode&lt;/code&gt; server request. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>49</panic_id>
+      <panic_description>&lt;p&gt; A client attempted to get a message when has not been signalled in the server. &lt;/p&gt; &lt;p&gt; This panic can be raised on a client thread calling &lt;code class="ApiItem"&gt;RWindowGroup::FetchMessage()&lt;/code&gt; or sending the &lt;code&gt;EWsWinOpGetMessageSize&lt;/code&gt; or &lt;code&gt;EWsWinOpGetMessage &lt;/code&gt; messages. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>50</panic_id>
+      <panic_description>&lt;p&gt; A client tried to send a second initialisation message, i.e. to call &lt;code class="ApiItem"&gt;RWsSession::Connect()&lt;/code&gt; twice. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>51</panic_id>
+      <panic_description>&lt;p&gt; A client attempted to send a message without specifying a target window. &lt;/p&gt; &lt;p&gt; This can be raised, for example, in response to &lt;code class="ApiItem"&gt;RWsSession::RequestOffEvents()&lt;/code&gt; &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>52</panic_id>
+      <panic_description>&lt;p&gt; A client attempted to perform and operation on a window that has had its parent or ancestor deleted. An operation which might raise this panic could be setting the window size, position or extent. &lt;/p&gt; &lt;p&gt; Introduced in v5.1 &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>53</panic_id>
+      <panic_description>&lt;p&gt; A client attempted to reset a window group&amp;#8217;s default owning window. For example, by calling the function &lt;code class="ApiItem"&gt;RWindowGroup::DefaultOwningWindow()&lt;/code&gt; twice on the same window group. &lt;/p&gt; &lt;p&gt; This is only raised in debug builds. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>54</panic_id>
+      <panic_description>&lt;p&gt; A client attempted to perform an operation on an invalid screen mode. &lt;/p&gt; &lt;p&gt; For example, if the client called the functions &lt;code class="ApiItem"&gt;CWsScreenDevice::GetScreenModeSizeAndRotation()&lt;/code&gt; or &lt;code class="ApiItem"&gt;CWsScreenDevice::SetScreenMode()&lt;/code&gt; with an illegal index. &lt;/p&gt; &lt;p&gt; Introduced in v5.1 &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>55</panic_id>
+      <panic_description>&lt;p&gt; A client attempted to set an invalid screen enforcement mode. &lt;/p&gt; &lt;p&gt; The valid screen mode enforcement modes are defined in &lt;code class="ApiItem"&gt;TScreenModeEnforcement&lt;/code&gt;. &lt;/p&gt; &lt;p&gt; Introduced in v5.1 &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>56</panic_id>
+      <panic_description>&lt;p&gt; A client specified an event type which was not a pointer event, when this is what was required by the operation. e.g. &lt;code class="ApiItem"&gt;RWindowGroup::SimulatePointerEvent()&lt;/code&gt;. &lt;/p&gt; &lt;p&gt; Introduced in v5.1 &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>57</panic_id>
+      <panic_description>&lt;p&gt; A client attempted to specify a screen rotation or orientation that is not allowed. Each screen size mode has a list of allowed rotations. &lt;/p&gt; &lt;p&gt; Introduced in v5.1 &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>58</panic_id>
+      <panic_description>&lt;p&gt; A client attempted to call a function that can only be called on a top level client window on a lower level window. A top level client window is a window with a window group as a parent, e.g. &lt;code class="ApiItem"&gt;RWindowBase::MoveToGroup()&lt;/code&gt;. &lt;/p&gt; &lt;p&gt; Introduced in v6.0 &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>59</panic_id>
+      <panic_description>&lt;p&gt; A client attempted to use a &lt;code class="ApiItem"&gt;RDirectScreenAccess&lt;/code&gt; object's member functions in the wrong order. &lt;/p&gt; &lt;p&gt; Introduced in v7.0 &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>60</panic_id>
+      <panic_description>&lt;p&gt; The handle to a window server resource is already in use (debug builds only). &lt;/p&gt; &lt;p&gt; Introduced in v7.0 &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>61</panic_id>
+      <panic_description>&lt;p&gt; An attempt was made to set a custom text cursor (using &lt;code class="ApiItem"&gt;RWindowGroup::SetTextCursor()&lt;/code&gt;) but the cursor's type was not recognised. &lt;/p&gt; &lt;p&gt; Introduced in v7.0s. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>62</panic_id>
+      <panic_description>&lt;p&gt; An attempt was made to set a custom text cursor (using &lt;code class="ApiItem"&gt;RWindowGroup::SetTextCursor()&lt;/code&gt;) whose alignment value is invalid. For valid alignment values see the &lt;code class="ApiItem"&gt;TCustomTextCursorAlignment&lt;/code&gt; enumeration in class &lt;code class="ApiItem"&gt;RWsSession&lt;/code&gt;. &lt;/p&gt; &lt;p&gt; Introduced in v7.0s. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>63</panic_id>
+      <panic_description>&lt;p&gt; An attempt was made to set a custom text cursor (using &lt;code class="ApiItem"&gt;RWindowGroup::SetTextCursor()&lt;/code&gt;) that does not have any sprite members set. &lt;/p&gt; &lt;p&gt; Introduced in v7.0s.&lt;/p&gt;</panic_description>
+    </panic>
+  </panics>
+</panic_category>

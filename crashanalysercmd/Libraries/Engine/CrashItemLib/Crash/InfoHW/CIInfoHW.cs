@@ -83,6 +83,13 @@ namespace CrashItemLib.Crash.InfoHW
             get { return iSerialNumber; }
             set { iSerialNumber = value; }
         }
+
+        [CIDBAttributeCell("Production Mode", 3)]
+        public int ProductionMode
+        {
+            get { return iPhoneMode; }
+            set { iPhoneMode = value; }
+        }
         #endregion
 
         #region Internal methods
@@ -129,6 +136,8 @@ namespace CrashItemLib.Crash.InfoHW
         private string iProductCode = string.Empty;
         private string iSerialNumber = string.Empty;
         private List<CIVersionInfo> iVersions = new List<CIVersionInfo>();
+        private int iPhoneMode = -1; // production mode = 1, R&D mode = 0
+
         #endregion
     }
 }

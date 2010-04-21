@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<panic_category>
+  <category_name>ViewSrv</category_name>
+  <category_description> &lt;p&gt; The table below lists the View Server panics.&lt;/p&gt;</category_description>
+  <panics>
+    <panic>
+      <panic_id>1</panic_id>
+      <panic_description>&lt;p&gt; View Server creation failed. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>3</panic_id>
+      <panic_description>&lt;p&gt; A bad client call was made - i.e. the opcode sent by the client was one not defined in &lt;code&gt;TVwsRequestOpcode&lt;/code&gt;. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>6</panic_id>
+      <panic_description>&lt;p&gt; The view that View Server is trying to remove has not been found. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>7</panic_id>
+      <panic_description>&lt;p&gt; An application tried to add a view with an application UID other than its own. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>8</panic_id>
+      <panic_description>&lt;p&gt; The custom message sent along with a view activation request was not copied across to the server properly. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>9</panic_id>
+      <panic_description>&lt;p&gt; An attempt was made to remove the currently active view. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>10</panic_id>
+      <panic_description>&lt;p&gt; A client has requested a view event even though it still has an outstanding request open. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>11</panic_id>
+      <panic_description>&lt;p&gt; The most common panic. A view has taken too long to complete its implementation of &lt;code&gt;ViewActivatedL()&lt;/code&gt; and must, therefore, be panicked to stop it from blocking the entire OS. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>13</panic_id>
+      <panic_description>&lt;p&gt; An attempt was made to activate a view that does not support the current screenmode. &lt;/p&gt;	   </panic_description>
+    </panic>
+    <panic>
+      <panic_id>14</panic_id>
+      <panic_description>&lt;p&gt; - A view has taken too long to complete its implementation of ViewDeactivated() and must, therefore, be panicked to stop it from blocking the entire OS. &lt;/p&gt;	   </panic_description>
+    </panic>
+  </panics>
+</panic_category>

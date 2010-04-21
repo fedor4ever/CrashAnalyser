@@ -133,6 +133,17 @@ namespace SymbianDebugLib.Engine
             EntityManager.Remove( aEntity );
         }
 
+        public void AddActiveRomId(uint aRomId)
+        {
+            if (! iActiveRomIds.Contains(aRomId))
+                iActiveRomIds.Add(aRomId);
+        }
+
+        public bool IsActiveRomId(uint aRomId)
+        {
+            return iActiveRomIds.Contains(aRomId);
+        }
+
         public void Prime( TSynchronicity aSynchronicity )
         {
             if ( EngineOperation != null )
@@ -478,6 +489,7 @@ namespace SymbianDebugLib.Engine
         private readonly DbgEntityDescriptorManager iDescriptorManager;
         private PlatformIdAllocator iIdAllocator = new PlatformIdAllocator();
         private DbgEntityConfig iCurrentConfig = null;
+        private List<uint> iActiveRomIds = new List<uint>();
         private bool iVerbose;
         #endregion
     }

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<panic_category>
+  <category_name>Telephony</category_name>
+  <category_description> &lt;p&gt;Third party telephony panic:&lt;/p&gt;</category_description>
+  <panics>
+    <panic>
+      <panic_id>0</panic_id>
+      <panic_description>&lt;p&gt;A client has attempted to re-post an asynchronous request before the original request has completed&lt;/p&gt;	   </panic_description>
+    </panic>
+  </panics>
+</panic_category>

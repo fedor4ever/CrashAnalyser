@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<panic_category>
+  <category_name>Etel Server</category_name>
+  <category_description> &lt;p&gt;Panic caused by incorrect use of the ETel Core API- e.g. passing bad or contradictory values to class constructors or member functions.&lt;/p&gt; &lt;p&gt;The client thread causing the panic is terminated.&lt;/p&gt;</category_description>
+  <panics>
+    <panic>
+      <panic_id>0</panic_id>
+      <panic_description>&lt;p&gt;The subsession handle is not recognised by the server.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>1</panic_id>
+      <panic_description>&lt;p&gt;An attempt to read or write across the client-server boundary has failed. This usually indicates that the descriptor sent is incorrectly formatted.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>2</panic_id>
+      <panic_description>&lt;p&gt;The message type- sent by the client- is not recognised by the server.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>3</panic_id>
+      <panic_description>&lt;p&gt;Client code has attempted to re-post an asynchronous request before the original request has completed.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>4</panic_id>
+      <panic_description>&lt;p&gt;The client has attempted to open a sub-session without first opening its parent object. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>5</panic_id>
+      <panic_description>&lt;p&gt;The client has attempted to use a zero length descriptor.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>6</panic_id>
+      <panic_description>&lt;p&gt;The size field of a descriptor indicates that it contains a negative amount of data.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>7</panic_id>
+      <panic_description>&lt;p&gt;Not used.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>8</panic_id>
+      <panic_description>&lt;p&gt;Client failed to call &lt;code&gt;Open()&lt;/code&gt;.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>9</panic_id>
+      <panic_description>&lt;p&gt;Client failed to call &lt;code&gt;Open()&lt;/code&gt;.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>10</panic_id>
+      <panic_description>&lt;p&gt;Client code request to access an element outside the array range.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>11</panic_id>
+      <panic_description>&lt;p&gt;The &lt;code&gt;Open()&lt;/code&gt; function has been called twice by the same sub-session.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>12</panic_id>
+      <panic_description>&lt;p&gt;The client has passed a bad phone call type.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>13</panic_id>
+      <panic_description>&lt;p&gt;The client has specified a bad name for a phone line or phone call object.&lt;/p&gt; 	   </panic_description>
+    </panic>
+  </panics>
+</panic_category>

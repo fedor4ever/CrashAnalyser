@@ -49,6 +49,9 @@ namespace CrashXmlPlugin.FileFormat.Segment.Entries
         // Header
         public const string Header = "seg_header";
         public const string Header_Uptime = "uptime";
+        public const string Header_Crash_Source = "crash_source";
+        public const string Header_Crash_Source_User = "User";
+        public const string Header_Crash_Source_Kernel = "Kernel";
 
         // Symbols
         public const string Symbols = "seg_symbols";
@@ -63,6 +66,7 @@ namespace CrashXmlPlugin.FileFormat.Segment.Entries
         public const string Stacks = "seg_stacks";
         public const string Stacks_Stack = "stack";
         public const string Stacks_Stack_Data = "stack_data";
+        public const string Stacks_Stack_Hash = "hash";
         public const string Stacks_Stack_Attributes_Accurate = "accurate";
         public const string Stacks_Stack_Attributes_Heuristic = "heuristic";
         public const string Stacks_Stack_Data_Entry = "stack_entry";
@@ -109,6 +113,7 @@ namespace CrashXmlPlugin.FileFormat.Segment.Entries
         public const string ExitInfo_Type_Pending = "Pending";
         public const string ExitInfo_Reason = "exit_reason";
         public const string ExitInfo_Category = "exit_category";
+        public const string ExitInfo_Description = "exit_description";
 
         // Code Segs
         public const string CodeSegs = "seg_codesegs";
@@ -122,6 +127,9 @@ namespace CrashXmlPlugin.FileFormat.Segment.Entries
         public const string HWInfo_ProductType = "product_type";
         public const string HWInfo_ProductCode = "product_code";
         public const string HWInfo_SerialNumber = "serial_number";
+        public const string HWInfo_ProductionMode = "production_mode";
+        public const string HWInfo_ProductionMode_Prd = "Production mode";
+        public const string HWInfo_ProductionMode_RnD = "R&D mode";
 
         // SW Info
         public const string SWInfo = "seg_sw_info";

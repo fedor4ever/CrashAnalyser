@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<panic_category>
+  <category_name>Irda Fault</category_name>
+  <category_description> &lt;p&gt; IrDA sockets (infra-red protocol) panics: &lt;/p&gt;</category_description>
+  <panics>
+    <panic>
+      <panic_id>0</panic_id>
+      <panic_description>&lt;p&gt; Unused &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>1</panic_id>
+      <panic_description>&lt;p&gt; Unused &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>2</panic_id>
+      <panic_description>&lt;p&gt; Unused &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>3</panic_id>
+      <panic_description>&lt;p&gt; Unused &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>4</panic_id>
+      <panic_description>&lt;p&gt; Unused &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>5</panic_id>
+      <panic_description>&lt;p&gt; Unused &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>6</panic_id>
+      <panic_description>&lt;p&gt; Session not closed &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>7</panic_id>
+      <panic_description>&lt;p&gt; Timer error &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>8</panic_id>
+      <panic_description>&lt;p&gt; IR connection in bad state &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>9</panic_id>
+      <panic_description>&lt;p&gt; Invalid state change &lt;/p&gt; 	   </panic_description>
+    </panic>
+  </panics>
+</panic_category>

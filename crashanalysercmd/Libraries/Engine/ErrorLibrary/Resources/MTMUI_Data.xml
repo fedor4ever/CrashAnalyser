@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<panic_category>
+  <category_name>MTMUI Data</category_name>
+  <category_description> &lt;p&gt;Messaging panic from the &lt;code class="filename"&gt;mtur&lt;/code&gt; library relating to UI Data MTM operations&lt;/p&gt;</category_description>
+  <panics>
+    <panic>
+      <panic_id>1</panic_id>
+      <panic_description>&lt;p&gt;Inconsistent start/end and zoom parameters passed to &lt;code&gt;CBaseMtmUiData::CreateBitmapsL()&lt;/code&gt;&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>4</panic_id>
+      <panic_description>&lt;p&gt;Multiple location flags set in &lt;code&gt;TMtmUiFunction::aFlags&lt;/code&gt;&lt;/p&gt;</panic_description>
+    </panic>
+  </panics>
+</panic_category>

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<panic_category>
+  <category_name>ALLOC COUNT</category_name>
+  <category_description> &lt;p&gt;These panics are only raised in debug builds and are caused when the heap debugging functions detect a memory leak.&lt;/p&gt;</category_description>
+  <panics>
+    <panic>
+      <panic_id> ALLOC COUNT 1 Expected aaaa Allocated bbbb Ln: ccc ddddd</panic_id>
+      <panic_description>&lt;p&gt;This panic is raised by  &lt;code class="ApiItem"&gt;RHeap::__DbgMarkCheck()&lt;/code&gt;  and &lt;code class="ApiItem"&gt;User::__DbgMarkCheck()&lt;/code&gt; when the current number of allocated heap cells is not as expected. &lt;/p&gt;&lt;p&gt;&lt;code&gt;aaa&lt;/code&gt; is the expected number of heap cells.&lt;/p&gt;&lt;p&gt;&lt;code&gt; bbb&lt;/code&gt; is the allocated number of heap cells.&lt;/p&gt;&lt;p&gt;&lt;code&gt; ccc&lt;/code&gt; is a line number; typically the source statement line containing the call to &lt;code&gt;__DbgMarkCheck()&lt;/code&gt;.&lt;/p&gt;&lt;p&gt;&lt;code&gt; ddddd&lt;/code&gt; is a file name; typically the file containing the source statement containing the call to &lt;code&gt;__DbgMarkCheck()&lt;/code&gt;.&lt;/p&gt;	   </panic_description>
+    </panic>
+  </panics>
+</panic_category>

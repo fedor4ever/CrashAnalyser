@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<panic_category>
+  <category_name>ESock</category_name>
+  <category_description> &lt;p&gt;Panic of client from Sockets Server&lt;/p&gt;</category_description>
+  <panics>
+    <panic>
+      <panic_id>0</panic_id>
+      <panic_description>&lt;p&gt; Unknown socket &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>1</panic_id>
+      <panic_description>&lt;p&gt; Unused &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>2</panic_id>
+      <panic_description>&lt;p&gt; Connection request made while already attempting to connect &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>3</panic_id>
+      <panic_description>&lt;p&gt; Read request made while already attempting to read &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>4</panic_id>
+      <panic_description>&lt;p&gt; Send request made while already attempting to send &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>5</panic_id>
+      <panic_description>&lt;p&gt; Close request made while already attempting to close &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>6</panic_id>
+      <panic_description>&lt;p&gt; Shutdown request made while already attempting to shutdown &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>7</panic_id>
+      <panic_description>&lt;p&gt; Accept request made while already attempting to accept &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>8</panic_id>
+      <panic_description>&lt;p&gt; Ioctl request made while already attempting to perform Ioctl &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>9</panic_id>
+      <panic_description>&lt;p&gt; Can't use &lt;code&gt;RSocket::SendTo()&lt;/code&gt; on connection-orientated sockets &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>10</panic_id>
+      <panic_description>&lt;p&gt; Can't use &lt;code&gt;RSocket::ListenL()&lt;/code&gt; on connectionless sockets &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>11</panic_id>
+      <panic_description>&lt;p&gt; Listen request made while already attempting to listen &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>12</panic_id>
+      <panic_description>&lt;p&gt; Can't use &lt;code&gt;RSocket::Accept()&lt;/code&gt; if not listening &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>13</panic_id>
+      <panic_description>&lt;p&gt; Failed to accept &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>14</panic_id>
+      <panic_description>&lt;p&gt; Descriptor parameter error &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>15</panic_id>
+      <panic_description>&lt;p&gt;A request was made of an &lt;code&gt;RHostResolver&lt;/code&gt;, &lt;code&gt;RServiceResolver&lt;/code&gt;, or &lt;code&gt;RNetDatabase&lt;/code&gt; when an asynchronous request was already pending. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>16</panic_id>
+      <panic_description>&lt;p&gt; Unused &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>17</panic_id>
+      <panic_description>&lt;p&gt; No socket in use &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>18</panic_id>
+      <panic_description>&lt;p&gt; Unused &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>19</panic_id>
+      <panic_description>&lt;p&gt; &lt;code&gt;RHostResolver::Next()&lt;/code&gt; called without initial resolution request &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>20</panic_id>
+      <panic_description>&lt;p&gt; Socket not set up to connect &lt;/p&gt;</panic_description>
+    </panic>
+  </panics>
+</panic_category>

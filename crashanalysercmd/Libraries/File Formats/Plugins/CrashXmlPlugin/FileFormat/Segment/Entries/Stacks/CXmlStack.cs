@@ -22,6 +22,7 @@ using CrashItemLib.Crash.Symbols;
 using CrashItemLib.Crash.Stacks;
 using CrashItemLib.Crash.Registers;
 using CrashXmlPlugin.FileFormat.Node;
+using MobileCrashLib;
 
 namespace CrashXmlPlugin.FileFormat.Segment.Entries.Stacks
 {
@@ -52,6 +53,20 @@ namespace CrashXmlPlugin.FileFormat.Segment.Entries.Stacks
             aParameters.Writer.WriteElementString( SegConstants.CmnBase, iStack.Base.ToString("x8") );
             aParameters.Writer.WriteElementString( SegConstants.CmnSize, iStack.Size.ToString( "x" ) );
             aParameters.Writer.WriteElementString( SegConstants.CmnRange, iStack.Range.ToString() );
+
+            // Write defect hash
+            try
+            {
+                MobileCrashHashBuilder hashBuilder = MobileCrashHashBuilder.New(MobileCrashHashBuilder.TConfiguration.EDefault, iStack);
+                if (hashBuilder != null)
+                {
+                    aParameters.Writer.WriteElementString(SegConstants.Stacks_Stack_Hash, hashBuilder.GetHash());
+                }
+            }
+            catch (Exception ex)
+            {       
+                // Could not create MobileCrashHashBuilder, ignore.
+            }
 
             // Write any messages
             CXmlSegBase.XmlSerializeMessages( aParameters, iStack );

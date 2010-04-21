@@ -46,6 +46,8 @@ using System.IO;
 using CrashItemLib.Crash.Traces;
 using SymbianStructuresLib.Debug.Trace;
 using CrashItemLib.Crash.InfoEnvironment;
+using ErrorLibrary;
+using MobileCrashLib;
 
 namespace CrashInfoFilePlugin.PluginImplementations.FileFormat
 {
@@ -76,6 +78,9 @@ namespace CrashInfoFilePlugin.PluginImplementations.FileFormat
 
                 //UpTime
                 iUptime = header.UpTime.TotalSeconds;
+
+                // Crash source
+                iCrashSource = header.CrashSource;
             }
         }
         /** Add romid, timestamp, platform, language and sw version */
@@ -234,7 +239,8 @@ namespace CrashInfoFilePlugin.PluginImplementations.FileFormat
             {
                 iProductType = info.ProductType; 
                 iProductCode = info.ProductCode.Trim();
-                iSerialNumber = info.SerialNumber.Trim();             
+                iSerialNumber = info.SerialNumber.Trim();
+                iProductionMode = info.ProductionMode;
             }           
         }
 
@@ -334,10 +340,10 @@ namespace CrashInfoFilePlugin.PluginImplementations.FileFormat
                 CISummarisableEntity primarySummary = aContainer.PrimarySummary;
                 if (primarySummary != null)
                 {
-                    CCrashInfoHashBuilder.TConfiguration config = CCrashInfoHashBuilder.TConfiguration.EDefault;
+                    MobileCrashHashBuilder.TConfiguration config = MobileCrashHashBuilder.TConfiguration.EDefault;
                     try //CCrashInfoHashBuilder.New throws an exception if there's not enough data for hash creation
                     {
-                        CCrashInfoHashBuilder builder = CCrashInfoHashBuilder.New(config, primarySummary);
+                        MobileCrashHashBuilder builder = MobileCrashHashBuilder.New(config, primarySummary);
                         iHash = builder.GetHash();
                     }
                     catch (Exception e)
@@ -503,6 +509,12 @@ namespace CrashInfoFilePlugin.PluginImplementations.FileFormat
             CCrashInfoFileUtilities.WriteOutputTags(iPanicCategory, CrashInfoConsts.Kpanic_category, aOutput);
         }
 
+        internal void WritePanicDescription(System.IO.StreamWriter aOutput)
+        {
+            string panicDescription = XmlErrorLibrary.GetPanicDescription(iPanicCategory, iPanicID.ToString());
+            CCrashInfoFileUtilities.WriteOutputTags(panicDescription, CrashInfoConsts.Kpanic_description, aOutput);
+        }
+
         internal void WriteLanguage(System.IO.StreamWriter aOutput)
         {
             CCrashInfoFileUtilities.WriteOutputTags(iLanguage, CrashInfoConsts.Klanguage, aOutput);
@@ -606,6 +618,31 @@ namespace CrashInfoFilePlugin.PluginImplementations.FileFormat
         {
             CCrashInfoFileUtilities.WriteOutputTags(iProductType, CrashInfoConsts.Kproduct_type, aOutput);   
         }
+
+        internal void WriteProductionMode(System.IO.StreamWriter aOutput)
+        {
+            if (iProductionMode == 1)
+            {
+                CCrashInfoFileUtilities.WriteOutputTags(CrashInfoConsts.Kproduction_mode_value, CrashInfoConsts.Kproduction_mode, aOutput);
+            }
+            else if (iProductionMode == 0)
+            {
+                CCrashInfoFileUtilities.WriteOutputTags(CrashInfoConsts.Krnd_mode_value, CrashInfoConsts.Kproduction_mode, aOutput);
+            }
+        }
+
+        internal void WriteCrashSource(System.IO.StreamWriter aOutput)
+        {
+            if (iCrashSource == 1)
+            {
+                CCrashInfoFileUtilities.WriteOutputTags(CrashInfoConsts.Kcrash_source_user, CrashInfoConsts.Kcrash_source, aOutput);
+            }
+            else if (iCrashSource == 0)
+            {
+                CCrashInfoFileUtilities.WriteOutputTags(CrashInfoConsts.Kcrash_source_kernel, CrashInfoConsts.Kcrash_source, aOutput);
+            }
+        }
+
         internal void WriteImei(System.IO.StreamWriter aOutput)
         {
             CCrashInfoFileUtilities.WriteOutputTags(iImei, CrashInfoConsts.Kimei, aOutput);
@@ -838,6 +875,8 @@ namespace CrashInfoFilePlugin.PluginImplementations.FileFormat
         private string iProductType = string.Empty; //aka RM-code
         private string iProductCode = string.Empty; //7-digit HW variant code 
         private string iSerialNumber = string.Empty; //aka PSN
+        private int? iProductionMode = null; // 1: production mode phone, 0: RnD phone
+        private int? iCrashSource = null; // 1: crash from user side, 0: from kernel side.
 
         private string iPhoneNumber = "NotFound";
         private string iImei = string.Empty;

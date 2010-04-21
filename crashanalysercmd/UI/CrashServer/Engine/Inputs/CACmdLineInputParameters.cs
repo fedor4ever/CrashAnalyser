@@ -68,7 +68,7 @@ namespace CrashAnalyserServerExe.Engine
             iSinkParams = new CISinkSerializationParameters( version, commandLine );
             iSinkParams.DetailLevel = CISinkSerializationParameters.TDetailLevel.EFull;
             iSinkParams.FileExtensionFailed = ".corrupt_ci";
-            iSinkParams.FileExtensionFailed = ".ci";
+            iSinkParams.FileExtensionSuccess = ".ci";
 
             // CHECKME:
             // The output data is written to the same directory as the input file.
@@ -118,7 +118,65 @@ namespace CrashAnalyserServerExe.Engine
                     {
                         TestWithoutMovingFiles = true;
                     }
+                    if (paramId == "-x")
+                    {
+                        UseXmlSink = true;
+                    }
 
+                    if (paramId == "-c")
+                    {
+                        CITargetPath = paramContent;
+                        System.Console.WriteLine("CITargetPath -c is " +CITargetPath);
+                    }
+                    
+                    // Plain text output
+                    if (paramId == "-p")
+                    {
+                        UseXmlSink = true; // XML sink is used for plain text output
+                        iSinkParams.PlainTextOutput = true;
+                    }
+                    
+                    // Crash files
+                    if (paramId == "-b")
+                    {
+                        FileInfo fi = new FileInfo(paramContent);
+                        CACmdLineFSEntityList<CACmdLineFileSource> fileList = new CACmdLineFSEntityList<CACmdLineFileSource>();
+
+                        if (fi.Exists)
+                        {
+                            fileList.Add(fi);
+                        }
+                        else
+                        {
+                            System.Console.WriteLine("Error: Crash file " + fi.FullName + " does not exist");
+                            retval = false;
+                        }
+                        iSources = fileList;
+                    }
+                    
+                    // Symbol/map/dictionary files
+                    if (paramId == "-m")
+                    {
+                        string[] symbolFileTable = paramContent.Split(',');
+                        CACmdLineFSEntityList<CACmdLineFSEntity> fileList = new CACmdLineFSEntityList<CACmdLineFSEntity>();
+                        foreach (string fileName in symbolFileTable)
+                        {
+                            FileInfo fi = new FileInfo(fileName);
+                            if(fi.Exists)
+                            {
+                                fileList.Add(fi);
+                            }
+                        }
+                        
+                        iMetaData = fileList;
+
+                        if (fileList.Count == 0)
+                        {
+                            System.Console.WriteLine("Error: Invalid symbol/map/dictionary files: " + paramContent);
+                            retval = false;
+                        }
+                    }
+                    
                 }
                 else
                 {
@@ -157,6 +215,18 @@ namespace CrashAnalyserServerExe.Engine
                     Directory.CreateDirectory(ErrorPath);
                 }
                 
+            }
+
+            if (CITargetPath != string.Empty)
+            {
+                CITargetPath = Path.GetFullPath(CITargetPath);
+                System.Console.WriteLine("CITargetPath used! Resulting files will be created to " +CITargetPath);
+                
+                if (!Directory.Exists(CITargetPath))
+                {
+                    Directory.CreateDirectory(CITargetPath);
+                }
+                iSinkParams.OutputDirectory = new DirectoryInfo(CITargetPath);
             }
 
             //make sure paths are absolute
@@ -209,11 +279,15 @@ namespace CrashAnalyserServerExe.Engine
         private void PrintCommandHelp()
         {
             System.Console.WriteLine("Command line parameters:");
-            System.Console.WriteLine("-a C:\\folderarchive\\   --Location where to move files to permanent archive");
-            System.Console.WriteLine("-s C:\\folder\\skipped\\  --Location whére to put skipped files to wait reprocessing");
-            System.Console.WriteLine("-f --Force decoding even if files are without symbols");
-            System.Console.WriteLine("-t --Test mode, will not move any files, ignores -a and -s");
-
+            System.Console.WriteLine("-a C:\\folderarchive\\   Location where to move files to permanent archive.");
+            System.Console.WriteLine("-s C:\\folder\\skipped\\  Location where to put skipped files to wait reprocessing.");
+            System.Console.WriteLine("-c C:\\folder\\output\\ Location where to put output files. Defaults to current working dir.");
+            System.Console.WriteLine("-b crashfile.bin   Crash file to be decoded.");
+            System.Console.WriteLine("-m crash.symbol,crash.map   Symbol/map/dictionary files.");
+            System.Console.WriteLine("-f Force decoding even if files are without symbols.");
+            System.Console.WriteLine("-t Test mode, will not move any files, ignores -a and -s.");
+            System.Console.WriteLine("-x Prints output in Xml format");
+            System.Console.WriteLine("-p Prints output in plain text format");
         }
 
         #endregion
@@ -230,6 +304,7 @@ namespace CrashAnalyserServerExe.Engine
         public CACmdLineFSEntityList<CACmdLineFileSource> SourceFiles
         {
             get { return iSources; }
+            set { iSources = value; }
         }
 
         public CACmdLineFSEntityList<CACmdLineFSEntity> MetaDataFiles
@@ -252,6 +327,11 @@ namespace CrashAnalyserServerExe.Engine
             get { return iErrorPath; }
             set { iErrorPath = value; }
         }
+        public string CITargetPath
+        {
+            get { return iCITargetPath; }
+            set { iCITargetPath = value; }
+        }  
         public bool DecodeWithoutSymbols
         {
             get { return iDecodeWithoutSymbols; }
@@ -261,6 +341,11 @@ namespace CrashAnalyserServerExe.Engine
         {
             get { return iTestWithoutMovingFiles; }
             set { iTestWithoutMovingFiles = value; }
+        }
+        public bool UseXmlSink
+        {
+            get { return iUseXmlSink; }
+            set { iUseXmlSink = value; }
         }
 
         #endregion
@@ -307,10 +392,12 @@ namespace CrashAnalyserServerExe.Engine
         private CACmdLineFSEntityList<CACmdLineFSEntity> iMetaData = new CACmdLineFSEntityList<CACmdLineFSEntity>();
         private CACmdLineFSEntityList<CACmdLineFileSource> iSources = new CACmdLineFSEntityList<CACmdLineFileSource>();
 
+        private string iCITargetPath = string.Empty;  
         private string iArchivePath = string.Empty;       
         private string iSkippedPath = string.Empty;      
         private string iErrorPath = string.Empty;    
         private bool iTestWithoutMovingFiles = false;
+        private bool iUseXmlSink = false;
         private bool iDecodeWithoutSymbols = false;
 
 

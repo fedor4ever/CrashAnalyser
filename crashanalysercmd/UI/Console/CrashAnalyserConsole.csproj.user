@@ -1,7 +1,7 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <StartWorkingDirectory>C:\Tool Demo Files\2. Crash Data\File71 - Sys Core Dump\User</StartWorkingDirectory>
-    <StartArguments>-plugin CRASH_ANALYSIS -input input.xml  -PROGRESS</StartArguments>
+    <StartWorkingDirectory>D:\CA_current\UI\Console\bin\Debug\</StartWorkingDirectory>
+    <StartArguments>-plugin CRASH_ANALYSIS -input bug.xml  -PROGRESS</StartArguments>
     <StartAction>Project</StartAction>
     <StartProgram>d:\My Documents\Visual Studio 2008\Apps\CrashAnalyser\App\bin\Debug\CrashAnalyserConsole.exe</StartProgram>
   </PropertyGroup>

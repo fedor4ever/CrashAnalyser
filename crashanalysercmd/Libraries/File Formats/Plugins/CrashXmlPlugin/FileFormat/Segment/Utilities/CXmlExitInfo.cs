@@ -22,6 +22,7 @@ using CrashItemLib.Crash.Registers;
 using CrashItemLib.Crash.Threads;
 using CrashItemLib.Crash.ExitInfo;
 using CrashXmlPlugin.FileFormat.Node;
+using ErrorLibrary;
 
 namespace CrashXmlPlugin.FileFormat.Segment.Entries
 {
@@ -68,6 +69,10 @@ namespace CrashXmlPlugin.FileFormat.Segment.Entries
             case CIExitInfo.TExitType.EExitTypePanic:
                 aParameters.Writer.WriteElementString( SegConstants.ExitInfo_Category, iExitInfo.Category );
                 aParameters.Writer.WriteElementString( SegConstants.ExitInfo_Reason, iExitInfo.Reason.ToString() );
+                
+                // Get panic description
+                String description = XmlErrorLibrary.GetPanicDescription(iExitInfo.Category, iExitInfo.Reason.ToString());
+                aParameters.Writer.WriteElementString(SegConstants.ExitInfo_Description, description);
                 break;
             }
         }

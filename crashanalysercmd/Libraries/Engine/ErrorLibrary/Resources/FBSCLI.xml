@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<panic_category>
+  <category_name>FBSCLI</category_name>
+  <category_description> &lt;p&gt; Panics raised by clients of the font and bitmap server. &lt;/p&gt;</category_description>
+  <panics>
+    <panic>
+      <panic_id>1</panic_id>
+      <panic_description>&lt;p&gt; No connection has been made to the font and bitmap server. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>2</panic_id>
+      <panic_description>&lt;p&gt; Attempted to pass a command to the font and bitmap server, but no connection has been made. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>3</panic_id>
+      <panic_description>&lt;p&gt; Not used. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>4</panic_id>
+      <panic_description>&lt;p&gt; Not used. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>5</panic_id>
+      <panic_description>&lt;p&gt; Not used. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>6</panic_id>
+      <panic_description>&lt;p&gt; Internal typeface store error: the list of accessed fonts (&lt;code&gt;CTypefaceStore::iFontAccess&lt;/code&gt;) is inconsistent with the font cache (&lt;code&gt;CFbsTypefaceStore::iTwipsCache&lt;/code&gt;). &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>7</panic_id>
+      <panic_description>&lt;p&gt; The typeface store was unable to create a font due to a NULL font handle or address. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>8</panic_id>
+      <panic_description>&lt;p&gt; Attempted to access a NULL font pointer (debug builds only). &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>9</panic_id>
+      <panic_description>&lt;p&gt; Invalid bitmap format (debug builds only). &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>10</panic_id>
+      <panic_description>&lt;p&gt; Invalid bitmap display mode (&lt;code class="ApiItem"&gt;TDisplayMode&lt;/code&gt;). &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>11</panic_id>
+      <panic_description>&lt;p&gt; Invalid bitmap compression value (&lt;code class="ApiItem"&gt;TBitmapfileCompression&lt;/code&gt;), or an unsupported operation was attempted on a compressed bitmap. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>12</panic_id>
+      <panic_description>&lt;p&gt; Bitmap decompression error (debug builds only). &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>13</panic_id>
+      <panic_description>&lt;p&gt; Memory addressing error. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>14</panic_id>
+      <panic_description>&lt;p&gt; Either the display mode of the destination bitmap is not &lt;code&gt;EColor256&lt;/code&gt;, or the two bitmaps are different sizes in &lt;code class="ApiItem"&gt;CFbsColor256BitmapUtil::CopyBitmap()&lt;/code&gt;. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>15</panic_id>
+      <panic_description>&lt;p&gt; An error occurred when constructing a hardware bitmap (debug builds only). &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>16</panic_id>
+      <panic_description>&lt;p&gt; Not used. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>17</panic_id>
+      <panic_description>&lt;p&gt; Memory alignment error in a bitmap loaded from ROM. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>18</panic_id>
+      <panic_description>&lt;p&gt; Not used. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>19</panic_id>
+      <panic_description>&lt;p&gt; New display mode not supported by &lt;code&gt;CBitwiseBitmap::ChangeDisplayMode()&lt;/code&gt; (debug builds only). &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>20</panic_id>
+      <panic_description>&lt;p&gt; New display mode not supported by &lt;code&gt;CBitwiseBitmap::ChangeDisplayMode()&lt;/code&gt; (debug builds only). &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>21</panic_id>
+      <panic_description>&lt;p&gt; When swapping a bitmap's width and height, the size of the new bitmap would exceed the amount of memory allocated. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>22</panic_id>
+      <panic_description>&lt;p&gt; &lt;code&gt;CFbsBitmap::LockHeap()&lt;/code&gt; has not been called prior to calling &lt;code&gt;CFbsBitmap::DataAddress()&lt;/code&gt; (debug builds only). &lt;/p&gt;	   </panic_description>
+    </panic>
+  </panics>
+</panic_category>

@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1D07751A-83EA-4D7B-8B2B-C41305A799E0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XmlFilePlugin</RootNamespace>
+    <AssemblyName>XmlFile.plugin</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SymbianUtils, Version=1.0.3463.26793, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Engine\CrashItemLib\bin\Debug\SymbianUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FileFormat\CXmlCallStack.cs" />
+    <Compile Include="FileFormat\CXmlCodeSegData.cs" />
+    <Compile Include="FileFormat\CXmlDataBlock.cs" />
+    <Compile Include="FileFormat\CXmlFileDocument.cs" />
+    <Compile Include="FileFormat\CXmlFileUtilities.cs" />
+    <Compile Include="FileFormat\CXmlRegisterStorage.cs" />
+    <Compile Include="FileFormat\PlainTextOutput.cs" />
+    <Compile Include="FileFormat\XmlConsts.cs" />
+    <Compile Include="PluginImplementations\Sink\CXmlFileSink.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\PerfToolsSharedLibraries\Engine\SymbianStructuresLib\SymbianStructuresLib.csproj">
+      <Project>{D3BDEB23-43DA-4534-986B-F6B3DD05EBF6}</Project>
+      <Name>SymbianStructuresLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Engine\CrashItemLib\CrashItemLib.csproj">
+      <Project>{A5B87D2F-E351-4B03-8BD0-9C8C91EDF1CC}</Project>
+      <Name>CrashItemLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Engine\ErrorLibrary\ErrorLibraryLib.csproj">
+      <Project>{C4F270B5-5B50-4270-9CDC-1616D9645365}</Project>
+      <Name>ErrorLibraryLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Engines\MobileCrashLib\MobileCrashLib.csproj">
+      <Project>{00DA206A-9DA2-4B2E-A376-05CAB2881ABA}</Project>
+      <Name>MobileCrashLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>set path_out="$(SolutionDir)$(OutDir)"
+if not exist %25path_out%25 (
+    mkdir %25path_out%25
+) 
+copy "$(TargetDir)\*.*" "$(SolutionDir)$(OutDir)"
+</PostBuildEvent>
+  </PropertyGroup>
+</Project>

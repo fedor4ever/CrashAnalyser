@@ -88,6 +88,12 @@ namespace SymbianDebugLib.Entity.Configurations
                 }
             }
         }
+
+        public bool IsActiveRomId(uint aRomId)
+        {
+            return iEngine.IsActiveRomId(aRomId);
+        }
+
         #endregion
 
         #region Event handlers

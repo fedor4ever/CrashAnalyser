@@ -127,16 +127,15 @@ namespace CrashInfoFilePlugin.PluginImplementations.FileFormat
                 {
 
                     aOutput.Write(regList.Name);
+                    aOutput.Write(CrashInfoConsts.KEOL);
                     foreach (CCrasInfoRegisterItem reg in regList.Registers)
                     {
-                        aOutput.Write(CrashInfoConsts.KSeparator);
-                        aOutput.Write(reg.Name);
-                        aOutput.Write(CrashInfoConsts.KSeparator);
-                        aOutput.Write(reg.Value);
+                        aOutput.Write(reg.Name + " 0x" + reg.Value.ToString("X8"));
                         if (reg.Symbol != string.Empty)
                         {
-                            aOutput.Write(":" + reg.Symbol);
+                            aOutput.Write(" " + reg.Symbol);
                         }
+                        aOutput.Write(CrashInfoConsts.KEOL);
                     }
                     aOutput.Write(CrashInfoConsts.KEOL);
 

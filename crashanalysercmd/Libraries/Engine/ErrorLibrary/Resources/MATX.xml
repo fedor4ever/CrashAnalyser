@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<panic_category>
+  <category_name>MATHX</category_name>
+  <category_description> &lt;p&gt;These panics represent errors raised by member functions of the &lt;code class="ApiItem"&gt;TRealX&lt;/code&gt; class. Typically, they are the result of illegal maths operations, such as dividing by zero, or operations which result in overflow.&lt;/p&gt;&lt;p&gt;The thread causing the panic is terminated.&lt;/p&gt;</category_description>
+  <panics>
+    <panic>
+      <panic_id>0</panic_id>
+      <panic_description>&lt;p&gt;This panic is raised by &lt;code&gt;operator/=&lt;/code&gt; of a &lt;code class="ApiItem"&gt;TRealX&lt;/code&gt;, when the divisor is zero&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>1</panic_id>
+      <panic_description>&lt;p&gt;This panic is raised by &lt;code&gt;operator+=&lt;/code&gt;, &lt;code&gt;operator-=&lt;/code&gt; and &lt;code&gt;operator*=&lt;/code&gt; of a &lt;code class="ApiItem"&gt;TRealX&lt;/code&gt;, when the the result of the operation is an overflow.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>2</panic_id>
+      <panic_description>&lt;p&gt;This panic is raised by &lt;code&gt;operator+=&lt;/code&gt;, &lt;code&gt;operator-=&lt;/code&gt; and &lt;code&gt;operator*=&lt;/code&gt; of a &lt;code class="ApiItem"&gt;TRealX&lt;/code&gt;, when the the result of the operation is an underflow.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>3</panic_id>
+      <panic_description>&lt;p&gt;This panic is raised by &lt;code&gt;operator+=&lt;/code&gt;, &lt;code&gt;operator-=&lt;/code&gt; and &lt;code&gt;operator*=&lt;/code&gt; of a &lt;code class="ApiItem"&gt;TRealX&lt;/code&gt;, when the the operands are invalid.&lt;/p&gt;&lt;p&gt;For &lt;code&gt;operator+=&lt;/code&gt;, the panic is raised if one of these conditions applies:&lt;/p&gt; &lt;p&gt;the target operand is not a number,&lt;/p&gt; &lt;p&gt;the source operand is not a number,&lt;/p&gt; &lt;p&gt;the target and the source operands are infinite and have different signs.&lt;/p&gt; &lt;p&gt; For &lt;code&gt;operator-=&lt;/code&gt;, the panic is raised if one of these conditions applies:&lt;/p&gt; &lt;p&gt;the target operand is not a number, &lt;/p&gt; &lt;p&gt;the source operand is not a number,&lt;/p&gt; &lt;p&gt;the target and the source operands are infinite and have different signs&lt;/p&gt; &lt;p&gt;For &lt;code&gt;operator*=&lt;/code&gt;, the panic is raised if one of these conditions applies:&lt;/p&gt; &lt;p&gt;the target operand is not a number, &lt;/p&gt; &lt;p&gt;the source operand is not a number, &lt;/p&gt; &lt;p&gt;the target operand is infinite and the source operand is zero &lt;/p&gt; &lt;p&gt;the target operand is zero and the source operand is infinite.&lt;/p&gt; &lt;p&gt;For &lt;code&gt;operator/=&lt;/code&gt;, the panic is raised if one of these conditions applies:&lt;/p&gt; &lt;p&gt;the target operand is not a number,&lt;/p&gt; &lt;p&gt;the source operand is not a number,&lt;/p&gt; &lt;p&gt;the target operand and the source operand are both infinite,&lt;/p&gt; &lt;p&gt;the target operand and the source operand are both zero.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>4</panic_id>
+      <panic_description>&lt;p&gt;This panic is raised by a number of operations on &lt;code class="ApiItem"&gt;TReal64&lt;/code&gt; and &lt;code class="ApiItem"&gt;TReal32&lt;/code&gt; types when they complete with an error code other than: &lt;code&gt;KErrArgument&lt;/code&gt;, &lt;code&gt;KErrDivideByZero&lt;/code&gt;, &lt;code&gt;KErrOverflow&lt;/code&gt; or &lt;code&gt;KErrUnderflow&lt;/code&gt;.&lt;/p&gt;	   </panic_description>
+    </panic>
+  </panics>
+</panic_category>

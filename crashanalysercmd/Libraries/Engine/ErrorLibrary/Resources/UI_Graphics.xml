@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<panic_category>
+  <category_name>UI Graphics</category_name>
+  <category_description> &lt;p&gt;UI Graphics Utilities panics:&lt;/p&gt;</category_description>
+  <panics>
+    <panic>
+      <panic_id>0</panic_id>
+      <panic_description>&lt;p&gt;A resource null pointer.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>1</panic_id>
+      <panic_description>&lt;p&gt;Resource specified has an invalid number type.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>2</panic_id>
+      <panic_description>&lt;p&gt;A null pointer.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>3</panic_id>
+      <panic_description>&lt;p&gt;The logical color was not found.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>4</panic_id>
+      <panic_description>&lt;p&gt;The logical color already exists.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>5</panic_id>
+      <panic_description>&lt;p&gt;Invalid color range specified.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>6</panic_id>
+      <panic_description>&lt;p&gt;The application color array was not found.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>7</panic_id>
+      <panic_description>&lt;p&gt;Null TLS (thread-local storage).&lt;/p&gt;</panic_description>
+    </panic>
+  </panics>
+</panic_category>

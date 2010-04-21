@@ -432,7 +432,7 @@ namespace SymbianUtils
 		#region Helper methods - body
 		public void WriteBodyBegin()
 		{
-			WriteLine( "<BODY>" );
+			WriteLine( "<BODY onload=\"initialize();\" onmousemove=\"mouseMove(event);\">" );
 		}
 
 		public void WriteBodyEnd()

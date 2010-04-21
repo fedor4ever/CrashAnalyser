@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<panic_category>
+  <category_name>PLAT (generic Kernel)</category_name>
+  <category_description> &lt;p&gt;These panics represent represent errors which are detected by  generic Kernel code. Typically, they are caused by passing bad or contradictory parameters to functions.&lt;/p&gt;&lt;p&gt;The thread causing the panic is terminated.&lt;/p&gt;</category_description>
+  <panics>
+    <panic>
+      <panic_id>0</panic_id>
+      <panic_description>&lt;p&gt;This panic is raised at system startup time if the secondary process cannot be created.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>2</panic_id>
+      <panic_description>&lt;p&gt;This panic is raised when a semaphore, a &lt;code&gt;DPlatSemaphore&lt;/code&gt;, is created and a negative count value is passed to the member function creating it.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>3</panic_id>
+      <panic_description>&lt;p&gt;This panic is raised when a semaphore, a &lt;code&gt;DPlatSemaphore&lt;/code&gt;, is signalled and the count value, if specified, is negative.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>6</panic_id>
+      <panic_description>&lt;p&gt;This panic is raised when fetching the home address of a specified address relative to the thread's process and the specified address is invalid.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>7</panic_id>
+      <panic_description>&lt;p&gt;These panics are raised when an illegal attempt is made to kill a thread, a &lt;code&gt;DPlatThread&lt;/code&gt;; the thread may already be dead or its status may be unknown.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>8</panic_id>
+      <panic_description>&lt;p&gt;These panics are raised when an illegal attempt is made to kill a thread, a &lt;code&gt;DPlatThread&lt;/code&gt;; the thread may already be dead or its status may be unknown.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>9</panic_id>
+      <panic_description>&lt;p&gt;These panics are raised when an illegal attempt is made to kill a thread, a &lt;code&gt;DPlatThread&lt;/code&gt;; the thread may already be dead or its status may be unknown.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>12</panic_id>
+      <panic_description>&lt;p&gt;This panic is raised when an attempt is made to resume the first thread in a process, a &lt;code&gt;DPlatProcess&lt;/code&gt;, when that process has not been loaded.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>15</panic_id>
+      <panic_description>&lt;p&gt;This panic is raised when looking up a function by ordinal in a library, a &lt;code&gt;DPlatLibrary&lt;/code&gt;. The panic occurs when the specified ordinal number is zero or negative.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>16</panic_id>
+      <panic_description>&lt;p&gt;This panic is raised because of a failure in the initialization of the Hardware Abstraction Layer (the HAL); specifically, the startup reason is not recognized.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>17</panic_id>
+      <panic_description>&lt;p&gt;This panic is raised because of a failure in the initialization of the Hardware Abstraction Layer (the HAL); specifically, the keyboard could not be initialized.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>18</panic_id>
+      <panic_description>&lt;p&gt;This panic is raised because of a failure in the initialization of the Hardware Abstraction Layer (the HAL); specifically, the x-y input device could not be initialized.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>19</panic_id>
+      <panic_description>&lt;p&gt;These panics are raised by failures during system startup.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>20</panic_id>
+      <panic_description>&lt;p&gt;These panics are raised by failures during system startup.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>21</panic_id>
+      <panic_description>&lt;p&gt;These panics are raised by failures during system startup.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>22</panic_id>
+      <panic_description>&lt;p&gt;This panic is raised when a failure occurs in dispatching an exception.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>64</panic_id>
+      <panic_description>&lt;p&gt;This panic is raised when an attempt is made to create a hardware chunk when that chunk has already been created.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>80</panic_id>
+      <panic_description>&lt;p&gt;This panic is raised when a Kernel fixed heap is being created and the specified maximum length is negative.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>81</panic_id>
+      <panic_description>&lt;p&gt;This panic is raised when the Kernel attempts to mutate a fixed heap into a chunk heap and the specified minimum length is different from the current minimum length.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>83</panic_id>
+      <panic_description>&lt;p&gt;This panic is raised in debug builds only.&lt;/p&gt;&lt;p&gt;This panic is raised by the millisecond timer when a call back has already been queued.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>87</panic_id>
+      <panic_description>&lt;p&gt;This panic is raised in debug builds only.&lt;/p&gt; &lt;p&gt;This panic is raised during debugging when handling an exception via &lt;code&gt;Debug::HandleException&lt;/code&gt; and a write operation to the remote thread running the monitor program fails.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>88</panic_id>
+      <panic_description>&lt;p&gt;This panic is raised when setting up the context for a newly created thread and the specified thread type, which defines the context, is not recognized.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>90</panic_id>
+      <panic_description>&lt;p&gt;This panic is raised if there is no screen-switch-on handler.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>91</panic_id>
+      <panic_description>&lt;p&gt;This panic is raised if a system thread has been panicked.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>92</panic_id>
+      <panic_description>&lt;p&gt;This panic is raised when an attempt is made to move a fixed address chunk.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>93</panic_id>
+      <panic_description>&lt;p&gt;These panics are raised during initialization of the MMU if creation of various components fails; for example, the domain allocator or the page table linear allocator.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>94</panic_id>
+      <panic_description>&lt;p&gt;These panics are raised during initialization of the MMU if creation of various components fails; for example, the domain allocator or the page table linear allocator.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>95</panic_id>
+      <panic_description>&lt;p&gt;These panics are raised during initialization of the MMU if creation of various components fails; for example, the domain allocator or the page table linear allocator.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>96</panic_id>
+      <panic_description>&lt;p&gt;These panics are raised during initialization of the MMU if creation of various components fails; for example, the domain allocator or the page table linear allocator.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>97</panic_id>
+      <panic_description>&lt;p&gt;These panics are raised during initialization of the MMU if creation of various components fails; for example, the domain allocator or the page table linear allocator.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>98</panic_id>
+      <panic_description>&lt;p&gt;These panics are raised during initialization of the MMU if creation of various components fails; for example, the domain allocator or the page table linear allocator.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>99</panic_id>
+      <panic_description>&lt;p&gt;These panics are raised during initialization of the MMU if creation of various components fails; for example, the domain allocator or the page table linear allocator.&lt;/p&gt;</panic_description>
+    </panic>
+  </panics>
+</panic_category>

@@ -137,6 +137,8 @@ namespace SymbianUtils.Threading
             int count = System.Environment.ProcessorCount;
             for ( int i = 0; i < count; i++ )
             {
+                System.Console.WriteLine("Creating thread " + i);
+
                 string name = string.Format( "Processor Thread {0:d3} {1:d8}", i, r.Next() );
                 Thread t = new Thread( new ThreadStart( RunThread ) );
                 t.IsBackground = true;
@@ -203,8 +205,20 @@ namespace SymbianUtils.Threading
                     // Will be done by "Start"
                 }
 
-                // Always release the blocker to "unblock" the main thread
-                ReleaseBlocker();
+                try
+                {
+
+                    // Always release the blocker to "unblock" the main thread
+                    ReleaseBlocker();
+
+                }
+                catch (Exception e)
+                {
+                    //eerlehto 
+                    System.Console.WriteLine("{0} Caught an exception from ReleaseBlocker!", e);                     
+                    //throw;
+                    
+                }
             }
         }
 
@@ -214,20 +228,27 @@ namespace SymbianUtils.Threading
         }
 
         private void DestroyBlocker()
-        {
-            if ( iSynchronousBlocker != null )
+        {            
+            lock (iBlockerLock)
             {
-                iSynchronousBlocker.Close();
-                iSynchronousBlocker = null;
+                if (iSynchronousBlocker != null)
+                {
+                    iSynchronousBlocker.Close();
+                    iSynchronousBlocker = null;
+            
+                }
             }
         }
 
         private void ReleaseBlocker()
-        {
-            if ( iSynchronousBlocker != null )
+        {            
+            lock (iBlockerLock)
             {
-                iSynchronousBlocker.Set();
-            }
+                if (iSynchronousBlocker != null)
+                {
+                    iSynchronousBlocker.Set();
+                }
+            }            
         }
 
         protected virtual void OnEvent( TEvent aEvent )
@@ -243,6 +264,12 @@ namespace SymbianUtils.Threading
             {
                 base.CleanupManagedResources();
             }
+            catch (Exception e)
+            {
+                System.Console.WriteLine("Caught an exception inCleanupManagedResources!");
+                System.Console.WriteLine(e.StackTrace);
+                throw;
+            }
             finally
             {
                 DestroyBlocker();
@@ -256,6 +283,7 @@ namespace SymbianUtils.Threading
         private BlockingQueue<T> iQueue = new BlockingQueue<T>();
         private List<Thread> iThreads = new List<Thread>();
         private ManualResetEvent iSynchronousBlocker = null;
+        private Object iBlockerLock = new Object();
         private TSynchronicity iSynchronicity = TSynchronicity.ESynchronous;
         #endregion
     }

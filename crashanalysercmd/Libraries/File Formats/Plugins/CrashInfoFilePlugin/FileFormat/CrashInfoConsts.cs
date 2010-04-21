@@ -44,6 +44,7 @@ namespace CrashInfoFilePlugin.PluginImplementations.FileFormat
         public const string Khw_version = "HW_VERSION";
         public const string Kpanic_id = "PANIC_ID";
         public const string Kpanic_category = "PANIC_CATEGORY";
+        public const string Kpanic_description = "PANIC_DESCRIPTION";
         public const string Klanguage = "LANGUAGE";
         public const string Kpanicked_process = "PANICKED_PROCESS";
         public const string Kprogram_counter = "PROGRAM_COUNTER";
@@ -57,6 +58,8 @@ namespace CrashInfoFilePlugin.PluginImplementations.FileFormat
         public const string Kreporter = "REPORTER";
         public const string Karchive = "ARCHIVE";
         public const string Kproduct_type = "PRODUCT_TYPE";
+        public const string Kproduction_mode = "PRODUCTION_MODE";
+        public const string Kcrash_source = "CRASH_SOURCE";
         public const string Kimei = "IMEI";
         public const string Knetwork_country_code = "NETWORK_COUNTRY_CODE";
         public const string Knetwork_identity = "NETWORK_IDENTITY";
@@ -99,6 +102,11 @@ namespace CrashInfoFilePlugin.PluginImplementations.FileFormat
         public const string Kcrash_hash = "DEFECT_HASH"; // New crash hash that DbMover used to create itself.
         public const string Kbinfile_name = "BIN_FILE_NAME";
         public const string Ksymbolfile_names = "SYMBOL_FILE_NAME";
+
+        public const string Kproduction_mode_value = "Production mode";
+        public const string Krnd_mode_value = "R&D mode";
+        public const string Kcrash_source_user = "User";
+        public const string Kcrash_source_kernel = "Kernel";
 
         public const int KMaxStackSize = 65000; //max length of call stack output in bytes
         public const int KMaxItemAboveSP = 7; //How many items are taken above stack pointer, should never be less than 2 to keep PC and LR 

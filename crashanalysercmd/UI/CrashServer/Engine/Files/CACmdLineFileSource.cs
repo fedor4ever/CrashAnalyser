@@ -20,6 +20,8 @@ using System.IO;
 using System.Collections.Generic;
 using CrashItemLib.Crash.Container;
 using CrashItemLib.Engine.Sources;
+using MobileCrashLib.Structures;
+using MobileCrashLib.Structures.Items;
 
 namespace CrashAnalyserServerExe.Engine
 {
@@ -129,6 +131,19 @@ namespace CrashAnalyserServerExe.Engine
             get { return iState; }
             set { iState = value; }
         }
+
+        public TMobileCrashContentType ContentType
+        {
+            get { return iContentType; }
+            set { iContentType = value; }
+        }
+
+        public MobileCrashItemUint32 RomId
+        {
+            get { return iRomId; }
+            set { iRomId = value; }
+        }
+
         #endregion
 
         #region Internal methods
@@ -217,6 +232,8 @@ namespace CrashAnalyserServerExe.Engine
         private CIEngineSource iSource = null;
         private List<OutputEntry> iOutputs = new List<OutputEntry>();
         private CIContainerCollection iContainers = null;
+        private TMobileCrashContentType iContentType = TMobileCrashContentType.EContentTypeUnknown;
+        private MobileCrashItemUint32 iRomId = new MobileCrashItemUint32();
         #endregion
     }
 

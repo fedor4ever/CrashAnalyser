@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<panic_category>
+  <category_name>CMdaAudioOutputStream</category_name>
+  <category_description> &lt;p&gt;Audio streaming panics&lt;/p&gt;</category_description>
+  <panics>
+    <panic>
+      <panic_id>0</panic_id>
+      <panic_description>&lt;p&gt;An attempt was made to change the audio stream player's properties while still writing to the stream.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>2</panic_id>
+      <panic_description>&lt;p&gt;Not currently used.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>4</panic_id>
+      <panic_description>&lt;p&gt;An attempt was made to set the audio stream player's volume to an invalid value.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>6</panic_id>
+      <panic_description>&lt;p&gt;An attempt was made to access the stream before opening it.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>8</panic_id>
+      <panic_description>&lt;p&gt;An attempt was made to open the stream when it is already open.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>10</panic_id>
+      <panic_description>&lt;p&gt;An attempt was made to set the client's priority to an invalid value.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>12</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CMdaAudioOutputStream::Open()&lt;/code&gt; was called with an incorrect audio package type&amp;#0160;&amp;#8212; it must be of type &lt;code&gt;TMdaAudioDataSettings&lt;/code&gt;.&lt;/p&gt;</panic_description>
+    </panic>
+  </panics>
+</panic_category>

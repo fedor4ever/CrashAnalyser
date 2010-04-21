@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{284BC871-EAE3-4D8F-8DFF-6C953E1B119D}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -102,6 +102,14 @@
     <ProjectReference Include="..\..\..\Engine\CrashItemLib\CrashItemLib.csproj">
       <Project>{A5B87D2F-E351-4B03-8BD0-9C8C91EDF1CC}</Project>
       <Name>CrashItemLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Engine\ErrorLibrary\ErrorLibraryLib.csproj">
+      <Project>{C4F270B5-5B50-4270-9CDC-1616D9645365}</Project>
+      <Name>ErrorLibraryLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Engines\MobileCrashLib\MobileCrashLib.csproj">
+      <Project>{00DA206A-9DA2-4B2E-A376-05CAB2881ABA}</Project>
+      <Name>MobileCrashLib</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

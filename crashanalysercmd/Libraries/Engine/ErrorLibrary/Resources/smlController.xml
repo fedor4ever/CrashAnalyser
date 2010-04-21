@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<panic_category>
+  <category_name>smlController</category_name>
+  <category_description> &lt;p&gt;SyncML panics represent program errors which are detected by the SyncML framework. Typically, they are caused by passing bad or contradictory parameters to functions.&lt;/p&gt; &lt;p&gt;The thread causing the panic is terminated. &lt;/p&gt;</category_description>
+  <panics>
+    <panic>
+      <panic_id>0</panic_id>
+      <panic_description>&lt;p&gt;Invalid parameter.&lt;/p&gt; &lt;p&gt;This panic is raised if there is an attempt to pass an invalid parameter to a SyncML function. &lt;/p&gt; &lt;p&gt;See &lt;code class="ApiItem"&gt;CSmlTask::SetNameL()&lt;/code&gt;, &lt;code class="ApiItem"&gt;CSmlProfile::AddTaskL()&lt;/code&gt;, &lt;code class="ApiItem"&gt;CSmlProfile::SetProfileNameL()&lt;/code&gt;.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>1</panic_id>
+      <panic_description>&lt;p&gt;Incomplete data.&lt;/p&gt; &lt;p&gt;This panic is raised if there is a attempt to use a parameter which contains incomplete data.&lt;/p&gt; &lt;p&gt;See &lt;code class="ApiItem"&gt;CSmlProfile::AddTaskL()&lt;/code&gt;, &lt;code class="ApiItem"&gt;CSmlController::CreateProfileL()&lt;/code&gt;.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>2</panic_id>
+      <panic_description>&lt;p&gt;Null task member.&lt;/p&gt; &lt;p&gt;This panic is raised if there is an attempt to externalise a Task object which has not been completely defined.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>3</panic_id>
+      <panic_description>&lt;p&gt;Task member not NULL.&lt;/p&gt; &lt;p&gt;This panic is raised if there is an attempt to internalise Task information into a &lt;code&gt;CSmlTask&lt;/code&gt; object which is not NULL.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>4</panic_id>
+      <panic_description>&lt;p&gt;Null task identifier.&lt;/p&gt; &lt;p&gt;This panic is raised if there is an attempt to get a task's identifier, when this has not previously been set.&lt;/p&gt; &lt;p&gt;See &lt;code class="ApiItem"&gt;CSmlTask::Identifier()&lt;/code&gt;.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>5</panic_id>
+      <panic_description>&lt;p&gt;Null task provider.&lt;/p&gt; &lt;p&gt;This panic is raised there is an attempt to get a task's content provider information, when this has not previously been set.&lt;/p&gt; &lt;p&gt;See &lt;code class="ApiItem"&gt;CSmlTask::Provider()&lt;/code&gt;.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>6</panic_id>
+      <panic_description>&lt;p&gt;Null task target.&lt;/p&gt; &lt;p&gt;This panic is raised if there is an attempt to get a task's target database, when this has not previously been set.&lt;/p&gt; &lt;p&gt;See &lt;code class="ApiItem"&gt;CSmlTask::Target()&lt;/code&gt;.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>7</panic_id>
+      <panic_description>&lt;p&gt;Null task source.&lt;/p&gt; &lt;p&gt;This panic is raised if there is an attempt to get a task's source database, when this has not previously been set.&lt;/p&gt; &lt;p&gt;See &lt;code class="ApiItem"&gt;CSmlTask::Source()&lt;/code&gt;. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>8</panic_id>
+      <panic_description>&lt;p&gt;Null profile member.&lt;/p&gt; &lt;p&gt;This panic is raised if there is an attempt to externalise a Profile object which has not been completely defined.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>9</panic_id>
+      <panic_description>&lt;p&gt;Profile member not NULL.&lt;/p&gt; &lt;p&gt;This panic is raised if there is an attempt to internalise Profile information into a profile object which is not NULL.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>10</panic_id>
+      <panic_description>&lt;p&gt;Task list not empty.&lt;/p&gt; &lt;p&gt;This panic is raised if there is an attempt to internalise Task list information into a profile object which is not empty.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>11</panic_id>
+      <panic_description>&lt;p&gt;Null profile identifier.&lt;/p&gt; &lt;p&gt;This panic is raised if there is an attempt to get a profile's identifier value, when this has not previously been set.&lt;/p&gt; &lt;p&gt;See &lt;code class="ApiItem"&gt;CSmlProfile::Identifier()&lt;/code&gt;.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>12</panic_id>
+      <panic_description>&lt;p&gt;Null profile authorisation type.&lt;/p&gt; &lt;p&gt;This panic is raised if there is an attempt to get a profile's authorisation type value, when this has not previously been set.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>13</panic_id>
+      <panic_description>&lt;p&gt;Null profile protocol.&lt;/p&gt; &lt;p&gt;This panic is raised if there is an attempt to get a profile's protocol information, when this has not previously been set.&lt;/p&gt; &lt;p&gt;See &lt;code class="ApiItem"&gt;CSmlProfile::Protocol()&lt;/code&gt;.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>14</panic_id>
+      <panic_description>&lt;p&gt;Null Content provider.&lt;/p&gt; &lt;p&gt;This panic is raised if there is an attempt to get a profile's Content provider information, when this has not previously been set.&lt;/p&gt; &lt;p&gt;See &lt;code class="ApiItem"&gt;CSmlProfile::AddTaskL()&lt;/code&gt;&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>15</panic_id>
+      <panic_description>&lt;p&gt;Invalid Protocol.&lt;/p&gt; &lt;p&gt;This panic is raised if there is an attempt to get a profile's transport protocol information, when the protocol does not exist.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>16</panic_id>
+      <panic_description>&lt;p&gt;Null Controller member.&lt;/p&gt; &lt;p&gt;This panic is raised if there is an attempt to use one of the controller's members if it has not been initialised.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>17</panic_id>
+      <panic_description>&lt;p&gt;Controller Member Not Null.&lt;/p&gt; &lt;p&gt;This panic is raised if there is an attempt to use one of the controller members that should be null, e.g. at the start of the sync.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>18</panic_id>
+      <panic_description>&lt;p&gt;Invalid Profile&lt;/p&gt; &lt;p&gt;This panic is raised when trying to retrieve a profile that does not exist.&lt;/p&gt; 	   </panic_description>
+    </panic>
+  </panics>
+</panic_category>

@@ -43,6 +43,10 @@ using SymbianDebugLib.Entity;
 using SymbianUtils;
 using SymbianUtils.Tracer;
 using CrashItemLib.Crash.InfoSW;
+using MobileCrashLib;
+using MobileCrashLib.Parser;
+using MobileCrashLib.Structures.Items;
+using MobileCrashLib.Structures;
 
 namespace CrashAnalyserServerExe.Engine
 {
@@ -92,10 +96,20 @@ namespace CrashAnalyserServerExe.Engine
                 // will be flagged accordingly within the CACmdLineFileSource object.
                 TryToPrimeSources();
 
+                // Try to the ROM ID and file type (i.e. crash, 
+                // registration msg, report) out of the crash files. This information is
+                // used in later phases (e.g. if there are only registration messages in 
+                // source files then we do not have to load symbol files).
+                TryToGetCrashInformation();
+
                 // Next, prime the debug engine will all the debug meta-data inputs.
                 // Again, individual error messages will be associated with each meta-data
                 // input.
-                TryToPrimeDbgEngine();
+
+              //  if (SymbolFilesNeeded())
+                {
+                    TryToPrimeDbgEngine();
+                }
 
                 // Next, we invoke the crash engine to process all the crash item sources we
                 // created during the prime step. Exceptions are caught and associated 
@@ -125,6 +139,7 @@ namespace CrashAnalyserServerExe.Engine
             Trace( "[CA Cmd] - operation complete: " + error );
             return error;
         }
+
         #endregion
 
 		#region Properties
@@ -208,6 +223,7 @@ namespace CrashAnalyserServerExe.Engine
 
         #region Internal constants
         private const string KCrashItemSinkName = "CRASH INFO FILE";
+        private const string KXmlCrashItemSinkName = "XML CRASH FILE";
         private const string KParamProgress = "-PROGRESS";
         #endregion
 
@@ -218,17 +234,23 @@ namespace CrashAnalyserServerExe.Engine
             return report;
         }
 
-        private CISink FindSink()
+        private CISink FindSink(bool aUseXmlSink)
         {
             Trace( "[CA Cmd] FindSink() - START" );
             CISink ret = null;
             //
+            string sinkToUse = KCrashItemSinkName;
+            if (aUseXmlSink)
+            {
+                sinkToUse = KXmlCrashItemSinkName;
+            }
+
             CISinkManager sinkManager = iCrashItemEngine.SinkManager;
             foreach ( CISink sink in sinkManager )
             {
                 Trace( "[CA Cmd] FindSink() - found sink: " + sink.Name );
 
-                if ( sink.Name.ToUpper().Contains( KCrashItemSinkName ) )
+                if ( sink.Name.ToUpper().Contains( sinkToUse ) )
                 {
                     ret = sink;
                     break;
@@ -292,6 +314,32 @@ namespace CrashAnalyserServerExe.Engine
             Trace( "[CA Cmd] TryToPrimeSources() - END" );
         }
 
+        /**
+         * Get important data (i.e. RomId and content type)
+         */
+        private void TryToGetCrashInformation()
+        {
+            Trace("[CA Cmd] TryToGetCrashInformation() - START");
+
+            foreach (CACmdLineFileSource file in iInputs.SourceFiles)
+            {
+                if (file.Source != null)
+                {
+                    byte[] bytes = File.ReadAllBytes(file.File.FullName);
+                    MobileCrashBin bin = new MobileCrashBin(bytes);
+                    MobileCrashData data = new MobileCrashData();
+                    MobileCrashParser parser = new MobileCrashParser(bin, data);
+                    parser.Parse(TSynchronicity.ESynchronous);
+                    data = parser.MobileCrashData;
+                    file.RomId = data.ItemById<MobileCrashItemUint32>(TMobileCrashId.EMobileCrashId_ROMID);
+                    file.ContentType = data.ContentType;
+                }
+            }
+
+            Trace("[CA Cmd] TryToGetCrashInformation() - END");
+
+        }
+
         private void TryToPrimeDbgEngine()
         {
             DbgEngine debugEngine = iDebugEngine;
@@ -302,6 +350,12 @@ namespace CrashAnalyserServerExe.Engine
             try
             {
                 debugEngine.Clear();
+
+                foreach (CACmdLineFileSource file in iInputs.SourceFiles)
+                {
+                    if (file.RomId != null)
+                        debugEngine.AddActiveRomId(file.RomId.Value);
+                }
 
                 foreach ( CACmdLineFSEntity entry in metaDataFiles )
                 {
@@ -448,7 +502,7 @@ namespace CrashAnalyserServerExe.Engine
         {
             CACmdLineFSEntityList<CACmdLineFileSource> inputFiles = iInputs.SourceFiles;
             //
-            CISink sink = FindSink();
+            CISink sink = FindSink(iInputs.UseXmlSink);
             if ( sink == null )
             {
                 throw new CACmdLineException( "CI Output Plugin Not Available", CACmdLineException.KErrSinkNotAvailable );
@@ -746,6 +800,8 @@ namespace CrashAnalyserServerExe.Engine
             {
                 if (message.Title == "MobileCrash content type")
                 {
+                    /* We could also decode registrations without but that will cause server to have
+                     * lots of registration only sw versions
                     if (message.Description.Trim() == "registration")
                     {
                         retval = true;
@@ -754,7 +810,9 @@ namespace CrashAnalyserServerExe.Engine
                     {
                         retval = true;
                     }
-                    else if (message.Description.Trim() == "report")
+                    else */
+
+                    if (message.Description.Trim() == "report")
                     {
                         retval = true;
                     }
@@ -850,6 +908,17 @@ namespace CrashAnalyserServerExe.Engine
 
         }
 
+        private bool SymbolFilesNeeded()
+        {
+            foreach (CACmdLineFileSource file in iInputs.SourceFiles)
+            {
+                if (file.ContentType == TMobileCrashContentType.EContentTypeException ||
+                    file.ContentType == TMobileCrashContentType.EContentTypePanic)
+                    return true;
+            }
+            return false;
+        }
+
         #endregion
 
         #region Output methods
@@ -862,7 +931,7 @@ namespace CrashAnalyserServerExe.Engine
         #region From ITracer
         public void Trace( string aMessage )
         {
-            System.Console.WriteLine("MANUAL TRACE:" +aMessage);
+            //System.Console.WriteLine("MANUAL TRACE:" +aMessage);
             iDebugEngine.Trace( aMessage );
         }
 

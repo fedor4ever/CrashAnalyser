@@ -279,6 +279,13 @@ namespace CrashItemLib.Sink
             get { return iOperationData3; }
             set { iOperationData3 = value; }
         }
+        
+        public bool PlainTextOutput
+        {
+            get { return iPlainTextOutput; }
+            set { iPlainTextOutput = value; }
+        }
+
         #endregion
 
         #region Internal methods
@@ -352,6 +359,7 @@ namespace CrashItemLib.Sink
         private TDetailLevel iDetailLevel = TDetailLevel.EFull;
         private string iFileExtensionSuccess = string.Empty;
         private string iFileExtensionFailed = string.Empty;
+        private bool iPlainTextOutput = false;
         private FileInfo iOutputFile;
         private DirectoryInfo iOutputDirectory;
         private TOutputMode iOutputMode = TOutputMode.EOutputToDirectory;

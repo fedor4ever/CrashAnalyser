@@ -1,0 +1,235 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<panic_category>
+  <category_name>CONE</category_name>
+  <category_description> &lt;p&gt;User Interface Control Framework panics&lt;/p&gt;</category_description>
+  <panics>
+    <panic>
+      <panic_id>1</panic_id>
+      <panic_description>&lt;p&gt; Environment start up error &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>2</panic_id>
+      <panic_description>&lt;p&gt; Environment already exists &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>3</panic_id>
+      <panic_description>&lt;p&gt; App UI cannot be created &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>4</panic_id>
+      <panic_description>&lt;p&gt; Control cannot be found in the control stack &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>5</panic_id>
+      <panic_description>&lt;p&gt; Environment caught unexpected leave &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>6</panic_id>
+      <panic_description>&lt;p&gt; Non-leaving function CCoeControl::Draw() leaves during a redraw operation &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>7</panic_id>
+      <panic_description>&lt;p&gt; Environment found file server resources had not been freed &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>8</panic_id>
+      <panic_description>&lt;p&gt; Environment found window server resources had not been freed &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>9</panic_id>
+      <panic_description>&lt;p&gt; Environment failed to handle window server event &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>10</panic_id>
+      <panic_description>&lt;p&gt; The control already owns a window &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>11</panic_id>
+      <panic_description>&lt;p&gt; The control cannot close the window as it does not own one &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>12</panic_id>
+      <panic_description>&lt;p&gt; &lt;code&gt;CCoeControl::ComponentControl()&lt;/code&gt; has been called, but the control is not a container &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>13</panic_id>
+      <panic_description>&lt;p&gt; Environment cannot find the resource file in order to delete it &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>14</panic_id>
+      <panic_description>&lt;p&gt; Environment cannot find the specified resource in any resource file &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>15</panic_id>
+      <panic_description>&lt;p&gt; A NULL resource file name was passed to &lt;code&gt;CCoeEnv::AddResourceFileL()&lt;/code&gt; &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>16</panic_id>
+      <panic_description>&lt;p&gt; Resource is wrong length to be read as Unicode string &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>17</panic_id>
+      <panic_description>&lt;p&gt; Internal control set up error &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>18</panic_id>
+      <panic_description>&lt;p&gt; Attempted to add NULL observer &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>19</panic_id>
+      <panic_description>&lt;p&gt; Attempted to remove NULL observer &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>20</panic_id>
+      <panic_description>&lt;p&gt; Attempted to set up NULL FEP &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>21</panic_id>
+      <panic_description>&lt;p&gt; Observer has already been added &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>22</panic_id>
+      <panic_description>&lt;p&gt; Unused &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>23</panic_id>
+      <panic_description>&lt;p&gt; Unused &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>24</panic_id>
+      <panic_description>&lt;p&gt; FEP could not be loaded due to set-up problem &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>25</panic_id>
+      <panic_description>&lt;p&gt; Unused &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>26</panic_id>
+      <panic_description>&lt;p&gt; Unused &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>27</panic_id>
+      <panic_description>&lt;p&gt; NULL GC passed to &lt;code&gt;CCoeEnv::SwapSystemGc()&lt;/code&gt; &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>28</panic_id>
+      <panic_description>&lt;p&gt; Resource file has not been freed &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>29</panic_id>
+      <panic_description>&lt;p&gt; No view server session present &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>30</panic_id>
+      <panic_description>&lt;p&gt; Specified view could not be found &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>31</panic_id>
+      <panic_description>&lt;p&gt; NULL UID passed to &lt;code&gt;CCoeStatic::CCoeStatic()&lt;/code&gt; &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>32</panic_id>
+      <panic_description>&lt;p&gt; Duplicate UID passed to &lt;code&gt;CCoeStatic::CCoeStatic()&lt;/code&gt; &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>33</panic_id>
+      <panic_description>&lt;p&gt; Attempt to use &lt;code&gt;CoeSoundPlayer&lt;/code&gt; without an environment &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>34</panic_id>
+      <panic_description>&lt;p&gt; Unused &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>35</panic_id>
+      <panic_description>&lt;p&gt; Unused &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>36</panic_id>
+      <panic_description>&lt;p&gt; Open handles were found during application shutdown &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>37</panic_id>
+      <panic_description>&lt;p&gt; Unexpected view server event &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>38</panic_id>
+      <panic_description>&lt;p&gt; View observer not found &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>39</panic_id>
+      <panic_description>&lt;p&gt; View notification observer already exists &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>40</panic_id>
+      <panic_description>&lt;p&gt; Embedded app UI is not NULL &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>41</panic_id>
+      <panic_description>&lt;p&gt; Embedded app UI is not NULL &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>42</panic_id>
+      <panic_description>&lt;p&gt; Embedded app UI is not NULL &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>43</panic_id>
+      <panic_description>&lt;p&gt; Embedded app UI is not NULL &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>44</panic_id>
+      <panic_description>&lt;p&gt; Control being destroyed is still on the control stack &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>45</panic_id>
+      <panic_description>&lt;p&gt; Focus observer notification is not pending &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>46</panic_id>
+      <panic_description>&lt;p&gt; The handle for the current Window Server Redraw event is invalid &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>47</panic_id>
+      <panic_description>&lt;p&gt; No longer used &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>48</panic_id>
+      <panic_description>&lt;p&gt; No longer used &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>49</panic_id>
+      <panic_description>&lt;p&gt; The control parent-child hierarchy has become circular &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>50</panic_id>
+      <panic_description>&lt;p&gt; A control's parent has been set to something other than NULL or itself prior to being added to the control stack &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>51</panic_id>
+      <panic_description>&lt;p&gt; Two controls with the same ID exist &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>52</panic_id>
+      <panic_description>&lt;p&gt; An attempt was made to add an item to a control array which does not exist &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>53</panic_id>
+      <panic_description>&lt;p&gt; No longer used &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>54</panic_id>
+      <panic_description>&lt;p&gt; No longer used &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>55</panic_id>
+      <panic_description>&lt;p&gt; No longer used &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>56</panic_id>
+      <panic_description>&lt;p&gt; No longer used &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>57</panic_id>
+      <panic_description>&lt;p&gt; An error occured while notifying the central repository of a FEP change&lt;/p&gt; 	   </panic_description>
+    </panic>
+  </panics>
+</panic_category>

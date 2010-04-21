@@ -61,6 +61,13 @@ namespace CrashItemLib.Crash.Header
             get { return iFileFormatVersion; }
             set { iFileFormatVersion = value; }
         }
+
+        [CIDBAttributeCell("Crash Source", 3)]
+        public int CrashSource
+        {
+            get { return iCrashSource; }
+            set { iCrashSource = value; }
+        }
         #endregion
 
         #region Internal methods
@@ -70,6 +77,7 @@ namespace CrashItemLib.Crash.Header
         private DateTime iCrashTime = new DateTime();
         private TimeSpan iUpTime = new TimeSpan();
         private CIVersionInfo iFileFormatVersion = new CIVersionInfo();
+        private int iCrashSource = -1; // user side = 1, kernel side = 0
         #endregion
     }
 }

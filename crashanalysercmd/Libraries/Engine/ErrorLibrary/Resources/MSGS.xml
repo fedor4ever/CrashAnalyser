@@ -1,0 +1,339 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<panic_category>
+  <category_name>MSGS</category_name>
+  <category_description> &lt;p&gt;Messaging panics of Message Server from the &lt;code&gt;msgs&lt;/code&gt; library&lt;/p&gt;</category_description>
+  <panics>
+    <panic>
+      <panic_id>11</panic_id>
+      <panic_description>&lt;p&gt;Parent of context could not be found&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>12</panic_id>
+      <panic_description>&lt;p&gt;Parent of context could not be found&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>13</panic_id>
+      <panic_description>&lt;p&gt;Parent of context could not be found&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>14</panic_id>
+      <panic_description>&lt;p&gt;Parent of context could not be found&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>15</panic_id>
+      <panic_description>&lt;p&gt;Parent of context could not be found&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>16</panic_id>
+      <panic_description>&lt;p&gt;Parent of context could not be found&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>17</panic_id>
+      <panic_description>&lt;p&gt;Parent of context could not be found&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>18</panic_id>
+      <panic_description>&lt;p&gt;Parent of context could not be found&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>19</panic_id>
+      <panic_description>&lt;p&gt;Specified entry was not a child of the parent&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>20</panic_id>
+      <panic_description>&lt;p&gt;Specified entry was not a child of the parent&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>35</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CMsvServerEntry::DeleteEntry()&lt;/code&gt; called on current context&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>36</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CMsvServerEntry&lt;/code&gt; update index request failed as ID specified is not the same as the context ID&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>66</panic_id>
+      <panic_description>&lt;p&gt;Invalid &lt;code&gt;TMsvEntry&lt;/code&gt; provided in &lt;code&gt;CMsvServerEntry&lt;/code&gt; change function&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>94</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CMsvServerEntry::EditStoreL()&lt;/code&gt; called with associated message store already open&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>95</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CMsvServerEntry::ReadStoreL()&lt;/code&gt; called with associated message store already open&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>96</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CMsvServerEntry&lt;/code&gt; destroyed while associated message store was left open&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>97</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CMsvServerEntry&lt;/code&gt; object notified of unknown message store event type&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>98</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CMsvServerEntry&lt;/code&gt; object notified of event relating to unknown message store &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>99</panic_id>
+      <panic_description>&lt;p&gt;New &lt;code&gt;CMsvServerEntry&lt;/code&gt; context request failed as the contexts store is still open&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>109</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CMsvServerEntry&lt;/code&gt; context cannot be changed as it has been deleted&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>120</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CMsvServerEntry&lt;/code&gt; move  function failed as the destination is the current parent&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>146</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CMsvServerEntry&lt;/code&gt; request failed as no context has been set for the object&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>175</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CMsvServerEntry::MoveEntry()/MoveEntryWithinService()&lt;/code&gt; failed as the destination belongs to a different service that the source&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>176</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CMsvServerEntry&lt;/code&gt; request called with an asynchronous move function is already being carried out on the context&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>177</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CMsvServerEntry::MoveEntryL()&lt;/code&gt; called with an asynchronous move function already being carried out on the context&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>178</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CMsvServerEntry&lt;/code&gt; &lt;code&gt;::MoveEntryCompleted()&lt;/code&gt; called with no move completed&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>179</panic_id>
+      <panic_description>&lt;p&gt;Target of &lt;code&gt;CMsvServerEntry::MoveEntryL()&lt;/code&gt; is the current context&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>180</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CMsvServerEntry&lt;/code&gt; &lt;code&gt;::CancelMoveEntry()&lt;/code&gt; called with no move begun&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>181</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CMsvServerEntry&lt;/code&gt; destroyed while asynchronous move operation was in progress&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>194</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CMtmDllInfo::SetHumanReadableNameL()&lt;/code&gt; called with name longer than 50 characters&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>195</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CRegisteredMtmDll&lt;/code&gt; object destroyed while MTM DLL is still in use&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>196</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CRegisteredMtmDll&lt;/code&gt; object released with no instances in use&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>197</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CRegisteredMtmDll&lt;/code&gt; load library call made while MTM DLL is still in use&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>198</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CMtmDllRegistry::MtmTypeUid()&lt;/code&gt; an out-of-range index value&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>199</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CMtmDllRegistry::IsInUse()&lt;/code&gt; specified a non-registered MTM&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>200</panic_id>
+      <panic_description>&lt;p&gt;MTM registered with type UID of existing MTM&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>203</panic_id>
+      <panic_description>&lt;p&gt;Request to sort entries by unknown priority&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>209</panic_id>
+      <panic_description>&lt;p&gt;Registration data for a single MTM component has incorrect value for UID2&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>210</panic_id>
+      <panic_description>&lt;p&gt;Request to sort entries by unknown MTM&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>211</panic_id>
+      <panic_description>&lt;p&gt;Error in constructed MTM list for sorting&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>223</panic_id>
+      <panic_description>&lt;p&gt;ID specified in new index entry is not the same as the context ID in &lt;code&gt;CMsvEntry&lt;/code&gt; change context&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>227</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CMsvSession&lt;/code&gt; &lt;code&gt;::RemoveObserver()&lt;/code&gt; was called for a non-registered observer&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>228</panic_id>
+      <panic_description>&lt;p&gt;Client attempted to remove an entry observer  that was not a registered observer&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>234</panic_id>
+      <panic_description>&lt;p&gt;Attempted to remove a session observer while no session observer exists&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>235</panic_id>
+      <panic_description>&lt;p&gt;No context for &lt;code&gt;CMsvEntry&lt;/code&gt;&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>236</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CMsvEntry&lt;/code&gt; children already sorted&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>237</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CMsvEntry&lt;/code&gt; encountered deletion of an entry not listed as a  child&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>239</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CMsvEntry&lt;/code&gt; context cannot be used, as it is being changed&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>240</panic_id>
+      <panic_description>&lt;p&gt;A context &lt;code&gt;CMsvEntry&lt;/code&gt; change operation is already taking place&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>241</panic_id>
+      <panic_description>&lt;p&gt;Selection passed to &lt;code&gt;CMsvEntry::DeleteL()&lt;/code&gt; contains entries with different MTM or service properties&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>242</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CMsvEntry::ChildrenWithTypeL()&lt;/code&gt; was called with an unknown type&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>244</panic_id>
+      <panic_description>&lt;p&gt;Selection was specified in &lt;code&gt;CMsvEntry&lt;/code&gt; move, but MTM type or service fields are inconsistent among the entries&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>245</panic_id>
+      <panic_description>&lt;p&gt;Selection was specified in &lt;code&gt;CMsvEntry&lt;/code&gt; copy, but MTM type or service fields are inconsistent among the entries&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>249</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CMsvEntry::CreateL()&lt;/code&gt; called with invalid &lt;code&gt;TMsvEntry&lt;/code&gt;&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>250</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CMsvEntry::ChangeL()&lt;/code&gt; called with invalid &lt;code&gt;TMsvEntry&lt;/code&gt;&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>251</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CMsvEntry&lt;/code&gt; object destroyed with associated message store left open&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>258</panic_id>
+      <panic_description>&lt;p&gt;Empty selection passed to &lt;code&gt;CMsvEntry::DeleteL()&lt;/code&gt;&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>259</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CMsvEntry::SetEntryL()&lt;/code&gt; called with associated message store left open&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>260</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CMsvEntry::MoveL()&lt;/code&gt; called with move target set to the present parent&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>261</panic_id>
+      <panic_description>&lt;p&gt;Client attempts to open already open message store through &lt;code&gt;CMsvEntry&lt;/code&gt;&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>262</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CMsvSession&lt;/code&gt; object destroyed with entries still on the session cleanup stack&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>265</panic_id>
+      <panic_description>&lt;p&gt;Entry passed to&lt;code&gt; CMsvEntry::DeleteL()&lt;/code&gt; has different owning service than parent&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>266</panic_id>
+      <panic_description>&lt;p&gt;Entry passed to&lt;code&gt; CMsvEntry::MoveL()&lt;/code&gt; has different owning service than parent&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>267</panic_id>
+      <panic_description>&lt;p&gt;Entry passed to&lt;code&gt; CMsvEntry::CopyL()&lt;/code&gt; has different owning service than parent&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>268</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CMsvEntry&lt;/code&gt; notified of new child with different owning service than context&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>269</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CMsvEntry&lt;/code&gt; notified of entry deletion with different owning service than context&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>270</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CMsvEntry&lt;/code&gt; notified of message store modification with different owning service than context&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>271</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CMsvEntry&lt;/code&gt; notified of entry modification with different owning service than context&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>273</panic_id>
+      <panic_description>&lt;p&gt;The Message Server has completed an asynchronous request with an error&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>275</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CBaseMtm::StoreBodyL()&lt;/code&gt; or &lt;code&gt;CBaseMtm::RestoreBodyL()&lt;/code&gt; called with no context set&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>279</panic_id>
+      <panic_description>&lt;p&gt;Entry ID of &lt;code&gt;CBaseMtm&lt;/code&gt; context changed&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>280</panic_id>
+      <panic_description>&lt;p&gt;MTM data was not found in MTM data file on installation&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>281</panic_id>
+      <panic_description>&lt;p&gt;Copy or move already in progress for &lt;code&gt;CMsvServerEntry&lt;/code&gt;&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>282</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CMsvServerEntry::Cancel()&lt;/code&gt; called when no asynchronous operation is in progress&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>283</panic_id>
+      <panic_description>&lt;p&gt;Error reading file system&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>284</panic_id>
+      <panic_description>&lt;p&gt;Unknown error in  &lt;code&gt;CMsvServerEntry::HasDirectory()&lt;/code&gt;&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>285</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CMsvOperation::FinalProgress()&lt;/code&gt; was called when the operation was not complete&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>286</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CMsvOperation::FinalProgress()&lt;/code&gt; called an operation's &lt;code&gt;ProgressL()&lt;/code&gt; function that left&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>287</panic_id>
+      <panic_description>&lt;p&gt;Error reading file system&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>294</panic_id>
+      <panic_description>&lt;p&gt;The synchronous version of &lt;code&gt;CMsvEntry::CreateL()&lt;/code&gt;, &lt;code&gt;CMsvEntry::ChangeL()&lt;/code&gt;, or &lt;code&gt;CMsvEntry::DeleteL()&lt;/code&gt; was called for a non-local context&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>296</panic_id>
+      <panic_description>&lt;p&gt;A &lt;code&gt;CMsvServerEntry&lt;/code&gt; delete function was called with an empty selection&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>299</panic_id>
+      <panic_description>&lt;p&gt;Target of a &lt;code&gt;CMsvServerEntry::CopyEntriesL()&lt;/code&gt; call was the current context&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>300</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CMsvServerEntry::CopyEntriesL()&lt;/code&gt; called when a copy is already in progress&lt;/p&gt; 	   </panic_description>
+    </panic>
+  </panics>
+</panic_category>

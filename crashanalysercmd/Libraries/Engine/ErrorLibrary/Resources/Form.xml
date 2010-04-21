@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<panic_category>
+  <category_name>Form</category_name>
+  <category_description> &lt;p&gt;Text Views panics: &lt;/p&gt;</category_description>
+  <panics>
+    <panic>
+      <panic_id>201</panic_id>
+      <panic_description>&lt;p&gt; A NULL layout handle was passed to &lt;code&gt;CTextView::NewL()&lt;/code&gt;, or to &lt;code&gt;CTextView::SetLayout()&lt;/code&gt; &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>202</panic_id>
+      <panic_description>&lt;p&gt; The character edit type in &lt;code&gt;CTextView::HandleCharEditL()&lt;/code&gt; was unknown or incompatible with the format changed value. Debug builds only. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>203</panic_id>
+      <panic_description>&lt;p&gt; The horizontal scroll jump value was set to be outside the allowable range (0 to 9999). &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>300</panic_id>
+      <panic_description>&lt;p&gt; An invalid document position was specified (e.g. negative or greater than the document length). &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>400</panic_id>
+      <panic_description>&lt;p&gt; Drawing error: attempting to draw a line cursor without a line cursor bitmap having been set. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>500</panic_id>
+      <panic_description>&lt;p&gt;Pagination error: attempting to paginate without a document having been set. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>501</panic_id>
+      <panic_description>&lt;p&gt; Pagination error: appending zero or negative characters per page to the page list (array of characters per page). Debug builds only. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>502</panic_id>
+      <panic_description>&lt;p&gt; Pagination error: page list is empty. Debug builds only. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>600</panic_id>
+      <panic_description>&lt;p&gt; Printing error: the page list has not been set or is defective. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>601</panic_id>
+      <panic_description>&lt;p&gt; Printing error: an invalid page number was specified. Debug builds only. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>702</panic_id>
+      <panic_description>&lt;p&gt; Document formatting error: the selected range flag is on but the selection has zero length. Debug builds only. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>704</panic_id>
+      <panic_description>&lt;p&gt; Document formatting error: the pixel position of the cursor is inconsistent with the position of its bounding line rectangle. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>705</panic_id>
+      <panic_description>&lt;p&gt; Document formatting error: the scroll caused by a single character edit was incomplete. Debug builds only. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>800</panic_id>
+      <panic_description>&lt;p&gt; CTextView::HandleCharEditL()&lt;/code&gt; was called while there is a text selection. Debug builds only. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>801</panic_id>
+      <panic_description>&lt;p&gt; An attempt was made to update the view when the document formatting is out of date. Debug builds only. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>802</panic_id>
+      <panic_description>&lt;p&gt; An attempt was made to handle a text edit while background formatting is taking place. Debug builds only. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>901</panic_id>
+      <panic_description>&lt;p&gt;A scroll was requested, but the specified amount to scroll by is zero. Debug builds only. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>902</panic_id>
+      <panic_description>&lt;p&gt; An algorithmic error occurred while scrolling. Debug builds only. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>903</panic_id>
+      <panic_description>&lt;p&gt; An error occured when scrolling down. Debug builds only. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>904</panic_id>
+      <panic_description>&lt;p&gt; An error occured when scrolling up. Debug builds only. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>905</panic_id>
+      <panic_description>&lt;p&gt; Invalid horizontal scroll value specified &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>1000</panic_id>
+      <panic_description>&lt;p&gt; Out of memory. Debug builds only. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>1001</panic_id>
+      <panic_description>&lt;p&gt; An attempt was made to recover from an out of memory condition when no out of memory condition has occured. Debug builds only. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>1100</panic_id>
+      <panic_description>&lt;p&gt;The cursor is not fully on the screen following a scroll. Debug builds only. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>1104</panic_id>
+      <panic_description>&lt;p&gt; The document position was out of range for the current source document. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>1200</panic_id>
+      <panic_description>&lt;p&gt; An attempt was made to turn highlighting on or off when the view is in the no visible highlighting state. Debug builds only. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>1202</panic_id>
+      <panic_description>&lt;p&gt;An attempt was made to create a graphics context for the view when one already exists. Debug builds only. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>1301</panic_id>
+      <panic_description>&lt;p&gt; A leave occurred when scrolling to change the cursor position. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>1302</panic_id>
+      <panic_description>&lt;p&gt; The cursor movement specified is inconsistent with the function call. Debug builds only. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>1303</panic_id>
+      <panic_description>&lt;p&gt; There is a picture frame at the cursor position, but no picture frame is in memory. Debug builds only. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>1304</panic_id>
+      <panic_description>&lt;p&gt; The value of a system constant has been changed. Debug builds only. &lt;/p&gt; 	   </panic_description>
+    </panic>
+  </panics>
+</panic_category>

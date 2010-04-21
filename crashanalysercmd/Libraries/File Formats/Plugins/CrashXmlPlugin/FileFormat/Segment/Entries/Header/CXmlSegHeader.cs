@@ -64,6 +64,17 @@ namespace CrashXmlPlugin.FileFormat.Segment.Entries.Header
                     CXmlVersionText version = new CXmlVersionText( header.FileFormatVersion );
                     version.XmlSerialize( aParameters );
                 }
+
+                // Crash source
+                if (header.CrashSource == 1)
+                {
+                    aParameters.Writer.WriteElementString(SegConstants.Header_Crash_Source, SegConstants.Header_Crash_Source_User);
+                }
+                else if(header.CrashSource == 0)
+                {
+                    aParameters.Writer.WriteElementString(SegConstants.Header_Crash_Source, SegConstants.Header_Crash_Source_Kernel);
+                }
+
             }
         }
         #endregion

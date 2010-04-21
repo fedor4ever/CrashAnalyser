@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panic_category>
+  <category_name>E32USER-CBase</category_name>
+  <category_description>Panics with this category are raised in user side code by member functions of CBase derived classes that reside in euser.dll. Typically, they are caused by passing bad or contradictory values to class constructors or member functions.&lt;br&gt;&lt;br&gt;The thread causing the panic is terminated.</category_description>
+  <panics>
+	<panic>
+    	<panic_id>1</panic_id>
+    	<panic_description>This panic is raised by the Set() member function of CAsyncCallBack, if this active object is already active when the function is called.</panic_description>
+  	</panic>
+	<panic>
+		<panic_id>2</panic_id>
+	    <panic_description>&lt;i&gt;This panic is raised in debug builds only.&lt;/i&gt;&lt;br&gt;&lt;br&gt;This panic is raised by the Call() member function of CAsyncOneShot if the active object has not already been added to the active scheduler.</panic_description>
+	</panic>
+	<panic>
+    	<panic_id>3</panic_id>
+    	<panic_description>This panic is raised during construction of a dynamic buffer (a CBufFlat or a CBufSeg) when the value of the granularity passed to the constructors is negative.</panic_description>
+  	</panic>
+	<panic>
+		<panic_id>4</panic_id>
+		<panic_description>This panic is raised when reading from a dynamic buffer (a CBufFlat or a CBufSeg) using the Read() member function. It is caused by attempting to read beyond the end of the buffer.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>5</panic_id>
+		<panic_description>This panic is raised when writing to a dynamic buffer (a CBufFlat or a CBufSeg) using the Write() member function. It is caused by attempting to write beyond the end of the buffer.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>6</panic_id>
+		<panic_description>This panic is raised when reading from a dynamic buffer (a CBufFlat or a CBufSeg) using the Read() member function. It is caused by specifying a negative length for the amount of data to be read.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>7</panic_id>
+		<panic_description>This panic is raised when writing to a dynamic buffer (a CBufFlat or a CBufSeg) using the Write() member function. It is caused by specifying a negative length for the amount of data to be written.</panic_description>
+	</panic>
+	<panic>
+    	<panic_id>8</panic_id>
+    	<panic_description>This panic is raised when inserting data into a dynamic buffer (a CBufFlat or a CBufSeg) using the InsertL() member function or when inserting an uninitialized region into the dynamic buffer using the ExpandL() member function. It is caused by passing a negative length value to these functions.</panic_description>
+	</panic>
+	<panic>
+    	<panic_id>9</panic_id>
+    	<panic_description>This panic is raised when inserting data into a dynamic buffer (a CBufFlat or a CBufSeg) using the InsertL() member function. It is caused when the variant of InsertL() which takes a pointer to TAny, is passed a NULL pointer value.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>10</panic_id>
+		<panic_description>This panic is raised when specifying the minimum amount of space which a flat dynamic buffer (a CBufFlat) should occupy using the SetReserveL() member function. It is caused when the size value passed to the function is negative.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>11</panic_id>
+		<panic_description>This panic is raised when specifying the minimum amount of space which a flat dynamic buffer (a CBufFlat) should occupy using the SetReserveL() member function. It is caused when the size value passed to the function is less than the current size of the buffer.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>12</panic_id>
+		<panic_description>This panic is raised by the Delete(), Ptr(), BackPtr() member functions of a flat dynamic buffer (a CBufFlat); the panic can also be raised by InsertL() and ExpandL(). It is caused when the position value passed to these functions is either negative or represents a position beyond the end of the current buffer.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>13</panic_id>
+		<panic_description>This panic is raised by the Delete() member function of a flat dynamic buffer (a CBufFlat). It is caused when the combination of position and length values passed to the function implies an attempt to delete data beyond the end of the flat buffer.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>14</panic_id>
+		<panic_description>This panic is raised by the Delete(), Ptr(), BackPtr() member functions of a segmented dynamic buffer (a CBufSeg); the panic can also be raised by InsertL() and ExpandL(). It is caused when the position value passed to these functions is either negative or represents a position beyond the end of the current buffer.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>15</panic_id>
+		<panic_description>This panic is raised by the Delete() member function of a segmented dynamic buffer (a CBufSeg). It is caused when the combination of position and length values passed to the function implies an attempt to delete data beyond the end of the segmented buffer.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>16</panic_id>
+		<panic_description>&lt;i&gt;This panic is raised in debug builds only.&lt;/i&gt;&lt;br&gt;&lt;br&gt;This panic is raised by the InsertL(), Delete(), Ptr() and BackPtr() member functions as implemented for segmented buffers (CBufSeg), when the offset within a segment, where data is to be inserted or removed, is greater than the buffer granularity.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>17</panic_id>
+		<panic_description>This panic is raised by the constructors of arrays of fixed length objects as represented, for example, by the classes CArrayFixFlat, CArrayFixSeg and CArrayFixFlat&lt;TAny&gt;. It is caused when the record length is either negative or zero.&lt;br&gt;&lt;br&gt;The record length is either explicitly specified as in the case of the CArrayFixFlat&lt;TAny&gt; class or is implied by the length of the template class as in the case of the CArrayFixFlat class.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>18</panic_id>
+		<panic_description>This panic is raised by the constructors of arrays of fixed length objects as represented, for example, by the classes: CArrayFixFlat and CArrayFixSeg. It is caused when the granularity passed to the constructors is either negative or zero.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>19</panic_id>
+		<panic_description>This panic is raised by the constructors of arrays of variable length objects as represented, for example, by the classes: CArrayVarFlat and CArrayVarSeg. It is caused when the granularity passed to the constructors is either negative or zero.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>20</panic_id>
+		<panic_description>This panic is raised by the constructors of packed arrays as represented, for example, by the class CArrayPakFlat. It is caused when the granularity passed to the constructors is either negative or zero.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>21</panic_id>
+		<panic_description>This panic is raised by any operation which accesses an element of an array by explicit reference to an index number, for example, the Delete(), InsertL() and At() member functions or the operator Operator[]. It is caused by specifying an index value which is either negative or is greater than or equal to the number of objects currently within the array.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>22</panic_id>
+		<panic_description>This panic is raised when deleting contiguous elements from an array of fixed length objects (derived from CArrayFixBase) using the Delete() member function. It is caused by specifying the number of contiguous elements as a zero or negative value.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>23</panic_id>
+		<panic_description>This panic is raised when inserting contiguous elements into an array of fixed length objects (derived from CArrayFixBase) using the InsertL() member function. It is caused by specifying the number of contiguous elements as a zero or negative value.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>24</panic_id>
+		<panic_description>This panic is raised when resizing an array of fixed length objects (derived from CArrayFixBase) using the ResizeL() member function. It is caused by specifying the number of contiguous elements as a zero or negative value.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>25</panic_id>
+		<panic_description>This panic is raised when deleting contiguous elements from an array of variable length objects (derived from CArrayVarBase) using the Delete() member function. It is caused by specifying the number of contiguous elements as a zero or negative value.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>26</panic_id>
+		<panic_description>This panic is raised when deleting contiguous elements from a packed array (derived from CArrayPakBase) using the Delete() member function. It is caused by specifying the number of contiguous elements as a zero or negative value.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>27</panic_id>
+		<panic_description>This panic is raised when reserving space in flat arrays of fixed length objects, (the CArrayFixFlat,CArrayFixFlat&lt;TAny&gt; and CArrayPtrFlat classes ) using the SetReserveL() member function. It is caused by specifying the number of elements, for which space is to be reserved, as less than the current number of elements in the array.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>28</panic_id>
+		<panic_description>This panic is raised when inserting or appending replicated elements to the arrays of fixed length objects CArrayFixFlat and CArrayFixSeg using the InsertL() or AppendL() functions. It is caused by specifying the number of replicas as negative or zero.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>29</panic_id>
+		<panic_description>This panic is raised when deleting elements from a fixed length, variable length or packed array (derived from CArrayFixBase, CArrayVarBase and CArrayPakBase) using the Delete() function. It is caused when the specification of the position of the first element to be deleted and the number of contiguous elements to be deleted refers to elements which are outside the bounds of the array.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>30</panic_id>
+		<panic_description>This panic is raised when inserting into, appending onto, expanding or extending a variable length array or a packed array (i.e. arrays derived from CArrayVar or CArrayPak) using the InsertL(), AppendL(), ExpandL() or ExtendL() functions respectively. It is caused by specifying the length of the element as a negative value.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>33</panic_id>
+		<panic_description>This panic is raised by the destructor of a CObject. It is caused, if an attempt is made to delete the CObject when the reference count is not zero.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>34</panic_id>
+		<panic_description>This panic is raised by the Close() member function of a CObject. It is caused, if the reference count is negative.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>35</panic_id>
+		<panic_description>This panic is raised by the Remove() member function of an object container, a CObjectCon. It is caused when the CObject to be removed from the container is not contained by the container.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>36</panic_id>
+		<panic_description>This panic is raised by the Remove() member function of a container index, a CObjectConIx. It is caused when the object container, a CObjectCon, to be removed from the index is not contained by the index.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>37</panic_id>
+		<panic_description>This panic is raised by the Remove() member function of an object index, a CObjectIx. It is caused when the handle passed to the Remove() function does not represent a CObject known to the object index.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>38</panic_id>
+		<panic_description>This panic is raised by the At(), FindByName() and FindByFullName() member functions of an object container, a CObjectCon. It is caused when the unique ID as derived from the handle is not the same as the unique ID held by the object container.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>39</panic_id>
+		<panic_description>This panic is raised by the At() member function of an object container, a CObjectCon. It is caused when the index represented by the handle is outside the permitted range. In effect, the handle is bad.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>40</panic_id>
+		<panic_description>This panic is raised by the destructor of an active object, a CActive. It is caused by an attempt to delete the active object while it still has a request outstanding.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>41</panic_id>
+		<panic_description>This panic is raised by the Add() member function of an active scheduler, a CActiveScheduler. It is caused by an attempt to add an active object to the active scheduler when it has already been added to the active scheduler.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>42</panic_id>
+		<panic_description>This panic is raised by the SetActive() member function of an active object, a CActive. It is caused by an attempt to flag the active object as active when it is already active, i.e. a request is still outstanding.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>43</panic_id>
+		<panic_description>This panic is raised by the Install() member function of an active scheduler, a CActiveScheduler. It is caused by attempting to install this active scheduler as the current active scheduler when there is already a current active scheduler; i.e. an active scheduler has already been installed.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>44</panic_id>
+		<panic_description>This panic is raised by calls to the Start(), Stop() and Add() member functions of an active scheduler, a CActiveScheduler when the thread does not have an installed active scheduler.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>45</panic_id>
+		<panic_description>This panic is raised by the Stop() member function of an active scheduler, a CActiveScheduler. Calling Stop() terminates the wait loop started by the most recent call to Start(). The panic is caused by a call to Stop() which is not matched by a corresponding call to Start().</panic_description>
+	</panic>
+	<panic>
+		<panic_id>46</panic_id>
+		<panic_description>This panic is raised by an active scheduler, a CActiveScheduler. It is caused by a stray signal.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>47</panic_id>
+		<panic_description>This panic is raised by the Error() virtual member function of an active scheduler, a CActiveScheduler. This function is called when an active object’s RunL() function leaves. Applications always replace the Error() function in a class derived from CActiveScheduler; the default behaviour provided by CActiveScheduler raises this panic.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>48</panic_id>
+		<panic_description>This panic is raised by the Add() member function of an active scheduler, a CActiveScheduler, when a NULL pointer is passed to the function.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>49</panic_id>
+		<panic_description>This panic is raised by the SetActive() and Deque() member functions of an active object, a CActive. It is raised if the active object has not been added to the active scheduler.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>50</panic_id>
+		<panic_description>This panic is raised by the SetPriority() member function of an active object, a CActive. It is caused by an attempt to change the priority of the active object while it is active, i.e. while a request is outstanding).</panic_description>
+	</panic>
+	<panic>
+		<panic_id>51</panic_id>
+		<panic_description>This panic is raised by the At(), After() and Lock() member functions of the CTimer active object. It is caused by an attempt to request a timer event when the CTimer active object has not been added to the active scheduler.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>52</panic_id>
+		<panic_description>This panic is raised by the Start() member function of the periodic timer active object, a CPeriodic, when a negative time interval is passed to the function.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>53</panic_id>
+		<panic_description>This panic is raised by the Start() member function of the periodic timer active object, a CPeriodic, when a negative delay time interval is passed to the function.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>54</panic_id>
+		<panic_description>This panic is raised by the RunL() member function of the CServer active object base class responsible for handling asynchronous requests from a client thread when the client passes a negative function code in RMessage. The only negative values permitted are RMessage::EConnect and RMessage::EDisConnect.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>55</panic_id>
+		<panic_description>This panic is raised by the Start() member function of the CServer active object base class responsible for handling asynchronous requests from a client thread. It is caused by the server having no name.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>56</panic_id>
+		<panic_description>This panic is raised by the New() and NewL() member functions of CBitMapAllocator when a negative or zero size is passed to them.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>57</panic_id>
+		<panic_description>This panic is raised by the Free(TInt aPos) member function of CBitMapAllocator when a position value is passed which is out of bounds.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>58</panic_id>
+		<panic_description>This panic is raised by the IsFree(TInt aPos) member function of CBitMapAllocator when a position value is passed which is out of bounds.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>59</panic_id>
+		<panic_description>This panic is raised by the AllocFromTopFrom(TInt aPos) member function of CBitMapAllocator when a position value is passed which is out of bounds.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>62</panic_id>
+		<panic_description>This panic is raised by the AllocAt() member function of CBitMapAllocator when the implied position has already been allocated.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>63</panic_id>
+		<panic_description>This panic is raised as a result of a call to the Pop() and PopAndDestroy() static member functions of the CleanupStack class. The panic occurs when TRAPs have been nested and an attempt is made to pop too many items from the cleanup stack for the current nest level.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>64</panic_id>
+		<panic_description>This panic is raised as a result of a call to the Pop() and PopAndDestroy() static member functions of the CleanupStack class. The panic occurs when attempt is made to pop more items from the cleanup stack than are on the cleanup stack.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>65</panic_id>
+		<panic_description>The panic is raised as a result of a call to the Pop() and PopAndDestroy() static member functions of the CleanupStack class. The panic occurs when an attempt is made to pop more items from the cleanup stack than are on the cleanup stack.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>66</panic_id>
+		<panic_description>This panic is raised if an attempt is being made to insert a cleanup item into a position on the cleanup stack reserved for marking the current TRAP nest level. In practice this error occurs if the call to CleanupStack::PushL() happens when there has been no call to TRAP().</panic_description>
+	</panic>
+	<panic>
+		<panic_id>67</panic_id>
+		<panic_description>This panic is raised when building a TCleanupStackItem which is to be added to the cleanup stack. The building of the TCleanupStackItem needs a TCleanupItem and this has been constructed with a NULL cleanup operation (a TCleanupOperation).</panic_description>
+	</panic>
+	<panic>
+		<panic_id>68</panic_id>
+		<panic_description>This panic is raised if there are no free slots available on the cleanup stack to insert a cleanup item.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>69</panic_id>
+		<panic_description>This panic is raised if no trap handler has been installed. In practice, this occurs if CTrapCleanup::New() has not been called before using the cleanup stack.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>70</panic_id>
+		<panic_description>This panic is raised as a result of a call to the versions of the Pop() and PopAndDestroy() static member functions of the CleanupStack class which take an explicit count of the items to be popped. The panic is caused by passing a negative value for the number of items to be popped.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>71</panic_id>
+		<panic_description>This panic is raised when TRAPs have been nested and an attempt is made to exit from a TRAP nest level before all the cleanup items belonging to that level have been popped off the cleanup stack.&lt;br&gt;&lt;br&gt;There must be the same number of items on the cleanup stack on entering a TRAP harness as there is on exiting. In other words, anything that is pushed onto the cleanup stack inside a TRAP harness must be popped off before leaving the harness.&lt;br&gt;&lt;br&gt;For example, the following code avoids this panic when FooLC() does not leave, by explicitly popping pointer before the end of the harness:&lt;br&gt;&lt;br&gt;TRAPD(error, pointer = FooLC(); CleanupStack::Pop(pointer));&lt;br&gt;&lt;br&gt;See also How to use TRAP.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>72</panic_id>
+		<panic_description>This panic is raised by the constructor of the circular buffer base class, a CCirBufBase, when the size value passed is zero or negative.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>73</panic_id>
+		<panic_description>This panic is raised by a call to the SetLengthL() member function of of the circular buffer base class, a CCirBufBase, by passing a length value which is zero or negative.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>74</panic_id>
+		<panic_description>This panic is raised by a call to the Add() member function of a circular buffer, a CCirBuf when the pointer to the item to be added is NULL.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>75</panic_id>
+		<panic_description>This panic is raised by a call to the Add() member function of a circular buffer, a CCirBuf when the number of items to be added is zero or negative.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>76</panic_id>
+		<panic_description>This panic is raised by a call to the Remove() member function of a circular buffer, a CCirBuf when the number of items to be removed is zero or negative.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>89</panic_id>
+		<panic_description>Introduced in 6.0: This panic is raised by call to the Replace() member function of CActiveScheduler when the replacement active scheduler is the same as the existing active scheduler.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>90</panic_id>
+		<panic_description>Introduced in 6.0: The panic is raised as a result of a call to the Pop() and PopAndDestroy() static member functions of the CleanupStack class. The panic occurs when an the item to be popped is not the expected item.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>91</panic_id>
+		<panic_description>This panic is raised by CActiveSchedulerWait::Start() when the CActiveSchedulerWait object has already been started.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>92</panic_id>
+		<panic_description>This panic is raised by CActiveSchedulerWait::AsyncStop() and CActiveSchedulerWait::CanStopNow() when the CActiveSchedulerWait object has not been started.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>93</panic_id>
+		<panic_description>This panic is raised during construction of a CAsyncOneShot if the attempt to open a handle to the current thread fails.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>94</panic_id>
+		<panic_description>Not used.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>95</panic_id>
+		<panic_description>This panic is raised on calls to the default implementations of functions: CPolicyServer::CustomSecurityCheckL() and CPolicyServer::CustomFailureActionL().&lt;br&gt;&lt;br&gt;The class CPolicyServer is intended to be derived from, and these functions in particular need to be re-implemented in a derived class. This panic is a symptom of a failure to provide a derived class.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>96</panic_id>
+		<panic_description>&lt;i&gt;This panic is raised in debug builds only.&lt;/i&gt;&lt;br&gt;&lt;br&gt;It is raised by the protected CPolicyServer constructor, if the first element pointed to by the iRanges member of the TPolicy aPolicy parameter does not have a value of 0; i.e. if aPolicy's TPolicy::iRanges[0] is not 0.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>97</panic_id>
+		<panic_description>&lt;i&gt;This panic is raised in debug builds only.&lt;/i&gt;&lt;br&gt;&lt;br&gt;It is raised by the protected CPolicyServer constructor, if the value of each element of the iRanges member of the TPolicy aPolicy parameter is not greater than the value of the previous element.&lt;br&gt;&lt;br&gt;See also TPolicy::iRanges.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>98</panic_id>
+		<panic_description>&lt;i&gt;This panic is raised in debug builds only.&lt;/i&gt;&lt;br&gt;&lt;br&gt;It is raised by the protected CPolicyServer constructor, if the value of every element in the iElementsIndex member of the TPolicy aPolicy parameter is not valid.&lt;br&gt;&lt;br&gt;Elements of iElementsIndex are invalid if their values are either:&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;li&gt;less than ESpecialCaseHardLimit&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;or&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;li&gt;greater than ESpecialCaseLimit&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;See also TPolicy::iElementsIndex and CPolicyServer::TSpecialCase.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>99</panic_id>
+		<panic_description>&lt;i&gt;This panic is raised in debug builds only.&lt;/i&gt;&lt;br&gt;&lt;br&gt;It is raised by the protected CPolicyServer constructor, if the value of the iOnConnect member of the TPolicy aPolicy parameter is not valid.&lt;br&gt;&lt;br&gt;The iOnConnect member is invalid if its value is either:&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;li&gt;less than ESpecialCaseHardLimit&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;or&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;li&gt;greater than ESpecialCaseLimit&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;See also TPolicy::iOnConnect and CPolicyServer::TSpecialCase.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>100</panic_id>
+		<panic_description>This panic is raised if CPolicyServer::iPolicy is found to be invalid for some unknown reason.&lt;br&gt;&lt;br&gt;If you run the server in debug mode, it is likely that the server will panic with one of the panic codes in the range 96 to 99 inclusive. These are described above.&lt;br&gt;&lt;br&gt;See CPolicyServer for information about what constitutes a valid policy.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>101</panic_id>
+		<panic_description>This panic is raised when the value returned by the CPolicyServer::CustomSecurityCheckL() and CPolicyServer::CustomFailureActionL() functions is invalid.&lt;br&gt;&lt;br&gt;The CPolicyServer::TCustomResult enum defines the valid set of return values.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>102</panic_id>
+		<panic_description>&lt;i&gt;This panic is raised in debug builds only.&lt;/i&gt;&lt;br&gt;&lt;br&gt;It is raised by the protected CPolicyServer constructor, if the value of the iRangeCount member of the TPolicy aPolicy parameter is not greater than 0. A value of 0 implies that no policies have been passed to the policy server. It is a requirement that at least one policy be passed to the policy server.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>103</panic_id>
+		<panic_description>This panic is raised by the policy server framework if a message fails a policy check, whether custom or not.</panic_description>
+	</panic>
+	<panic>
+		<panic_id>104</panic_id>
+		<panic_description>&lt;i&gt;This panic is raised in debug builds only.&lt;/i&gt;&lt;br&gt;&lt;br&gt;It is raised by a number of CObjectIx member functions if the object's data becomes inconsistent.</panic_description>
+	</panic>
+  </panics>
+</panic_category>

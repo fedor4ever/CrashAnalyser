@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<panic_category>
+  <category_name>MSGS Client</category_name>
+  <category_description> &lt;p&gt;Client messaging panics from the &lt;code&gt;msgs&lt;/code&gt; library&lt;/p&gt;</category_description>
+  <panics>
+    <panic>
+      <panic_id>1</panic_id>
+      <panic_description>&lt;p&gt;Unsupported asynchronous request made to Message Server&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>2</panic_id>
+      <panic_description>&lt;p&gt;Session event notification request repeated by client&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>3</panic_id>
+      <panic_description>&lt;p&gt;Failed to write data into asynchronous call descriptor to be passed back to client&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>4</panic_id>
+      <panic_description>&lt;p&gt;Failed to read data from asynchronous call descriptor passed from client&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>5</panic_id>
+      <panic_description>&lt;p&gt;Client requested Message Server to create or modify an entry with invalid data&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>7</panic_id>
+      <panic_description>&lt;p&gt;Message Server session ended while a message store is still locked&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>8</panic_id>
+      <panic_description>&lt;p&gt;Message Server session ended with outstanding requests&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>9</panic_id>
+      <panic_description>&lt;p&gt;Client requested Message Server to release message store that was not locked&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>10</panic_id>
+      <panic_description>&lt;p&gt;Client requested Message Server to delete empty entry selection&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>11</panic_id>
+      <panic_description>&lt;p&gt;Client requested Message Server to pop remote entry from session cleanup stack&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>12</panic_id>
+      <panic_description>&lt;p&gt;Progress information exceeded maximum 256-character length&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>13</panic_id>
+      <panic_description>&lt;p&gt;Client requested Message Server to move an empty selection of entries&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>14</panic_id>
+      <panic_description>&lt;p&gt;Client requested Message Server to copy an empty selection of entries&lt;/p&gt;	   </panic_description>
+    </panic>
+  </panics>
+</panic_category>

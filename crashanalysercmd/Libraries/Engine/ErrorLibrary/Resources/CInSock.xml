@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<panic_category>
+  <category_name>CInSock</category_name>
+  <category_description> &lt;p&gt;Panic of TCP/IP relating to socket implementation&lt;/p&gt;</category_description>
+  <panics>
+    <panic>
+      <panic_id>0</panic_id>
+      <panic_description>&lt;p&gt;Connectionless socket used when connected type required&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>1</panic_id>
+      <panic_description>&lt;p&gt;Attempt to send or receive on socket already in use&lt;/p&gt;</panic_description>
+    </panic>
+  </panics>
+</panic_category>

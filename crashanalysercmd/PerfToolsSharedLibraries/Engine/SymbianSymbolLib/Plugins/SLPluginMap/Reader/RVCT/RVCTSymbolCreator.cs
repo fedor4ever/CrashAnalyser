@@ -70,6 +70,10 @@ namespace SLPluginMap.Reader.RVCT
                 string objectName = groups[ "Binary" ].Value;
                 uint size = uint.Parse( groups[ "Size" ].Value );
                 string symbol = groups[ "Function" ].Value;
+                if (symbol.Contains(KExported))
+                {
+                    symbol = symbol.Substring(0, symbol.LastIndexOf(KExported));
+                }
                 uint offsetAddress = uint.Parse( groups[ "Address" ].Value, System.Globalization.NumberStyles.HexNumber ) - globalBaseAddress;
                 TSymbolType type = TypeByString( typeString );
                 //
@@ -148,6 +152,9 @@ namespace SLPluginMap.Reader.RVCT
             | RegexOptions.Singleline
             | RegexOptions.Compiled
             );
+
+        private static readonly string KExported = " (EXPORTED)";
+
         #endregion
 
 		#region Internal methods

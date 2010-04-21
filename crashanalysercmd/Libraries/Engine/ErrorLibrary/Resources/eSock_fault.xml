@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<panic_category>
+  <category_name>eSock fault</category_name>
+  <category_description> &lt;p&gt;Panic of Sockets Server due to internal Sockets Server error&lt;/p&gt;</category_description>
+  <panics>
+    <panic>
+      <panic_id>0</panic_id>
+      <panic_description>&lt;p&gt;Socket server initiation error&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>1</panic_id>
+      <panic_description>&lt;p&gt;No comms server available&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>2</panic_id>
+      <panic_description>&lt;p&gt;Unused&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>3</panic_id>
+      <panic_description>&lt;p&gt;Failed to install active scheduler&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>4</panic_id>
+      <panic_description>&lt;p&gt;Failed to create Sockets Server&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>5</panic_id>
+      <panic_description>&lt;p&gt;Failed to start Sockets Server&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>6</panic_id>
+      <panic_description>&lt;p&gt;Unused&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>7</panic_id>
+      <panic_description>&lt;p&gt;Unused&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>8</panic_id>
+      <panic_description>&lt;p&gt;Call made to unimplemented &lt;code&gt;CProtocolBase::NewSAPL()&lt;/code&gt;&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>9</panic_id>
+      <panic_description>&lt;p&gt;Call made to unimplemented &lt;code&gt;CProtocolBase::NewHostResolverL()&lt;/code&gt;&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>10</panic_id>
+      <panic_description>&lt;p&gt;Call made to unimplemented &lt;code&gt;CProtocolBase::NewServiceResolverL()&lt;/code&gt;&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>11</panic_id>
+      <panic_description>&lt;p&gt;Call made to unimplemented &lt;code&gt;CProtocolBase::NewNetDatabaseL()&lt;/code&gt;&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>12</panic_id>
+      <panic_description>&lt;p&gt;Unused&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>13</panic_id>
+      <panic_description>&lt;p&gt;Unused&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>14</panic_id>
+      <panic_description>&lt;p&gt;Unused&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>15</panic_id>
+      <panic_description>&lt;p&gt;Error in internal state&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>16</panic_id>
+      <panic_description>&lt;p&gt;Read attempted when already attempting&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>17</panic_id>
+      <panic_description>&lt;p&gt;Write attempted when already attempting&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>18</panic_id>
+      <panic_description>&lt;p&gt;Connect attempted when already attempting&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>19</panic_id>
+      <panic_description>&lt;p&gt;Close attempted when already attempting&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>20</panic_id>
+      <panic_description>&lt;p&gt;Ioctl attempted when already attempting&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>21</panic_id>
+      <panic_description>&lt;p&gt;Unused&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>22</panic_id>
+      <panic_description>&lt;p&gt;Error in accepted connection queuing&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>23</panic_id>
+      <panic_description>&lt;p&gt;Unused&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>24</panic_id>
+      <panic_description>&lt;p&gt;Failed to delete socket&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>25</panic_id>
+      <panic_description>&lt;p&gt;Unused&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>26</panic_id>
+      <panic_description>&lt;p&gt;Internal session maintenance error&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>27</panic_id>
+      <panic_description>&lt;p&gt;Unused&lt;/p&gt;	   </panic_description>
+    </panic>
+  </panics>
+</panic_category>

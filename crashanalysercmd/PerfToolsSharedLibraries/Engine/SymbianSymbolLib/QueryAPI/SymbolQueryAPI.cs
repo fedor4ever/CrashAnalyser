@@ -65,6 +65,10 @@ namespace SymbianSymbolLib.QueryAPI
         public Symbol Lookup( uint aAddress, out SymbolCollection aCollection )
         {
             aCollection = null;
+            if (aAddress < 0x400000) // Process run area is above this address
+            {
+                return null;
+            }
 
             // First check with the relocated/activated symbol collections,
             // i.e. RAM-loaded code that has been fixed up.

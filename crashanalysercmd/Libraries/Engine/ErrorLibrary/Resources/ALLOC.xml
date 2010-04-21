@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<panic_category>
+  <category_name>ALLOC</category_name>
+  <category_description> &lt;p&gt;These panics are raised in debug builds only and are caused when the heap debugging functions detect a memory leak.&lt;/p&gt;</category_description>
+  <panics>
+    <panic>
+      <panic_id> nnnnnnnn</panic_id>
+      <panic_description>&lt;p&gt;This panic is raised by the &lt;code class="ApiItem"&gt;RHeap::__DbgMarkEnd()&lt;/code&gt;  and &lt;code class="ApiItem"&gt;User::__DbgMarkEnd()&lt;/code&gt; when the number of heap cells at the current nested level is not as expected. &lt;/p&gt;&lt;p&gt;nnnnnnnn is the hexadecimal pointer to the first orphaned heap cell.&lt;/p&gt;	   </panic_description>
+    </panic>
+  </panics>
+</panic_category>

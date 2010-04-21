@@ -38,7 +38,7 @@ namespace CrashXmlPlugin.FileFormat.Segment.Entries.Memory
         protected override void XmlSerializeContent( CrashXmlPlugin.FileFormat.Document.CXmlDocumentSerializationParameters aParameters )
         {
             CXmlNode.WriteId( iInfo, aParameters.Writer );
-            WriteIfNotZero( aParameters.Writer, SegConstants.CmnName, iInfo.Free );
+            WriteIfNotZero( aParameters.Writer, SegConstants.MemoryInfo_Free, iInfo.Free );
             WriteIfNotZero( aParameters.Writer, SegConstants.MemoryInfo_Capacity, iInfo.Capacity );
 
             if ( iInfo.Type == CIMemoryInfo.TType.ETypeDrive )

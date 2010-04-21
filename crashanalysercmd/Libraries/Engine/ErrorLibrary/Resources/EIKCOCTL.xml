@@ -1,0 +1,351 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<panic_category>
+  <category_name>EIKCOCTL</category_name>
+  <category_description> &lt;p&gt;TechView Core Controls panics:&lt;/p&gt;</category_description>
+  <panics>
+    <panic>
+      <panic_id>0</panic_id>
+      <panic_description>&lt;p&gt;Unused&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>1</panic_id>
+      <panic_description>&lt;p&gt;Environment could not be created&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>2</panic_id>
+      <panic_description>&lt;p&gt;Invalid command line&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>3</panic_id>
+      <panic_description>&lt;p&gt;Unused&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>4</panic_id>
+      <panic_description>&lt;p&gt;Unused&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>5</panic_id>
+      <panic_description>&lt;p&gt;Environment attempted to draw cursor in an unfocussed control&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>6</panic_id>
+      <panic_description>&lt;p&gt;Control does not own the cursor&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>7</panic_id>
+      <panic_description>&lt;p&gt;No such hotkey in call to &lt;code&gt;CEikHotKeyTable::RemoveItem()&lt;/code&gt;&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>8</panic_id>
+      <panic_description>&lt;p&gt;No such menu item&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>9</panic_id>
+      <panic_description>&lt;p&gt;Hotkey and extra text set have been set on the same &lt;code&gt;CEikMenuPane&lt;/code&gt;&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>10</panic_id>
+      <panic_description>&lt;p&gt;Changing the title text of this menu bar is not permitted&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>11</panic_id>
+      <panic_description>&lt;p&gt;Unused&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>12</panic_id>
+      <panic_description>&lt;p&gt;Unused&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>13</panic_id>
+      <panic_description>&lt;p&gt;Text length exceeds the maximum in a &lt;code&gt;CEikSecretEditor&lt;/code&gt;&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>14</panic_id>
+      <panic_description>&lt;p&gt;Unused&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>15</panic_id>
+      <panic_description>&lt;p&gt;Unused&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>16</panic_id>
+      <panic_description>&lt;p&gt;Unused&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>17</panic_id>
+      <panic_description>&lt;p&gt;Unused&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>18</panic_id>
+      <panic_description>&lt;p&gt;Unused&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>19</panic_id>
+      <panic_description>&lt;p&gt;Unused&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>20</panic_id>
+      <panic_description>&lt;p&gt;Unused&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>21</panic_id>
+      <panic_description>&lt;p&gt;Unused&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>22</panic_id>
+      <panic_description>&lt;p&gt;Unused&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>23</panic_id>
+      <panic_description>&lt;p&gt;Unused&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>24</panic_id>
+      <panic_description>&lt;p&gt;Country or city selector already exists&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>25</panic_id>
+      <panic_description>&lt;p&gt;Index out of range in &lt;code&gt;CColumnListBoxData&lt;/code&gt;&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>26</panic_id>
+      <panic_description>&lt;p&gt;Illegal NULL pointer&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>27</panic_id>
+      <panic_description>&lt;p&gt;Unused&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>28</panic_id>
+      <panic_description>&lt;p&gt;Unused&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>29</panic_id>
+      <panic_description>&lt;p&gt;Unused&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>30</panic_id>
+      <panic_description>&lt;p&gt;NULL field passed to &lt;code&gt;CEikEdwin::InsertFieldL()&lt;/code&gt;&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>31</panic_id>
+      <panic_description>&lt;p&gt;Combo box is too small&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>32</panic_id>
+      <panic_description>&lt;p&gt;Unused&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>33</panic_id>
+      <panic_description>&lt;p&gt;Command button has no components (label or picture not set)&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>34</panic_id>
+      <panic_description>&lt;p&gt;Unknown folder selected through a &lt;code&gt;CEikFolderNameSelector&lt;/code&gt;&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>35</panic_id>
+      <panic_description>&lt;p&gt;Toolbar has no observer&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>36</panic_id>
+      <panic_description>&lt;p&gt;Toolbar could not be created&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>37</panic_id>
+      <panic_description>&lt;p&gt;Unused&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>38</panic_id>
+      <panic_description>&lt;p&gt;Internal event error&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>39</panic_id>
+      <panic_description>&lt;p&gt;Invalid dimensions for a &lt;code&gt;CEikControlGroup&lt;/code&gt;&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>40</panic_id>
+      <panic_description>&lt;p&gt;Invalid number of lines for a &lt;code&gt;CEikControlGroup&lt;/code&gt;&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>41</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CEikControlGroup&lt;/code&gt; not fully initialised&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>42</panic_id>
+      <panic_description>&lt;p&gt;Invalid bitmap index in &lt;code&gt;CColumnListBoxData::Draw()&lt;/code&gt;&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>43</panic_id>
+      <panic_description>&lt;p&gt;Unused&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>44</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CEikProcess::SaveToDirectFileStoreL()&lt;/code&gt; cannot be used as there is no store for the process&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>45</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CEikProcess::SaveToDirectFileStoreL()&lt;/code&gt; cannot be used as the store is the wrong type&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>46</panic_id>
+      <panic_description>&lt;p&gt;No observer set for a &lt;code&gt;CEikDialogToolBar&lt;/code&gt;&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>47</panic_id>
+      <panic_description>&lt;p&gt;Unused&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>48</panic_id>
+      <panic_description>&lt;p&gt;Invalid resource for creating a &lt;code&gt;CEikLabeledButton&lt;/code&gt;&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>49</panic_id>
+      <panic_description>&lt;p&gt;Unused&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>50</panic_id>
+      <panic_description>&lt;p&gt;Options or data have not been set for a time dialog&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>51</panic_id>
+      <panic_description>&lt;p&gt;Unused&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>52</panic_id>
+      <panic_description>&lt;p&gt;Unused&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>53</panic_id>
+      <panic_description>&lt;p&gt;Environment set up error: logical color not found&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>54</panic_id>
+      <panic_description>&lt;p&gt;Unused&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>55</panic_id>
+      <panic_description>&lt;p&gt;Environment set up error: invalid logical color&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>56</panic_id>
+      <panic_description>&lt;p&gt;Unused&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>57</panic_id>
+      <panic_description>&lt;p&gt;NULL text set for a &lt;code&gt;CEikLabel&lt;/code&gt;&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>58</panic_id>
+      <panic_description>&lt;p&gt;Environment set up error: invalid library&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>59</panic_id>
+      <panic_description>&lt;p&gt;Resource files are still open on environment closedown&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>60</panic_id>
+      <panic_description>&lt;p&gt;Control factory not removed on environment closedown&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>61</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CEikButtonGroupContainer::CleanupCommandPushL()&lt;/code&gt; called with &lt;code&gt;aPosition&lt;/code&gt; already allocated on the cleanup stack&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>62</panic_id>
+      <panic_description>&lt;p&gt;Corrupt &lt;code&gt;CEikButtonGroupContainer&lt;/code&gt; cleanup stack &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>63</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CEikButtonGroupContainer::UpdateCommandObserverL()&lt;/code&gt; called with an updated observer already present&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>64</panic_id>
+      <panic_description>&lt;p&gt;Corrupt edwin state for inlining editing&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>65</panic_id>
+      <panic_description>&lt;p&gt;Corrupt edwin state for inlining editing&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>66</panic_id>
+      <panic_description>&lt;p&gt;Corrupt edwin state for inlining editing&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>67</panic_id>
+      <panic_description>&lt;p&gt;Corrupt edwin state for inlining editing&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>68</panic_id>
+      <panic_description>&lt;p&gt;Corrupt edwin state for inlining editing&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>69</panic_id>
+      <panic_description>&lt;p&gt;Corrupt edwin state for inlining editing&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>70</panic_id>
+      <panic_description>&lt;p&gt;Corrupt edwin state for inlining editing&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>71</panic_id>
+      <panic_description>&lt;p&gt;Corrupt edwin state for inlining editing&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>72</panic_id>
+      <panic_description>&lt;p&gt;Corrupt edwin state for inlining editing&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>73</panic_id>
+      <panic_description>&lt;p&gt;Corrupt edwin state for inlining editing&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>74</panic_id>
+      <panic_description>&lt;p&gt;Corrupt edwin state for inlining editing&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>75</panic_id>
+      <panic_description>&lt;p&gt;Corrupt edwin state for inlining editing&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>76</panic_id>
+      <panic_description>&lt;p&gt;Invalid menu title identifier&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>77</panic_id>
+      <panic_description>&lt;p&gt;Environment set up error: library could not be loaded&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>78</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CEikScrollBarFrame&lt;/code&gt; could not create scroll bar&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>79</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CEikMsgWin&lt;/code&gt; used without vaild app UI&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>80</panic_id>
+      <panic_description>&lt;p&gt;Unexpected leave while setting the virtual cursor state&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>81</panic_id>
+      <panic_description>&lt;p&gt;Attempt to pop &lt;code&gt;CEikCommandButton&lt;/code&gt; from a NULL stack&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>82</panic_id>
+      <panic_description>&lt;p&gt;Unknown virtual cursor error&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>83</panic_id>
+      <panic_description>&lt;p&gt;Unused&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>84</panic_id>
+      <panic_description>&lt;p&gt;NULL button group factory referenced&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>85</panic_id>
+      <panic_description>&lt;p&gt;Button group factory did not create button group&lt;/p&gt;</panic_description>
+    </panic>
+  </panics>
+</panic_category>

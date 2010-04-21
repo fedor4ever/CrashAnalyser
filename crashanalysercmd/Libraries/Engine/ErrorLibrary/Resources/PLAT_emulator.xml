@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<panic_category>
+  <category_name>PLAT (emulator)</category_name>
+  <category_description> &lt;p&gt;These panics represent errors which are detected by emulator   specific code. Typically, they are caused by passing bad or contradictory parameters to functions.&lt;/p&gt; &lt;p&gt;The thread causing the panic is terminated.&lt;/p&gt;</category_description>
+  <panics>
+    <panic>
+      <panic_id>0</panic_id>
+      <panic_description>&lt;p&gt;These panics are raised when a failure occurs running any DLL attach process calls which have been registered during startup.&lt;/p&gt;&lt;/td&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>1</panic_id>
+      <panic_description>&lt;p&gt;These panics are raised when a failure occurs running any DLL attach process calls which have been registered during startup.&lt;/p&gt;&lt;/td&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>2</panic_id>
+      <panic_description>&lt;p&gt;This panic is raised when registering a thread callback.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>3</panic_id>
+      <panic_description>&lt;p&gt;This panic is raised if a failure occurs in loading &lt;code class="filename"&gt;EKERN.EXE&lt;/code&gt;&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>4</panic_id>
+      <panic_description>&lt;p&gt;This panic is raised if any of the &lt;code&gt;_E32Initialise()&lt;/code&gt;, &lt;code&gt;_E32DeInitialise()&lt;/code&gt; or &lt;code&gt;_E32ExitProcess()&lt;/code&gt; Kernel functions cannot be found.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>5</panic_id>
+      <panic_description>&lt;p&gt;This panic is raised if a leave occurs and there is no trap harness.&lt;/p&gt;	   </panic_description>
+    </panic>
+  </panics>
+</panic_category>

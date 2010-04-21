@@ -1,0 +1,96 @@
+===============================================================================
+
+RELEASE NOTES - CrashAnalyser
+RELEASED 20th April 2010 
+
+
+
+===============================================================================
+
+Product Description:
+====================
+CrashAnalyser is a multi-format crash log decoder.
+CrashAnalyser has three UIs:
+ * Console UI - Used inside CrashAnalyser Carbide Plugin.
+ * Server EXE - Used on the MobileCrash server for automated decoding.
+ * Native UI - Used for internal development only, Carbide UI is recommended solution for end users.
+
+Main Features:
+==============
+- Decoding D_EXC crash logs
+- Decoding MobileCrash crash logs
+- Decoding Symbian ELF crash logs
+
+===============================================================================
+
+What's New 
+===================
+Version 1.0.9 20th April 2010 
+--------------------------------
+  - Changes in selge.ini file handling
+  - Added support for kern-common and kern-heap panic descriptions
+  - Added .nosync files and NOKIA START/END tags to support SF releasing
+  - Changed hash-code calculation so that similar crashes have same hash code
+  - Support for paged out code segments added
+
+===============================================================================
+
+Installation Notes:
+===================
+- [None]
+
+===============================================================================
+
+System Requirements:
+====================
+Basic Requirements:
+- .NET 2.0 Framework
+
+===============================================================================
+
+Compatibility Issues:
+=====================
+- [None]
+
+===============================================================================
+
+Known Issues:
+=============
+
+Bugs
+----
+- [None]
+
+
+===============================================================================
+
+Version History:
+================
+Version 1.0.8 12th March 2010
+  - VersionHistory.bin support
+  - Many other features
+
+Version 1.0.6 04th December 2009 
+--------------------------------
+  - Weekly division in ServerExe's archiving
+  - Fix for ELF core dump exceptions are not decoded to XML correctly
+  - Fix for SVC register is not supported
+  - Fix for CrashAnalyser does not generate stacks from ELF file to XML
+  - Workaround for cspr typo in MobileCrash
+  - Improve progress reporting while importing files (Console)
+  - Fix for some code segment warnings/messages are incorrectly formatted
+  - Fix for XML input files that contain meta-data directories are not handled properly
+
+Version 1.0.5 - 06th November 2009
+----------------------------------
+  -Added this releasenote
+  -Fix for race condition in symbol handling (affects all UIs)
+  -Fix in callstack hash creation ( Jira CRA-366 ) (affects ServerExe)
+  -Fix for stability when using broken mapfiles zip ( Jira CRA-361 ) (affects all UIs)
+
+
+===============================================================================
+
+Copyright © 2009 Nokia Corporation. All rights reserved. 
+Nokia and Nokia Connecting People are registered trademarks of 
+Nokia Corporation.

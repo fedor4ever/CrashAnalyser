@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<panic_category>
+  <category_name>BAFL</category_name>
+  <category_description> &lt;p&gt;Basic Application Framework Library (BFL.lib) panics. A number of APIs raise these panics. &lt;/p&gt; &lt;p&gt;These are:&lt;/p&gt; &lt;p&gt;Application Utilities &lt;/p&gt; &lt;p&gt;Command Line Parsing &lt;/p&gt; &lt;p&gt;Environment Change Notifier &lt;/p&gt; &lt;p&gt;Incremental Matcher &lt;/p&gt; &lt;p&gt;Interface to Resource Files &lt;/p&gt;</category_description>
+  <panics>
+    <panic>
+      <panic_id>1</panic_id>
+      <panic_description>&lt;p&gt;&lt;i&gt;This panic is raised in debug builds only.&lt;/i&gt; &lt;/p&gt; &lt;p&gt;This panic is raised by &lt;code class="ApiItem"&gt;RResourceFile::ReadL()&lt;/code&gt;, when the length of the resource is greater than the maximum length of the target descriptor &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>2</panic_id>
+      <panic_description>&lt;p&gt;Out of range index passed to &lt;code&gt;RIncrMatcherBase::FirstMatchingIndex()&lt;/code&gt; &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>3</panic_id>
+      <panic_description>&lt;p&gt;Maximum length passed to &lt;code&gt;RTextBuf::SetMaxLengthL()&lt;/code&gt; was &amp;lt;=0 &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>4</panic_id>
+      <panic_description>&lt;p&gt;This panic is raised by the &lt;code&gt;Read...()&lt;/code&gt;  member functions and the &lt;code&gt;Advance()&lt;/code&gt;  member function of &lt;code class="ApiItem"&gt;TResourceReader&lt;/code&gt;, when the current position  in the resource buffer is moved  beyond the end of the buffer. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>5</panic_id>
+      <panic_description>&lt;p&gt;This panic is raised by &lt;code class="ApiItem"&gt;TResourceReader::Rewind()&lt;/code&gt;, when the current position  in the resource buffer is moved before the start of the buffer. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>6</panic_id>
+      <panic_description>&lt;p&gt;Unused &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>7</panic_id>
+      <panic_description>&lt;p&gt;Unused &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>8</panic_id>
+      <panic_description>&lt;p&gt;Unused &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>9</panic_id>
+      <panic_description>&lt;p&gt;Unused &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>10</panic_id>
+      <panic_description>&lt;p&gt;Unused &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>11</panic_id>
+      <panic_description>&lt;p&gt;Unused &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>12</panic_id>
+      <panic_description>&lt;p&gt;Unused &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>13</panic_id>
+      <panic_description>&lt;p&gt;Unused &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>14</panic_id>
+      <panic_description>&lt;p&gt;No path specified in sound info passed to &lt;code&gt;CBaSystemSoundArray::SetSoundL()&lt;/code&gt; &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>15</panic_id>
+      <panic_description>&lt;p&gt;&lt;i&gt;This panic is raised in debug builds only.&lt;/i&gt;&lt;/p&gt;&lt;p&gt;This panic is raised by &lt;code class="ApiItem"&gt;TResourceReader::ReadTPtrC16()&lt;/code&gt;, when it detects that the alignment of Unicode strings within the  resource is incorrect, i.e. the buffer is of an incorrect length for reading  a Unicode string. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>16</panic_id>
+      <panic_description>&lt;p&gt;Unsupported old resource file format&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>17</panic_id>
+      <panic_description>&lt;p&gt;No system sound category set for new system sound &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>18</panic_id>
+      <panic_description>&lt;p&gt;Invalid system sound priority set &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>19</panic_id>
+      <panic_description>&lt;p&gt;NULL UID passed to &lt;code&gt;CBaNamedPlugins::IndexOfUid()&lt;/code&gt; &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>20</panic_id>
+      <panic_description>&lt;p&gt;Bad resource file format found when constructing a &lt;code&gt;CBaNamedPlugins&lt;/code&gt; object. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>21</panic_id>
+      <panic_description>&lt;p&gt;The array position at which the text representing the choice of no plug-in is to  be inserted, is invalid. The panic is raised by &lt;code&gt;CBaNamedPlugins::ConstructL()&lt;/code&gt;. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>22</panic_id>
+      <panic_description>&lt;p&gt;An invalid comparison algorithm or no comparison algorithm supplied when sorting the plug-in names in the implementation of &lt;code&gt;CBaNamedPlugins::ConstructL()&lt;/code&gt;. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>23</panic_id>
+      <panic_description>&lt;p&gt;Unused. &lt;/p&gt; 	   </panic_description>
+    </panic>
+  </panics>
+</panic_category>

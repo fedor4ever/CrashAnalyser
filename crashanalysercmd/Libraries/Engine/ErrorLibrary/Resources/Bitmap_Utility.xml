@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<panic_category>
+  <category_name>Bitmap Utility</category_name>
+  <category_description> &lt;p&gt;TImageBitmapUtilPanic:&lt;/p&gt;</category_description>
+  <panics>
+    <panic>
+      <panic_id>0</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;ECorrupt&lt;/code&gt; - Data is corrupt cannot continue.&lt;/p&gt;	   </panic_description>
+    </panic>
+  </panics>
+</panic_category>

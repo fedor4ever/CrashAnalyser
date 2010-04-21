@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<panic_category>
+  <category_name>ImageConversion</category_name>
+  <category_description> &lt;p&gt; Panics used in the Image Conversion Library &lt;/p&gt;</category_description>
+  <panics>
+    <panic>
+      <panic_id>0</panic_id>
+      <panic_description>&lt;p&gt; No source bitmap. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>1</panic_id>
+      <panic_description>&lt;p&gt; No destination bitmap. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>2</panic_id>
+      <panic_description>&lt;p&gt; Reset destination bitmap. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>3</panic_id>
+      <panic_description>&lt;p&gt; Convert called while busy. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>4</panic_id>
+      <panic_description>&lt;p&gt; No conversion currently in progress. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>5</panic_id>
+      <panic_description>&lt;p&gt; Different destination bitmap. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>6</panic_id>
+      <panic_description>&lt;p&gt; Different destination bitmap mask. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>7</panic_id>
+      <panic_description>&lt;p&gt; The destination has been illegally modified. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>8</panic_id>
+      <panic_description>&lt;p&gt; The bitmap has zero dimensions. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>9</panic_id>
+      <panic_description>&lt;p&gt; No bitmap mask specified. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>10</panic_id>
+      <panic_description>&lt;p&gt; Invalid frame number. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>11</panic_id>
+      <panic_description>&lt;p&gt; The source type is undefined. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>12</panic_id>
+      <panic_description>&lt;p&gt; Comment are not supported. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>13</panic_id>
+      <panic_description>&lt;p&gt; Header processing is not complete. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>14</panic_id>
+      <panic_description>&lt;p&gt; Comment number is out of range. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>15</panic_id>
+      <panic_description>&lt;p&gt; Bad display mode. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>16</panic_id>
+      <panic_description>&lt;p&gt; Unknown header state. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>17</panic_id>
+      <panic_description>&lt;p&gt; The descriptor that was passed is not NULL. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>18</panic_id>
+      <panic_description>&lt;p&gt; Undefined MIME type. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>19</panic_id>
+      <panic_description>&lt;p&gt; Illegal image sub-type. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>20</panic_id>
+      <panic_description>&lt;p&gt; Illegal image type. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>21</panic_id>
+      <panic_description>&lt;p&gt; Illegal encoder restart. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>22</panic_id>
+      <panic_description>&lt;p&gt; Attempt to change options while decoding in progress. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>23</panic_id>
+      <panic_description>&lt;p&gt; Decoder not created. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>24</panic_id>
+      <panic_description>&lt;p&gt; Feature is not yet implemented. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>25</panic_id>
+      <panic_description>&lt;p&gt; Relay sub thread panic timeout. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>26</panic_id>
+      <panic_description>&lt;p&gt; Invalid thread state. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>27</panic_id>
+      <panic_description>&lt;p&gt; Invalid function leave request. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>28</panic_id>
+      <panic_description>&lt;p&gt; An Image Decoder was found to be in an invalid state. For example &lt;code class="ApiItem"&gt;CBufferedImageDecoder::ContinueConvert()&lt;/code&gt; was called when there is no image data to convert. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>29</panic_id>
+      <panic_description>&lt;p&gt; Not used. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>30</panic_id>
+      <panic_description>&lt;p&gt; Illegal call to reserved function. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>31</panic_id>
+      <panic_description>&lt;p&gt; An index is invalid. For example &lt;code class="ApiItem"&gt;TFrameLayout::Length()&lt;/code&gt; will panic if the value of the index parameter &lt;code&gt;aIndex&lt;/code&gt;is not in the range&lt;code&gt;[0:TFrameLayout::Planes()]&lt;/code&gt;. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>32</panic_id>
+      <panic_description>&lt;p&gt; A parameter value is invalid. For example &lt;code class="ApiItem"&gt;TFrameLayout::SetLength()&lt;/code&gt; will panic if the value of the length parameter &lt;code&gt;aLength&lt;/code&gt; is negative. &lt;/p&gt;</panic_description>
+    </panic>
+  </panics>
+</panic_category>

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<panic_category>
+  <category_name>USER-EXEC</category_name>
+  <category_description> &lt;p&gt;No Description&lt;/p&gt;</category_description>
+  <panics>
+    <panic>
+      <panic_id>3</panic_id>
+      <panic_description>&lt;p&gt;In Symbian OS 8.1b, 9.0, 9.1 and subsequent versions:&lt;/p&gt; &lt;p&gt;this panic is raised when an exception is raised on the current thread by a call to &lt;code class="ApiItem"&gt;User::RaiseException()&lt;/code&gt;, and the thread has no exception handler to handle the specified exception.&lt;/p&gt; &lt;p&gt;In Symbian OS up to 8.1a:&lt;/p&gt; &lt;p&gt;this panic is raised when the current thread calls &lt;code class="ApiItem"&gt;RThread::RaiseException()&lt;/code&gt; on itself, and the thread has no exception handler to handle the specified exception.&lt;/p&gt; &lt;p&gt;Note that the &lt;code class="ApiItem"&gt;RThread::RaiseException()&lt;/code&gt; API is deprecated in Symbian OS 8.1b, 9.0, 9.1 and subsequent versions, and should not be used.&lt;/p&gt;	   </panic_description>
+    </panic>
+  </panics>
+</panic_category>

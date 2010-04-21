@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<panic_category>
+  <category_name>HTTP-COOKIE</category_name>
+  <category_description> &lt;p&gt;Cookie filter panics. &lt;/p&gt;</category_description>
+  <panics>
+    <panic>
+      <panic_id>0</panic_id>
+      <panic_description>&lt;p&gt; Invalid filter state &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>1</panic_id>
+      <panic_description>&lt;p&gt; The &lt;code&gt;aCookieList&lt;/code&gt; array passed to &lt;code class="ApiItem"&gt;MHttpCookieManager::GetCookiesL()&lt;/code&gt; is not empty&lt;/p&gt; 	   </panic_description>
+    </panic>
+  </panics>
+</panic_category>

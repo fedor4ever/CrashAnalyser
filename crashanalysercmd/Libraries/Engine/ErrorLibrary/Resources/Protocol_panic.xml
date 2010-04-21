@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<panic_category>
+  <category_name>Protocol panic</category_name>
+  <category_description> &lt;p&gt;The Sockets Server gives a &amp;quot;Protocol panic&amp;quot; when it finds incorrect protocol module behaviour.&lt;/p&gt;</category_description>
+  <panics>
+    <panic>
+      <panic_id>0</panic_id>
+      <panic_description>&lt;p&gt;An unknown request completed&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>1</panic_id>
+      <panic_description>&lt;p&gt;Protocol completed a connect request unexpectedly&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>2</panic_id>
+      <panic_description>&lt;p&gt;Unused&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>3</panic_id>
+      <panic_description>&lt;p&gt;Protocol completed a connect with data request unexpectedly&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>4</panic_id>
+      <panic_description>&lt;p&gt;Protocol completed a shutdown with data request unexpectedly&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>5</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt;CProtocolFamilyBase::Remove()&lt;/code&gt; failed&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>6</panic_id>
+      <panic_description>&lt;p&gt;Protocol made incorrect call to the server through a &lt;code&gt;MSocketNotify&lt;/code&gt; function&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>7</panic_id>
+      <panic_description>&lt;p&gt;Protocol made call to &lt;code&gt;MSocketNotify::NewDataL()&lt;/code&gt; with bad &lt;code&gt;aCount&lt;/code&gt; value&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>8</panic_id>
+      <panic_description>&lt;p&gt;Unused&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>9</panic_id>
+      <panic_description>&lt;p&gt;Protocol made call to &lt;code&gt;MSocketNotify::DisConnect()&lt;/code&gt; with connectionless socket&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>10</panic_id>
+      <panic_description>&lt;p&gt;Server could not get expected received data from protocol&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>11</panic_id>
+      <panic_description>&lt;p&gt;Protocol has returned an invalid &lt;code&gt;TServerProtocolDesc&lt;/code&gt;&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>12</panic_id>
+      <panic_description>&lt;p&gt;Protocol has not implemented &lt;code&gt;CProtocolBase::Error()&lt;/code&gt;&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>13</panic_id>
+      <panic_description>&lt;p&gt;Protocol has not implemented descriptor-overload of &lt;code&gt;CProtocolBase::Process()&lt;/code&gt;&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>14</panic_id>
+      <panic_description>&lt;p&gt;Protocol has not implemented &lt;code&gt;RMBufChain&lt;/code&gt;-overload &lt;code&gt;CProtocolBase::Process()&lt;/code&gt;&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>15</panic_id>
+      <panic_description>&lt;p&gt;Protocol has not implemented descriptor-overload of &lt;code&gt;CProtocolBase::Send()&lt;/code&gt;&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>16</panic_id>
+      <panic_description>&lt;p&gt;Protocol has not implemented &lt;code&gt;RMBufChain&lt;/code&gt;-overload &lt;code&gt;CProtocolBase::Send()&lt;/code&gt;&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>17</panic_id>
+      <panic_description>&lt;p&gt;Protocol has not implemented &lt;code&gt;CProtocolBase::BindToL()&lt;/code&gt;&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>18</panic_id>
+      <panic_description>&lt;p&gt;Protocol has not implemented &lt;code&gt;CProtocolBase::BindL()&lt;/code&gt;&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>19</panic_id>
+      <panic_description>&lt;p&gt;Protocol made call to &lt;code&gt;MSocketNotify::ConnectComplete()&lt;/code&gt; on non-listening socket&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>20</panic_id>
+      <panic_description>&lt;p&gt;Protocol made call to &lt;code&gt;MSocketNotify::ConnectComplete()&lt;/code&gt; when server has accepted maximum number of sockets&lt;/p&gt;</panic_description>
+    </panic>
+  </panics>
+</panic_category>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <xsd:element name="category_name" type="xsd:string"/>
+  <xsd:element name="category_description" type="xsd:string"/>
+  <xsd:element name="panic_id" type="xsd:string"/>
+  <xsd:element name="panic_description" type="xsd:string"/>
+  <xsd:element name="error_name" type="xsd:string"/>
+  <xsd:element name="error_value" type="xsd:string"/>
+  <xsd:element name="error_component" type="xsd:string"/>
+  <xsd:element name="error_text" type="xsd:string"/>
+  
+  <xsd:element name="panic_category">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="category_name" minOccurs="1" maxOccurs="1"/>
+				<xsd:element ref="category_description" minOccurs="1" maxOccurs="1"/>
+				<xsd:element ref="panics" minOccurs="1" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+  <xsd:element name="panics">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="panic" minOccurs="1" maxOccurs="unbounded"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="panic">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="panic_id" minOccurs="1" maxOccurs="1"/>
+        <xsd:element ref="panic_description" minOccurs="1" maxOccurs="1"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="error_codes">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="error" minOccurs="1" maxOccurs="unbounded"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="error">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="error_name" minOccurs="1" maxOccurs="1"/>
+        <xsd:element ref="error_value" minOccurs="1" maxOccurs="1"/>
+        <xsd:element ref="error_component" minOccurs="1" maxOccurs="1"/>
+        <xsd:element ref="error_text" minOccurs="1" maxOccurs="1"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+</xsd:schema>

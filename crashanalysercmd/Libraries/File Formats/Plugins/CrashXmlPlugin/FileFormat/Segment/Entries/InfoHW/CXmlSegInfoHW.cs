@@ -65,6 +65,16 @@ namespace CrashXmlPlugin.FileFormat.Segment.Entries.InfoHW
                 // Serial number
                 string serialNumber = info.SerialNumber;
                 WriteStringIfNotEmpty( aParameters.Writer, SegConstants.HWInfo_SerialNumber, serialNumber );
+
+                // Crash source
+                if (info.ProductionMode == 1)
+                {
+                    aParameters.Writer.WriteElementString(SegConstants.HWInfo_ProductionMode, SegConstants.HWInfo_ProductionMode_Prd);
+                }
+                else if (info.ProductionMode == 0)
+                {
+                    aParameters.Writer.WriteElementString(SegConstants.HWInfo_ProductionMode, SegConstants.HWInfo_ProductionMode_RnD);
+                }
             }
         }
 

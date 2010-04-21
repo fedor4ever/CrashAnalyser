@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<panic_category>
+  <category_name>IMAPServer</category_name>
+  <category_description> &lt;p&gt; IMAPServer panics are raised by the IMAP server-side MTM. They are used to signal errors in the implementation of the MTM, and are raised in debug builds. The panic codes are divided into a number of ranges, each of which relates to a particular area of functionality in the MTM: &lt;/p&gt;</category_description>
+  <panics>
+    <panic>
+      <panic_id>0-999</panic_id>
+      <panic_description>&lt;p&gt; Session logic, which relates to the set up and management of an individual session to an IMAP server &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>1000-1999</panic_id>
+      <panic_description>&lt;p&gt; IMAP settings loading and storage &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>2000-2999</panic_id>
+      <panic_description>&lt;p&gt; Server MTM class implementation &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>3000-3999</panic_id>
+      <panic_description>&lt;p&gt; Character set conversion &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>4000-4999</panic_id>
+      <panic_description>&lt;p&gt; Storage and manipulation of messages &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>5000-5999</panic_id>
+      <panic_description>&lt;p&gt; Controlling logic for handling client commands &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>6000-6999</panic_id>
+      <panic_description>&lt;p&gt; Transport handler, which handles reading and writing of data to connected sockets &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>7000-7999</panic_id>
+      <panic_description>&lt;p&gt; Synchronisation manager, which handles the synchronisation of mailbox folders between the locally persisted mailbox store and a remote mailbox store &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>8000-8999</panic_id>
+      <panic_description>&lt;p&gt; Server MTM class &lt;/p&gt;</panic_description>
+    </panic>
+  </panics>
+</panic_category>

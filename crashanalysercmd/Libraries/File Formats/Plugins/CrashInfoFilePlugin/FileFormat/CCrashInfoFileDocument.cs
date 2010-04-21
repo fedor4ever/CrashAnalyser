@@ -96,6 +96,7 @@ namespace CrashInfoFilePlugin.PluginImplementations.FileFormat
                 datablock.WriteHWVersion(aOutput);
                 datablock.WritePanicID(aOutput);
                 datablock.WritePanicCategory(aOutput);
+                datablock.WritePanicDescription(aOutput);
                 datablock.WriteLanguage(aOutput);
                 datablock.WritePanicedProcess(aOutput);
                 datablock.WriteProgramCounter(aOutput);
@@ -109,6 +110,8 @@ namespace CrashInfoFilePlugin.PluginImplementations.FileFormat
                 datablock.WriteReporter(aOutput);
                 datablock.WriteArchive(aOutput);                
                 datablock.WriteProductType(aOutput);
+                datablock.WriteCrashSource(aOutput);
+                datablock.WriteProductionMode(aOutput);
                 datablock.WriteImei(aOutput);
                 datablock.WriteResetreason(aOutput);
                 datablock.WriteUptime(aOutput);

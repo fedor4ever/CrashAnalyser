@@ -146,7 +146,7 @@ namespace SLPluginMap.Reader.RVCT
 
         #region Internal constants
         private readonly static Regex KGlobalBaseAddressRegEx = new Regex(
-              "\\s*Image\\$\\$ER_RO\\$\\$Base\\s+0x([A-Fa-f0-9]{8})\\s"+
+              "\\s*Image\\$\\$ER_RO\\$\\$Base.*\\s+0x([A-Fa-f0-9]{8})\\s"+
               "+Number",
              RegexOptions.CultureInvariant
             | RegexOptions.Compiled
