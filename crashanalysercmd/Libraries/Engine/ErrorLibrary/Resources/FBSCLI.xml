@@ -13,15 +13,15 @@
     </panic>
     <panic>
       <panic_id>3</panic_id>
-      <panic_description>&lt;p&gt; Not used. &lt;/p&gt;</panic_description>
+      <panic_description>&lt;p&gt;Unknown message. &lt;/p&gt;</panic_description>
     </panic>
     <panic>
       <panic_id>4</panic_id>
-      <panic_description>&lt;p&gt; Not used. &lt;/p&gt;</panic_description>
+      <panic_description>&lt;p&gt;There is an error with the Active Scheduler. &lt;/p&gt;</panic_description>
     </panic>
     <panic>
       <panic_id>5</panic_id>
-      <panic_description>&lt;p&gt; Not used. &lt;/p&gt;</panic_description>
+      <panic_description>&lt;p&gt;The startup of the Font and Bitmap Server failed. &lt;/p&gt;</panic_description>
     </panic>
     <panic>
       <panic_id>6</panic_id>
@@ -65,7 +65,7 @@
     </panic>
     <panic>
       <panic_id>16</panic_id>
-      <panic_description>&lt;p&gt; Not used. &lt;/p&gt;</panic_description>
+      <panic_description>&lt;p&gt;Bitmap not supported for compression. &lt;/p&gt;</panic_description>
     </panic>
     <panic>
       <panic_id>17</panic_id>
@@ -73,7 +73,7 @@
     </panic>
     <panic>
       <panic_id>18</panic_id>
-      <panic_description>&lt;p&gt; Not used. &lt;/p&gt;</panic_description>
+      <panic_description>&lt;p&gt;Invalid Scan Line pointer. &lt;/p&gt;</panic_description>
     </panic>
     <panic>
       <panic_id>19</panic_id>
@@ -89,7 +89,27 @@
     </panic>
     <panic>
       <panic_id>22</panic_id>
-      <panic_description>&lt;p&gt; &lt;code&gt;CFbsBitmap::LockHeap()&lt;/code&gt; has not been called prior to calling &lt;code&gt;CFbsBitmap::DataAddress()&lt;/code&gt; (debug builds only). &lt;/p&gt;	   </panic_description>
+      <panic_description>&lt;p&gt;&lt;code&gt;CFbsBitmap::LockHeap()&lt;/code&gt; has been called on a bitmap by more than one thread (debug builds only). See &lt;a href="../../guide/guide/fbserv/heaplocking.html#gr%2efont%2efbs%2eheaplocking" title="The Font and Bitmap Server's heap locking API is deprecated in Symbian OS v9.3 and later versions. This topic explains the rationale for this and how it affects existing applications that use the CFBsBitmap::LockHeap(), CFBsBitmap::LockHeapLC() and CFbsBitmap::UnlockHeap() functions."&gt;Heap Locking in the Font &amp;amp; Bitmap Server&lt;/a&gt; for more information. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>23</panic_id>
+      <panic_description>&lt;p&gt;FbsShaper not yet called. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>24</panic_id>
+      <panic_description>&lt;p&gt;FbsShaper has invalid arguments. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>25</panic_id>
+      <panic_description>&lt;p&gt;Invalid compression threshold. Value needs to be 0 or greater, and less than 256. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>26</panic_id>
+      <panic_description>&lt;p&gt;Typeface index out of range. Index needs to be 0 or greater. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>27</panic_id>
+      <panic_description>&lt;p&gt;Problem copying bitmap data. &lt;/p&gt;</panic_description>
     </panic>
   </panics>
 </panic_category>

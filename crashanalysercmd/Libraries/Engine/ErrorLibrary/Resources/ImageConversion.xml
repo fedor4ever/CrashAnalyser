@@ -117,7 +117,7 @@
     </panic>
     <panic>
       <panic_id>28</panic_id>
-      <panic_description>&lt;p&gt; An Image Decoder was found to be in an invalid state. For example &lt;code class="ApiItem"&gt;CBufferedImageDecoder::ContinueConvert()&lt;/code&gt; was called when there is no image data to convert. &lt;/p&gt;</panic_description>
+      <panic_description>&lt;p&gt;An Image Decoder was found to be in an invalid state. &lt;/p&gt; &lt;p&gt; For example &lt;code class="ApiItem" &gt;CBufferedImageDecoder::ContinueConvert()&lt;/code&gt; was called when there is no image data to convert. &lt;/p&gt;</panic_description>
     </panic>
     <panic>
       <panic_id>29</panic_id>
@@ -129,11 +129,47 @@
     </panic>
     <panic>
       <panic_id>31</panic_id>
-      <panic_description>&lt;p&gt; An index is invalid. For example &lt;code class="ApiItem"&gt;TFrameLayout::Length()&lt;/code&gt; will panic if the value of the index parameter &lt;code&gt;aIndex&lt;/code&gt;is not in the range&lt;code&gt;[0:TFrameLayout::Planes()]&lt;/code&gt;. &lt;/p&gt;</panic_description>
+      <panic_description>&lt;p&gt;An index is invalid. &lt;/p&gt; &lt;p&gt; For example &lt;code class="ApiItem" &gt;TFrameLayout::Length()&lt;/code&gt; will panic if the value of the index parameter &lt;code&gt;aIndex&lt;/code&gt; is not in the range &lt;code&gt;[0:TFrameLayout::Planes()]&lt;/code&gt;. &lt;/p&gt;</panic_description>
     </panic>
     <panic>
       <panic_id>32</panic_id>
-      <panic_description>&lt;p&gt; A parameter value is invalid. For example &lt;code class="ApiItem"&gt;TFrameLayout::SetLength()&lt;/code&gt; will panic if the value of the length parameter &lt;code&gt;aLength&lt;/code&gt; is negative. &lt;/p&gt;</panic_description>
+      <panic_description>&lt;p&gt;A parameter value is invalid. &lt;/p&gt; &lt;p&gt; For example &lt;code class="ApiItem" &gt;TFrameLayout::SetLength()&lt;/code&gt; will panic if the value of the length parameter &lt;code&gt;aLength&lt;/code&gt; is negative. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>33</panic_id>
+      <panic_description>&lt;p&gt;The encoder has run out of memory buffers during asynchronous write operation. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>34</panic_id>
+      <panic_description>&lt;p&gt;An invalid buffer was detected during an encoder's asynchronous write operation. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>35</panic_id>
+      <panic_description>&lt;p&gt;The encoder's buffer queue has overflowed during asynchronous write operation. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>36</panic_id>
+      <panic_description>&lt;p&gt;An extension on image decoder or encoder has not been set up correctly. Caused by calling a function on a &lt;code&gt;TImageConv*&lt;/code&gt; extension interface when the extension has not been setup. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>37</panic_id>
+      <panic_description>&lt;p&gt;An attempt has been made by the decoder of encoder framework to obtain an extension on a plug-in when this has already been obtained. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>38</panic_id>
+      <panic_description>&lt;p&gt;The decoder or encoder framework has called an unknown function on a extension interface. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>39</panic_id>
+      <panic_description>&lt;p&gt;An attempt has been made by the decoder of encoder framework to set up an extension on a plug-in when this has already been done. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>40</panic_id>
+      <panic_description>&lt;p&gt;The decoder or encoder framework has attempted to access an unknown extension type or has detected a mismatch between extension types. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>41</panic_id>
+      <panic_description>&lt;p&gt;An new asynchronous request on a decoder extension has been made when it is already active. &lt;/p&gt;</panic_description>
     </panic>
   </panics>
 </panic_category>

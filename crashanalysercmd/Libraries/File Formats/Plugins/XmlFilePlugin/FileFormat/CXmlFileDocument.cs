@@ -205,6 +205,16 @@ namespace XmlFilePlugin.PluginImplementations.FileFormat
                 aOutput.WriteAttributeString(XmlConsts.Kxml_defect_hash, datablock.Hash());
             }
 
+            if (datablock.DetailedHash() != string.Empty)
+            {
+                aOutput.WriteAttributeString(XmlConsts.Kxml_detailed_defect_hash, datablock.DetailedHash());
+            }
+
+            if (datablock.TestSet() != string.Empty)
+            {
+                aOutput.WriteAttributeString(XmlConsts.Kxml_testset, datablock.TestSet());
+            }
+
             // Child elements for report details
             if (datablock.CodeSegs().Count > 0)
             {
@@ -225,16 +235,17 @@ namespace XmlFilePlugin.PluginImplementations.FileFormat
             }
 
             // Traces
-            if(datablock.RegStorage().BasicRegs().Registers.Count > 0 ||
+            if( datablock.RegStorage().BasicRegs().Registers.Count > 0 ||
                 datablock.CallStacks().Count > 0 ||
                 datablock.OstTraces().Count > 0 ||
                 datablock.Eventlog().Count > 0 ||
-                datablock.RegStorage().OtherRegLists().Count > 0)
+                datablock.RegStorage().OtherRegLists().Count > 0 ||
+                datablock.PanicDescription() != String.Empty )
             {
                 aOutput.WriteStartElement(XmlConsts.Kxml_traces);
             }
 
-            WriteDetail(aOutput, XmlConsts.Kxml_register, datablock.RegStorage().BasicRegs().ToString());
+            WriteDetail(aOutput, XmlConsts.Kxml_register, datablock.RegStorage().BasicRegs().ToPrettyString());
 
             // Extra registers  
             System.Text.StringBuilder extraRegisters = new System.Text.StringBuilder();
@@ -266,11 +277,15 @@ namespace XmlFilePlugin.PluginImplementations.FileFormat
             }
             WriteDetail(aOutput, XmlConsts.Kxml_eventlog, eventLog.ToString());
 
+            // Panic description
+            WriteDetail(aOutput, XmlConsts.Kxml_panic_description, datablock.PanicDescription());
+
             if (datablock.RegStorage().BasicRegs().Registers.Count > 0 ||
                 datablock.CallStacks().Count > 0 ||
                 datablock.OstTraces().Count > 0 ||
                 datablock.Eventlog().Count > 0 ||
-                datablock.RegStorage().OtherRegLists().Count > 0)
+                datablock.RegStorage().OtherRegLists().Count > 0 ||
+                datablock.PanicDescription() != String.Empty)
             {
                 aOutput.WriteEndElement(); // traces
             }
@@ -288,7 +303,6 @@ namespace XmlFilePlugin.PluginImplementations.FileFormat
 
             WriteDetail(aOutput, XmlConsts.Kxml_panic_id, datablock.PanicId());
             WriteDetail(aOutput, XmlConsts.Kxml_panic_category, datablock.PanicCategory());
-            WriteDetail(aOutput, XmlConsts.Kxml_panic_description, datablock.PanicDescription());
             WriteDetail(aOutput, XmlConsts.Kxml_language, datablock.Language());
             
             if (!datablock.Process().Equals(XmlConsts.Kxml_unknown_process))
@@ -379,7 +393,6 @@ namespace XmlFilePlugin.PluginImplementations.FileFormat
             WriteDetail(aOutput, XmlConsts.Kxml_cellid, datablock.NetworkCell());
             WriteDetail(aOutput, XmlConsts.Kxml_psninfo, datablock.SerialNumber());
             WriteDetail(aOutput, XmlConsts.Kxml_uid, datablock.UID());
-            WriteDetail(aOutput, XmlConsts.Kxml_testset, datablock.TestSet());
             WriteDetail(aOutput, XmlConsts.Kxml_diskinfo, datablock.DiskInfo());
             WriteDetail(aOutput, XmlConsts.Kxml_phone_number, datablock.PhoneNumber());
             

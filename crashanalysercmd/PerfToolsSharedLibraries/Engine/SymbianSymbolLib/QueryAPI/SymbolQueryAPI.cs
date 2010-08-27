@@ -70,19 +70,20 @@ namespace SymbianSymbolLib.QueryAPI
                 return null;
             }
 
-            // First check with the relocated/activated symbol collections,
-            // i.e. RAM-loaded code that has been fixed up.
-            Symbol ret = iRelocator.CollectionList.Lookup( aAddress, out aCollection );
+            Symbol ret = null;
+            // First check from symbol file and then from map files
+            foreach (SymSource source in SourceManager)
+            {
+                if (source.Contains(aAddress))
+                {
+                    ret = source.Lookup(aAddress, out aCollection);
+                    break;
+                }
+            }
+
             if ( ret == null && aCollection == null )
             {
-                foreach ( SymSource source in SourceManager )
-                {
-                    if ( source.Contains( aAddress ) )
-                    {
-                        ret = source.Lookup( aAddress, out aCollection );
-                        break;
-                    }
-                }
+                ret = iRelocator.CollectionList.Lookup(aAddress, out aCollection);
             }
 
             // Tag the collection because it provided a symbol

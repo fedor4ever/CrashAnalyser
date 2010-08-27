@@ -116,10 +116,11 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
-				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;SYMBIANBYTEPAIRLIB_EXPORTS"
+				AdditionalIncludeDirectories=".\Include"
+				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;__VC32__;__MSVCDOTNET__;SYMBIAN_NATIVE_TOOL_EXPORTS"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
-				UsePrecompiledHeader="2"
+				UsePrecompiledHeader="0"
 				WarningLevel="3"
 				DebugInformationFormat="3"
 			/>

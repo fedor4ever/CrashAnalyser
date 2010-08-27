@@ -177,6 +177,13 @@ namespace SymbianDebugLib.Entity.Configurations
         #endregion
 
         #region Properties
+
+        public bool SymbolDataNeeded
+        {
+            get { return iSymbolDataNeeded; }
+            set { iSymbolDataNeeded = value; }
+        }
+
         public DbgEngine Engine
         {
             get { return Manager.Engine; }
@@ -212,6 +219,7 @@ namespace SymbianDebugLib.Entity.Configurations
         #region Data members
         private readonly DbgEntityConfigManager iManager;
         private Dictionary<string, CfgSet> iSets = new Dictionary<string, CfgSet>();
+        private bool iSymbolDataNeeded = true;
         #endregion
     }
 }

@@ -33,7 +33,7 @@
   <ItemGroup>
     <Reference Include="SymbianUtils, Version=1.0.3463.26793, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Engine\CrashItemLib\bin\Debug\SymbianUtils.dll</HintPath>
+      <HintPath>..\..\..\..\..\PerfToolsSharedLibraries\Engine\SymbianUtils\bin\Release\SymbianUtils.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />

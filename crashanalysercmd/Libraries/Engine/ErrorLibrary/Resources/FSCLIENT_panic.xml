@@ -5,15 +5,15 @@
   <panics>
     <panic>
       <panic_id>0</panic_id>
-      <panic_description>&lt;p&gt; This panic is raised by: &lt;/p&gt; &lt;p&gt; the &lt;code&gt;TDriveUnit(TInt aDrive)&lt;/code&gt; variant of the &lt;code class="ApiItem"&gt;TDriveUnit&lt;/code&gt; constructor, &lt;/p&gt; &lt;p&gt; the &lt;code&gt;(TInt aDrive)&lt;/code&gt; variant of the &lt;code class="ApiItem"&gt;TDriveUnit&lt;/code&gt; assignment operator &lt;/p&gt; &lt;p&gt; when the specified drive number is greater than or equal to &lt;code&gt;KMaxDrives&lt;/code&gt;, i.e. 26. &lt;/p&gt;</panic_description>
+      <panic_description>&lt;p&gt;This panic is raised by: &lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt; the &lt;code&gt;TDriveUnit(TInt aDrive)&lt;/code&gt; variant of the &lt;code class="ApiItem" &gt;TDriveUnit&lt;/code&gt; constructor, &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; the &lt;code&gt;(TInt aDrive)&lt;/code&gt; variant of the &lt;code class="ApiItem" &gt;TDriveUnit&lt;/code&gt; assignment operator &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt; when the specified drive number is greater than or equal to &lt;code&gt;KMaxDrives&lt;/code&gt;, i.e. 26. &lt;/p&gt;</panic_description>
     </panic>
     <panic>
       <panic_id>1</panic_id>
-      <panic_description>&lt;p&gt; This panic is raised by: &lt;/p&gt; &lt;p&gt; the &lt;code&gt;TDriveUnit(const TDesC&amp;amp; aDriveText)&lt;/code&gt; variant of the &lt;code class="ApiItem"&gt;TDriveUnit&lt;/code&gt; constructor, &lt;/p&gt; &lt;p&gt; the &lt;code&gt;(const TDesC&amp;amp; aDriveText)&lt;/code&gt; variant of the &lt;code class="ApiItem"&gt;TDriveUnit&lt;/code&gt; assignment operator &lt;/p&gt; &lt;p&gt; when the specified drive letter is invalid, i.e. does not correspond to a drive number. &lt;/p&gt;</panic_description>
+      <panic_description>&lt;p&gt;This panic is raised by: &lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt; the &lt;code&gt;TDriveUnit(const TDesC&amp;amp; aDriveText)&lt;/code&gt; variant of the &lt;code class="ApiItem" &gt;TDriveUnit&lt;/code&gt; constructor, &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; the &lt;code&gt;(const TDesC&amp;amp; aDriveText)&lt;/code&gt; variant of the &lt;code class="ApiItem" &gt;TDriveUnit&lt;/code&gt; assignment operator &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt; when the specified drive letter is invalid, i.e. does not correspond to a drive number. &lt;/p&gt;</panic_description>
     </panic>
     <panic>
       <panic_id>2</panic_id>
-      <panic_description>&lt;p&gt; This panic is raised when searching for the next file using &lt;code class="ApiItem"&gt;TFindFile::Find()&lt;/code&gt; or &lt;code class="ApiItem"&gt;TFindFile::FindWild()&lt;/code&gt; before the initial call specifying the search method. &lt;/p&gt; &lt;p&gt; Calls to &lt;code class="ApiItem"&gt;TFindFile::Find()&lt;/code&gt; cannot be made until an initial call has been made to either of: &lt;/p&gt; &lt;p&gt; &lt;code class="ApiItem"&gt;TFindFile::FindByDir()&lt;/code&gt; &lt;/p&gt; &lt;p&gt; &lt;code class="ApiItem"&gt;TFindFile::FindByPath()&lt;/code&gt; &lt;/p&gt; &lt;p&gt; Calls to &lt;code class="ApiItem"&gt;TFindFile::FindWild()&lt;/code&gt; cannot be made until an initial call has been made to either of: &lt;/p&gt; &lt;p&gt; &lt;code class="ApiItem"&gt;TFindFile::FindWildByDir()&lt;/code&gt; &lt;/p&gt; &lt;p&gt; &lt;code class="ApiItem"&gt;TFindFile::FindWildByPath()&lt;/code&gt; &lt;/p&gt;</panic_description>
+      <panic_description>&lt;p&gt;This panic is raised when searching for the next file using &lt;code class="ApiItem" &gt;TFindFile::Find()&lt;/code&gt; or &lt;code class="ApiItem" &gt;TFindFile::FindWild()&lt;/code&gt; before the initial call specifying the search method. &lt;/p&gt; &lt;p&gt; Calls to &lt;code class="ApiItem" &gt;TFindFile::Find()&lt;/code&gt; cannot be made until an initial call has been made to either of: &lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code class="ApiItem" &gt;TFindFile::FindByDir()&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code class="ApiItem" &gt;TFindFile::FindByPath()&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt; Calls to &lt;code class="ApiItem" &gt;TFindFile::FindWild()&lt;/code&gt; cannot be made until an initial call has been made to either of: &lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code class="ApiItem" &gt;TFindFile::FindWildByDir()&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code class="ApiItem" &gt;TFindFile::FindWildByPath()&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt;</panic_description>
     </panic>
     <panic>
       <panic_id>3</panic_id>
@@ -33,7 +33,7 @@
     </panic>
     <panic>
       <panic_id>7</panic_id>
-      <panic_description>&lt;/p&gt; &lt;p&gt; &lt;em&gt;Not used.&lt;/em&gt; &lt;/p&gt;</panic_description>
+      <panic_description>&lt;p&gt;&lt;em&gt;Not used.&lt;/em&gt; &lt;/p&gt;</panic_description>
     </panic>
     <panic>
       <panic_id>8</panic_id>
@@ -53,7 +53,7 @@
     </panic>
     <panic>
       <panic_id>12</panic_id>
-      <panic_description>&lt;p&gt; The value returned by the file management observer functions: &lt;/p&gt; &lt;p&gt; &lt;code class="ApiItem"&gt;MFileManObserver::NotifyFileManStarted()&lt;/code&gt; &lt;/p&gt; &lt;p&gt; &lt;code class="ApiItem"&gt;MFileManObserver::NotifyFileManEnded()&lt;/code&gt; &lt;/p&gt; &lt;p&gt; &lt;code class="ApiItem"&gt;MFileManObserver::NotifyFileManOperation()&lt;/code&gt; &lt;/p&gt; &lt;p&gt; is not a valid &lt;code class="ApiItem"&gt;MFileManObserver::TControl&lt;/code&gt; enum value. &lt;/p&gt;</panic_description>
+      <panic_description>&lt;p&gt;The value returned by the file management observer functions: &lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code class="ApiItem" &gt;MFileManObserver::NotifyFileManStarted()&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code class="ApiItem" &gt;MFileManObserver::NotifyFileManEnded()&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code class="ApiItem" &gt;MFileManObserver::NotifyFileManOperation()&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt; is not a valid &lt;code class="ApiItem" &gt;MFileManObserver::TControl&lt;/code&gt; enum value. &lt;/p&gt;</panic_description>
     </panic>
     <panic>
       <panic_id>13</panic_id>
@@ -97,7 +97,7 @@
     </panic>
     <panic>
       <panic_id>23</panic_id>
-      <panic_description>&lt;p&gt; This panic is raised by &lt;code class="ApiItem"&gt;CDir::Sort()&lt;/code&gt; when the method of sorting, as defined by the single function argument, is none of the entries: &lt;/p&gt; &lt;p&gt; &lt;code class="ApiItem"&gt;TEntryKey&lt;/code&gt;&lt;code&gt;::ESortNone&lt;/code&gt; &lt;/p&gt; &lt;p&gt; &lt;code class="ApiItem"&gt;TEntryKey&lt;/code&gt;&lt;code&gt;::ESortByDate&lt;/code&gt; &lt;/p&gt; &lt;p&gt; &lt;code class="ApiItem"&gt;TEntryKey&lt;/code&gt;&lt;code&gt;::ESortBySize&lt;/code&gt; &lt;/p&gt; &lt;p&gt; &lt;code class="ApiItem"&gt;TEntryKey&lt;/code&gt;&lt;code&gt;::ESortByExt&lt;/code&gt; &lt;/p&gt; &lt;p&gt; &lt;code class="ApiItem"&gt;TEntryKey&lt;/code&gt;&lt;code&gt;::ESortByUid&lt;/code&gt; &lt;/p&gt; &lt;p&gt; &lt;code class="ApiItem"&gt;TEntryKey&lt;/code&gt;&lt;code&gt;::ESortByName&lt;/code&gt; &lt;/p&gt;</panic_description>
+      <panic_description>&lt;p&gt;This panic is raised by &lt;code class="ApiItem" &gt;CDir::Sort()&lt;/code&gt; when the method of sorting, as defined by the single function argument, is none of the entries: &lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code class="ApiItem" &gt;TEntryKey&lt;/code&gt; &lt;code&gt;::ESortNone&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code class="ApiItem" &gt;TEntryKey&lt;/code&gt; &lt;code&gt;::ESortByDate&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code class="ApiItem" &gt;TEntryKey&lt;/code&gt; &lt;code&gt;::ESortBySize&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code class="ApiItem" &gt;TEntryKey&lt;/code&gt; &lt;code&gt;::ESortByExt&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code class="ApiItem" &gt;TEntryKey&lt;/code&gt; &lt;code&gt;::ESortByUid&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code class="ApiItem" &gt;TEntryKey&lt;/code&gt; &lt;code&gt;::ESortByName&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt;</panic_description>
     </panic>
     <panic>
       <panic_id>24</panic_id>

@@ -81,11 +81,11 @@
     </panic>
     <panic>
       <panic_id>83</panic_id>
-      <panic_description>&lt;p&gt;This panic is raised in debug builds only.&lt;/p&gt;&lt;p&gt;This panic is raised by the millisecond timer when a call back has already been queued.&lt;/p&gt;</panic_description>
+      <panic_description>&lt;p&gt;&lt;em&gt;This panic is raised in debug builds only.&lt;/em&gt; &lt;/p&gt; &lt;p&gt; This panic is raised by the millisecond timer when a call back has already been queued.&lt;/p&gt;</panic_description>
     </panic>
     <panic>
       <panic_id>87</panic_id>
-      <panic_description>&lt;p&gt;This panic is raised in debug builds only.&lt;/p&gt; &lt;p&gt;This panic is raised during debugging when handling an exception via &lt;code&gt;Debug::HandleException&lt;/code&gt; and a write operation to the remote thread running the monitor program fails.&lt;/p&gt;</panic_description>
+      <panic_description>&lt;p&gt;&lt;em&gt;This panic is raised in debug builds only.&lt;/em&gt; &lt;/p&gt; &lt;p&gt;This panic is raised during debugging when handling an exception via &lt;code&gt;Debug::HandleException&lt;/code&gt; and a write operation to the remote thread running the monitor program fails.&lt;/p&gt;</panic_description>
     </panic>
     <panic>
       <panic_id>88</panic_id>

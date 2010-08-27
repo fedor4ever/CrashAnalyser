@@ -62,8 +62,16 @@ namespace CrashXmlPlugin.FileFormat.Segment.Entries.Stacks
                 {
                     aParameters.Writer.WriteElementString(SegConstants.Stacks_Stack_Hash, hashBuilder.GetHash());
                 }
+
+                // Write detailed hash
+                hashBuilder = MobileCrashHashBuilder.New(MobileCrashHashBuilder.TConfiguration.EDetailed, iStack, MobileCrashHashBuilder.KDetailedNumberOfStackEntriesToCheckForSymbols);
+                
+                if (hashBuilder != null)
+                {
+                    aParameters.Writer.WriteElementString(SegConstants.Stacks_Stack_Detailed_Hash, hashBuilder.GetHash());
+                }
             }
-            catch (Exception ex)
+            catch (Exception)
             {       
                 // Could not create MobileCrashHashBuilder, ignore.
             }

@@ -142,6 +142,7 @@ namespace CrashInfoFilePlugin.PluginImplementations.FileFormat
                 datablock.WriteRegisterExtraList(aOutput);
 
                 datablock.WriteCrashHash(aOutput);
+                datablock.WriteDetailedCrashHash(aOutput);
 
                 datablock.WriteBinFileName(aOutput);
                 datablock.WriteSymbolFileNames(aOutput);

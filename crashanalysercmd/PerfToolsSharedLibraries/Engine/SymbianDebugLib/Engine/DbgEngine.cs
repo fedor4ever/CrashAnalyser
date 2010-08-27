@@ -139,12 +139,31 @@ namespace SymbianDebugLib.Engine
                 iActiveRomIds.Add(aRomId);
         }
 
-        public bool IsActiveRomId(uint aRomId)
+        public void AddSymbolRomId(uint aRomId)
         {
-            return iActiveRomIds.Contains(aRomId);
+            if (!iSymbolRomIds.Contains(aRomId))
+                iSymbolRomIds.Add(aRomId);
         }
 
-        public void Prime( TSynchronicity aSynchronicity )
+        // Returns true we are decoding files related to this romid
+        public bool IsActiveRomId(uint aRomId)
+        {
+            if (iActiveRomIds.Count == 0)
+                return true;
+            else
+                return iActiveRomIds.Contains(aRomId);
+        }
+
+        // Returns true if this romid needs symbol files
+        public bool IsSymbolDataNeeded(uint aRomId)
+        {
+            if (iSymbolRomIds.Count == 0)
+                return true;
+            else
+                return iSymbolRomIds.Contains(aRomId);
+        }
+
+        public void Prime(TSynchronicity aSynchronicity)
         {
             if ( EngineOperation != null )
             {
@@ -490,6 +509,7 @@ namespace SymbianDebugLib.Engine
         private PlatformIdAllocator iIdAllocator = new PlatformIdAllocator();
         private DbgEntityConfig iCurrentConfig = null;
         private List<uint> iActiveRomIds = new List<uint>();
+        private List<uint> iSymbolRomIds = new List<uint>();
         private bool iVerbose;
         #endregion
     }

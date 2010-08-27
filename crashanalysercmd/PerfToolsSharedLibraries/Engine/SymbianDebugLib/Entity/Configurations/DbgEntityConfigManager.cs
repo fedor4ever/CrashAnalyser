@@ -76,11 +76,15 @@ namespace SymbianDebugLib.Entity.Configurations
 
                     // Prepare list of files
                     List<string> files = new List<string>();
-                    foreach ( DbgEntityConfig.CfgSet set in config )
+                    
+                    if (config.SymbolDataNeeded)
                     {
-                        foreach ( DbgEntityConfig.CfgFile file in set )
+                        foreach (DbgEntityConfig.CfgSet set in config)
                         {
-                            files.Add( file.FileNameAndPath );
+                            foreach (DbgEntityConfig.CfgFile file in set)
+                            {
+                                files.Add(file.FileNameAndPath);
+                            }
                         }
                     }
                     iEngine.AddRange( files );
@@ -89,9 +93,35 @@ namespace SymbianDebugLib.Entity.Configurations
             }
         }
 
+        // Returns true if aRomId is currently used id
         public bool IsActiveRomId(uint aRomId)
         {
             return iEngine.IsActiveRomId(aRomId);
+        }
+
+        // Returns true if symbol data is needed for this RomId
+        public bool IsSymbolDataNeeded(uint aRomId)
+        {
+            return iEngine.IsSymbolDataNeeded(aRomId);
+        }
+
+        public DbgEntityConfig ConfigById(DbgEntityConfigIdentifier aId)
+        {
+            DbgEntityConfig ret = null;
+            //
+            lock (iConfigurations)
+            {
+                foreach (DbgEntityConfig cfg in iConfigurations)
+                {
+                    if (cfg.Contains(aId))
+                    {
+                        ret = cfg;
+                        break;
+                    }
+                }
+            }
+            //
+            return ret;
         }
 
         #endregion
@@ -118,24 +148,6 @@ namespace SymbianDebugLib.Entity.Configurations
         #endregion
 
         #region Internal methods
-        private DbgEntityConfig ConfigById( DbgEntityConfigIdentifier aId )
-        {
-            DbgEntityConfig ret = null;
-            //
-            lock ( iConfigurations )
-            {
-                foreach ( DbgEntityConfig cfg in iConfigurations )
-                {
-                    if ( cfg.Contains( aId ) )
-                    {
-                        ret = cfg;
-                        break;
-                    }
-                }
-            }
-            //
-            return ret;
-        }
         #endregion
 
         #region Data members

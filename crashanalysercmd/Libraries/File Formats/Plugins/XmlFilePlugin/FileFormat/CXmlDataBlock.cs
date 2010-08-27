@@ -344,7 +344,16 @@ namespace XmlFilePlugin.PluginImplementations.FileFormat
                     try //CCrashInfoHashBuilder.New throws an exception if there's not enough data for hash creation
                     {
                         MobileCrashHashBuilder builder = MobileCrashHashBuilder.New(config, primarySummary);
-                        iHash = builder.GetHash();
+                        
+                        if (builder != null)
+                            iHash = builder.GetHash();
+
+                        // Detailed hash
+                        config = MobileCrashHashBuilder.TConfiguration.EDetailed;
+                        builder = MobileCrashHashBuilder.New(config, primarySummary, MobileCrashHashBuilder.KDetailedNumberOfStackEntriesToCheckForSymbols);
+                        
+                        if (builder != null)
+                            iDetailedHash = builder.GetHash();
                     }
                     catch (Exception /* e */)
                     {
@@ -705,6 +714,11 @@ namespace XmlFilePlugin.PluginImplementations.FileFormat
              return iHash;
          }
 
+        internal string DetailedHash()
+        {
+            return iDetailedHash;
+        }
+
         internal List<CXmlCallStack> CallStacks()
         {
              return iCallStacks;
@@ -787,6 +801,7 @@ namespace XmlFilePlugin.PluginImplementations.FileFormat
         private uint? iReportParamValue3 = null;
         private string iReportComments = string.Empty;
         private string iHash = string.Empty;
+        private string iDetailedHash = string.Empty;
 
         private List<CXmlCallStack> iCallStacks = new List<CXmlCallStack>(); //Call stacks
 

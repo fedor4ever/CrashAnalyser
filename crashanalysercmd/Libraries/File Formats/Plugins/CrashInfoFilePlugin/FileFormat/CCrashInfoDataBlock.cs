@@ -344,7 +344,16 @@ namespace CrashInfoFilePlugin.PluginImplementations.FileFormat
                     try //CCrashInfoHashBuilder.New throws an exception if there's not enough data for hash creation
                     {
                         MobileCrashHashBuilder builder = MobileCrashHashBuilder.New(config, primarySummary);
-                        iHash = builder.GetHash();
+
+                        if (builder != null)
+                            iHash = builder.GetHash();
+
+                        // Get detailed hash
+                        config = MobileCrashHashBuilder.TConfiguration.EDetailed;
+                        builder = MobileCrashHashBuilder.New(config, primarySummary, MobileCrashHashBuilder.KDetailedNumberOfStackEntriesToCheckForSymbols);
+                        
+                        if (builder != null)
+                            iDetailedHash = builder.GetHash();
                     }
                     catch (Exception e)
                     {
@@ -716,6 +725,15 @@ namespace CrashInfoFilePlugin.PluginImplementations.FileFormat
                 aOutput.Write( CCrashInfoFileUtilities.MakeOutputTags( iHash, CrashInfoConsts.Kcrash_hash ) );
             }
         }
+        
+        internal void WriteDetailedCrashHash(System.IO.StreamWriter aOutput)
+        {
+            if (string.IsNullOrEmpty(iDetailedHash) == false)
+            {
+                aOutput.Write(CCrashInfoFileUtilities.MakeOutputTags(iDetailedHash, CrashInfoConsts.Kcrash_detailedhash));
+            }
+        }
+
         internal void WriteMMCInfo(System.IO.StreamWriter aOutput)
         {
             //Dummy value needs to be written for dbmover
@@ -901,6 +919,7 @@ namespace CrashInfoFilePlugin.PluginImplementations.FileFormat
         private uint? iReportParamValue3 = null;
         private string iReportComments = string.Empty;
         private string iHash = string.Empty;
+        private string iDetailedHash = string.Empty;
 
         private List<CCrashInfoCallStack> iCallStacks = new List<CCrashInfoCallStack>(); //Call stacks
 

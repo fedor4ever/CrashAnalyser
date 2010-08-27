@@ -77,7 +77,7 @@
     </panic>
     <panic>
       <panic_id>99</panic_id>
-      <panic_description>&lt;p&gt;New &lt;code&gt;CMsvServerEntry&lt;/code&gt; context request failed as the contexts store is still open&lt;/p&gt;</panic_description>
+      <panic_description>&lt;p&gt;New &lt;code&gt;CMsvServerEntry&lt;/code&gt; context request failed as the context&amp;#8217;s store is still open&lt;/p&gt;</panic_description>
     </panic>
     <panic>
       <panic_id>109</panic_id>

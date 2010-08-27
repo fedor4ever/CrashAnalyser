@@ -40,6 +40,7 @@ using SymbianXmlInputLib.Elements.Types.Command;
 using SymbianDebugLib;
 using SymbianDebugLib.Engine;
 using SymbianDebugLib.Entity;
+using SymbianDebugLib.Entity.Configurations;
 using SymbianUtils;
 using SymbianUtils.Tracer;
 using CrashItemLib.Crash.InfoSW;
@@ -353,8 +354,15 @@ namespace CrashAnalyserServerExe.Engine
 
                 foreach (CACmdLineFileSource file in iInputs.SourceFiles)
                 {
+                    // Tell all used RomIds to debugEngine.  
                     if (file.RomId != null)
                         debugEngine.AddActiveRomId(file.RomId.Value);
+                    
+                    // Tell all RomIds which needs symbols to debugEngine so that 
+                    // we load only symbols for those.
+                    if (file.ContentType == TMobileCrashContentType.EContentTypePanic ||
+                        file.ContentType == TMobileCrashContentType.EContentTypeException)
+                        debugEngine.AddSymbolRomId(file.RomId.Value);                     
                 }
 
                 foreach ( CACmdLineFSEntity entry in metaDataFiles )
@@ -779,16 +787,15 @@ namespace CrashAnalyserServerExe.Engine
             }
         }
 
-
+        // Returns true if there exists symbols
         private bool ContainsSymbols( CIContainer aContainer )
         {
-            bool retval = false;
-            if (aContainer.FileNames.Length > 1)
-            {
-                retval = true;
-            }
-            return retval;
+            DbgEntityConfig config = null;
+            CIInfoSW info = (CIInfoSW)aContainer.ChildByType(typeof(CIInfoSW));
+            if(info != null)
+                config = aContainer.Engine.DebugEngine.ConfigManager.ConfigById(new DbgEntityConfigIdentifier(info.ImageCheckSum));
 
+            return (config != null || iInputs.SymbolsGiven);
         }
 
         private bool IsSymbollessMobileCrash(CIContainer aContainer)
@@ -894,9 +901,9 @@ namespace CrashAnalyserServerExe.Engine
             } 
 
             // Move the file.
-            System.Console.WriteLine("Moving file " + aFile.Name + " to " + newName);
-            if (!iInputs.TestWithoutMovingFiles)
+            if (!iInputs.NotMovingFiles)
             {
+                System.Console.WriteLine("Moving file " + aFile.Name + " to " + newName);
                 File.Move(aFile.Name, newName);
                 if (!File.Exists(newName))
                 {

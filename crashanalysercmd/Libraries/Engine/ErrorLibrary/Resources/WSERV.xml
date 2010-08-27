@@ -77,7 +77,7 @@
     </panic>
     <panic>
       <panic_id>19</panic_id>
-      <panic_description>&lt;p&gt; Attempted to use a patterned brush when the pattern bitmap has not yet been set&amp;#0160;&amp;#8212;  &lt;code&gt;UseBrushPattern()&lt;/code&gt;. &lt;/p&gt;</panic_description>
+      <panic_description>&lt;p&gt;Attempted to use a patterned brush when the pattern bitmap has not yet been set &amp;mdash; &lt;code&gt;UseBrushPattern()&lt;/code&gt;. &lt;/p&gt;</panic_description>
     </panic>
     <panic>
       <panic_id>20</panic_id>
@@ -185,7 +185,7 @@
     </panic>
     <panic>
       <panic_id>46</panic_id>
-      <panic_description>&lt;p&gt; An invalid call or request parameter was detected by &lt;code&gt;CWsPassword&lt;/code&gt;. This can be caused: &lt;/p&gt; &lt;p&gt; By &lt;code class="ApiItem"&gt;RWindowBase::PasswordWindow()&lt;/code&gt; sending an &lt;code&gt;EWsWinOpPasswordWindow&lt;/code&gt; server request whose password mode parameter is not recognised. &lt;/p&gt; &lt;p&gt; By an attempt to cancel the password window by a client which doesn&amp;#8217;t own the window. &lt;/p&gt; &lt;p&gt; By &lt;code class="ApiItem"&gt;RWsSession::PasswordEntered()&lt;/code&gt; sending a &lt;code&gt;EWsClOpPasswordEntered&lt;/code&gt; server request when no password window has been set, or when the client does not own the password window. &lt;/p&gt; &lt;p&gt; Valid password modes are defined in &lt;code class="ApiItem"&gt;TPasswordMode&lt;/code&gt; of &lt;code class="filename"&gt;w32std.h&lt;/code&gt;. &lt;/p&gt;</panic_description>
+      <panic_description>&lt;p&gt;An invalid call or request parameter was detected by &lt;code&gt;CWsPassword&lt;/code&gt;. This can be caused: &lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt; By &lt;code class="ApiItem" &gt;RWindowBase::PasswordWindow()&lt;/code&gt; sending an &lt;code&gt;EWsWinOpPasswordWindow&lt;/code&gt; server request whose password mode parameter is not recognised. &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; By an attempt to cancel the password window by a client which doesn&amp;#8217;t own the window. &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; By &lt;code class="ApiItem" &gt;RWsSession::PasswordEntered()&lt;/code&gt; sending a &lt;code&gt;EWsClOpPasswordEntered&lt;/code&gt; server request when no password window has been set, or when the client does not own the password window. &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt; Valid password modes are defined in &lt;code class="ApiItem" &gt;TPasswordMode&lt;/code&gt; of &lt;code class="filename"&gt;w32std.h&lt;/code&gt;. &lt;/p&gt;</panic_description>
     </panic>
     <panic>
       <panic_id>47</panic_id>
@@ -254,6 +254,78 @@
     <panic>
       <panic_id>63</panic_id>
       <panic_description>&lt;p&gt; An attempt was made to set a custom text cursor (using &lt;code class="ApiItem"&gt;RWindowGroup::SetTextCursor()&lt;/code&gt;) that does not have any sprite members set. &lt;/p&gt; &lt;p&gt; Introduced in v7.0s.&lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>64</panic_id>
+      <panic_description>&lt;p&gt;An attempt was made to set a transparency operation to a window that has not been enabled to be transparent. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>65</panic_id>
+      <panic_description>&lt;p&gt;An multiple screen API function was called with an illegal screen number. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>66</panic_id>
+      <panic_description>&lt;p&gt;An attempt was made to call an event API without specifying the SwEvent capability, such as &lt;code class="ApiItem" &gt;RWsSession::SimulateKeyEvent()&lt;/code&gt;, &lt;code class="ApiItem" &gt;RWindowGroup::SimulatePointerEvent()&lt;/code&gt;. &lt;/p&gt; &lt;p&gt; Introduced in v8.1. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>67</panic_id>
+      <panic_description>&lt;p&gt;A leave occured whilst processing a command in the middle of the buffer. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>68</panic_id>
+      <panic_description>&lt;p&gt;An attempt was made to try to use a group window with a deleted Screen Device. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>69</panic_id>
+      <panic_description>&lt;p&gt;Redraw storing cannot be disabled for transparent window. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>70</panic_id>
+      <panic_description>&lt;p&gt;Bad internal state in &lt;code&gt;CWsGraphic&lt;/code&gt; code. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>71</panic_id>
+      <panic_description>&lt;p&gt;An attempt was made to use an uninitialised &lt;code&gt;CWsClient&lt;/code&gt;. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>72</panic_id>
+      <panic_description>&lt;p&gt;Client IPC message is &lt;code&gt;NULL&lt;/code&gt;. &lt;/p&gt; &lt;p&gt; Introduced in v9.4 &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>73</panic_id>
+      <panic_description>&lt;p&gt;Incompatible use of window transparency and background surface/overlay. &lt;/p&gt; &lt;p&gt; Introduced in v9.4 &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>74</panic_id>
+      <panic_description>&lt;p&gt;A notification request is pending for a window so new requests cannot be added for that window. &lt;/p&gt; &lt;p&gt; Introduced in v9.4 &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>75</panic_id>
+      <panic_description>&lt;p&gt;An incorrect surface type has been used. &lt;/p&gt; &lt;p&gt; Introduced in v9.4 &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>76</panic_id>
+      <panic_description>&lt;p&gt;Attempted use of a surface configuration without any valid members. &lt;/p&gt; &lt;p&gt; Introduced in v9.4 &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>77</panic_id>
+      <panic_description>&lt;p&gt;Not used &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>78</panic_id>
+      <panic_description>&lt;p&gt;Illegal display mode is used. &lt;/p&gt; &lt;p&gt; Introduced in v9.5 &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>79</panic_id>
+      <panic_description>&lt;p&gt;A draw operation was performed on the &lt;code class="ApiItem" &gt;CWindowGc&lt;/code&gt; outside an &lt;code class="ApiItem" &gt;RWindow::BeginRedraw()&lt;/code&gt; / &lt;code&gt;EndRedraw()&lt;/code&gt; pair. &lt;/p&gt; &lt;p&gt; Introduced in v9.4 &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>80</panic_id>
+      <panic_description>&lt;p&gt;General invalid parameter code for invariant checking. &lt;/p&gt; &lt;p&gt; Introduced in v9.5 &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>81</panic_id>
+      <panic_description>&lt;p&gt;Invalid drawable source handle. &lt;/p&gt; &lt;p&gt; Introduced in v9.5 &lt;/p&gt;</panic_description>
     </panic>
   </panics>
 </panic_category>

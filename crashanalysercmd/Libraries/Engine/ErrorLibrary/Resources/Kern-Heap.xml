@@ -13,7 +13,7 @@
     </panic>
     <panic>
       <panic_id>213</panic_id>
-      <panic_description>&lt;p&gt;This panic is raised when attempting to set a new debug failure mode on a heap with an invalid argument. For example, if aBurst &gt; KMaxTUint6 when invoking __UHEAP_BURSTFAILNEXT when a RHeap object is used for the user heap. On the user side this is associated with the USER category; on the kernel side this is associated with the KERN-HEAP category. &lt;/p&gt;</panic_description>
+      <panic_description>&lt;p&gt;This panic is raised when attempting to set a new debug failure mode on a heap with an invalid argument. For example, if aBurst &amp;gt; KMaxTUint6 when invoking __UHEAP_BURSTFAILNEXT when a RHeap object is used for the user heap. On the user side this is associated with the USER category; on the kernel side this is associated with the KERN-HEAP category. &lt;/p&gt;</panic_description>
     </panic>
   </panics>
 </panic_category>

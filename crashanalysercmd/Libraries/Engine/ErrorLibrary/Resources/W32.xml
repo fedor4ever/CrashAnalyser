@@ -1,47 +1,95 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <panic_category>
   <category_name>W32</category_name>
-  <category_description>W32 is a synchronous interface onto the window server that user code can include, link to and invoke instead of sending low level client-server requests to the window server. Some errors can be detected before they are sent to the server and are raised as panics from W32. Code in the W32 synchronous interface runs in the client’s thread, so it raises panics in situations it can understand on the current thread via User::Panic(). These panics have a category of W32. &lt;br&gt;&lt;br&gt;To minimise strain on the system, W32 can cache several requests in order in a buffer and send them as a group to the server. This means that a panic might not be caused by a bug in the last client-side code to run, but by an earlier line that does not get its request serviced until later. To debug such a panic it is often useful to turn on auto flushing.&lt;br&gt;&lt;br&gt;Window server synchronous interface (W32) panics are raised by the synchronous interface onto the window server when it realises a client has attempted an action the interface can’t legally pass on to the window server thread. Because the interface is synchronous, the current thread is panicked, and the request is never sent to the window server.&lt;br&gt;&lt;br&gt;These panics are defined in the enumeration TW32Panic in w32cmd.h.&lt;br&gt;&lt;br&gt;Note that some panics are raised in debug builds only.</category_description>
+  <category_description> &lt;p&gt;W32 is a synchronous interface onto the window server that user code can include, link to and invoke instead of sending low level client-server requests to the window server. Some errors can be detected before they are sent to the server and are raised as panics from W32. Code in the W32 synchronous interface runs in the client&amp;#8217;s thread, so it raises panics in situations it can understand on the current thread via &lt;code class="ApiItem" &gt;User::Panic()&lt;/code&gt;. These panics have a category of W32. &lt;/p&gt;&lt;p&gt; To minimise strain on the system, W32 can cache several requests in order in a buffer and send them as a group to the server. This means that a panic might not be caused by a bug in the last client-side code to run, but by an earlier line that does not get its request serviced until later. To debug such a panic it is often useful to turn on auto flushing. &lt;/p&gt;&lt;p&gt; Window server synchronous interface (W32) panics are raised by the synchronous interface onto the window server when it realises a client has attempted an action the interface can&amp;#8217;t legally pass on to the window server thread. Because the interface is synchronous, the current thread is panicked, and the request is never sent to the window server. &lt;/p&gt;&lt;p&gt; These panics are defined in the enumeration &lt;code&gt;TW32Panic&lt;/code&gt; in &lt;code class="filename"&gt;w32cmd.h&lt;/code&gt;. &lt;/p&gt;&lt;p&gt; Note that some panics are raised in debug builds only. &lt;/p&gt;</category_description>
   <panics>
-	<panic>
-    	<panic_id>0</panic_id>
-    	<panic_description>An attempt was made to reconnect to the window server using RWsSession::Connect(). It is only possible to reconnect if the current session has been closed.</panic_description>
-  	</panic>
-	<panic>
-		<panic_id>1</panic_id>
-	    <panic_description>Not used.</panic_description>
-	</panic>
-	<panic>
-    	<panic_id>2</panic_id>
-    	<panic_description>Not used.</panic_description>
-  	</panic>
-	<panic>
-		<panic_id>3</panic_id>
-		<panic_description>Not used.</panic_description>
-	</panic>
-	<panic>
-		<panic_id>4</panic_id>
-		<panic_description>Raised by CWindowGc::MapColors() when its aNumPairs argument has a value greater than 16.</panic_description>
-	</panic>
-	<panic>
-		<panic_id>5</panic_id>
-		<panic_description>Data is too long to fit into the window server's client side buffer, see Client-side buffer.&lt;br&gt;&lt;br&gt;Introduced in v6.0.</panic_description>
-	</panic>
-	<panic>
-		<panic_id>6</panic_id>
-		<panic_description>CWsScreenDevice::SetCustomPalette() was called with a NULL pointer.&lt;br&gt;&lt;br&gt;Introduced in v7.0.</panic_description>
-	</panic>
-	<panic>
-    	<panic_id>7</panic_id>
-    	<panic_description>CWsScreenDevice::SetPalette() failed, but no error code could be returned. Debug builds for the emulator only.&lt;br&gt;&lt;br&gt;Introduced in v7.0.</panic_description>
-	</panic>
-	<panic>
-    	<panic_id>8</panic_id>
-    	<panic_description>A direct screen access function was called out of turn.&lt;br&gt;&lt;br&gt;Introduced in v7.0.</panic_description>
-	</panic>
-	<panic>
-		<panic_id>9</panic_id>
-		<panic_description>An attempt was made to pass an invalid region to the window server. Debug builds only.&lt;br&gt;&lt;br&gt;Introduced in v7.0s.</panic_description>
-	</panic>
+    <panic>
+      <panic_id>0</panic_id>
+      <panic_description>&lt;p&gt;An attempt was made to reconnect to the window server using &lt;code class="ApiItem" &gt;RWsSession::Connect()&lt;/code&gt;. It is only possible to reconnect if the current session has been closed. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>1</panic_id>
+      <panic_description>&lt;p&gt;Not used. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>2</panic_id>
+      <panic_description>&lt;p&gt;Not used. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>3</panic_id>
+      <panic_description>&lt;p&gt;Not used. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>4</panic_id>
+      <panic_description>&lt;p&gt;Raised by &lt;code class="ApiItem" &gt;CWindowGc::MapColors()&lt;/code&gt; when its &lt;code&gt;aNumPairs&lt;/code&gt; argument has a value greater than 16. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>5</panic_id>
+      <panic_description>&lt;p&gt;Data is too long to fit into the window server's client side buffer, see &lt;a href="../../guide/guide/windowing/wserv/cli_lib/concepts/client_side_buffer.concept.html#WindowServerGuide6%2eClientSideBuffer" title="The Window Server client-side buffer enables drawing functions to be buffered and executed in sequence. This saves many client-server context switches and makes the system fast and responsive."&gt;Client-side buffer&lt;/a&gt;. &lt;/p&gt; &lt;p&gt; Introduced in v6.0. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>6</panic_id>
+      <panic_description>&lt;p&gt;&lt;code&gt; &lt;code class="ApiItem" &gt;CWsScreenDevice::SetCustomPalette()&lt;/code&gt; &lt;/code&gt; was called with a NULL pointer. &lt;/p&gt; &lt;p&gt; Introduced in v7.0. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>7</panic_id>
+      <panic_description>&lt;p&gt;&lt;code class="ApiItem" &gt;CWsScreenDevice::SetPalette()&lt;/code&gt; failed, but no error code could be returned. Debug builds for the emulator only. &lt;/p&gt; &lt;p&gt; Introduced in v7.0. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>8</panic_id>
+      <panic_description>&lt;p&gt;A direct screen access function was called out of turn. &lt;/p&gt; &lt;p&gt; Introduced in v7.0. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>9</panic_id>
+      <panic_description>&lt;p&gt;An attempt was made to pass an invalid region to the window server. Debug builds only. &lt;/p&gt; &lt;p&gt; Introduced in v7.0s. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>10</panic_id>
+      <panic_description>&lt;p&gt;Raised when the client is trying to use a wrong IpcSlot. The first slot if raised by &lt;code class="ApiItem" &gt;RAnim::CommandReply&lt;/code&gt; or &lt;code class="ApiItem" &gt;RAnimDll::Construct&lt;/code&gt;. Either the first or the second if raised by &lt;code class="ApiItem" &gt;RAnim::AsyncCommandReply&lt;/code&gt;. &lt;/p&gt; &lt;p&gt; Introduced in v7.0s. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>11</panic_id>
+      <panic_description>&lt;p&gt;A function has been called with a &lt;code&gt;NULL&lt;/code&gt; array pointer when it should not be. &lt;/p&gt; &lt;p&gt; Introduced in v8.1. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>12</panic_id>
+      <panic_description>&lt;p&gt;Not used. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>13</panic_id>
+      <panic_description>&lt;p&gt;The &lt;code class="ApiItem" &gt;CWsGraphic::CManager&lt;/code&gt;'s &lt;code class="ApiItem" &gt;RPointerArray&amp;lt;CWsGraphic&amp;gt;&lt;/code&gt; still has pointers to &lt;code&gt;CWsGraphic&lt;/code&gt; left inside when it should be empty. &lt;/p&gt; &lt;p&gt; Introduced in v9.2. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>14</panic_id>
+      <panic_description>&lt;p&gt;Raised when one of the &lt;code&gt;CWsGraphic::CManager&lt;/code&gt;'s members has an inconsistent value (i.e. &lt;code&gt;NULL&lt;/code&gt; when it should not be and vice-versa). &lt;/p&gt; &lt;p&gt; Introduced in v9.2. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>15</panic_id>
+      <panic_description>&lt;p&gt;Raised if &lt;code class="ApiItem" &gt;RWsGraphicMsgBuf&lt;/code&gt; has been passed an out of bounds index or an incorrect type message. &lt;/p&gt; &lt;p&gt; Introduced in v9.2. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>16</panic_id>
+      <panic_description>&lt;p&gt;Raised when trying to send an empty &lt;code class="ApiItem" &gt;TWsClCmdGdSendMessage&lt;/code&gt;. &lt;/p&gt; &lt;p&gt; Introduced in v9.2. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>17</panic_id>
+      <panic_description>&lt;p&gt;Not used. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>18</panic_id>
+      <panic_description>&lt;p&gt;Raised when an invalid parameter is passed to a function. &lt;/p&gt; &lt;p&gt; Introduced in v9.4. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>19</panic_id>
+      <panic_description>&lt;p&gt;Raised when &lt;code&gt;Construct()&lt;/code&gt; is called on an already constructed client-side object. &lt;/p&gt; &lt;p&gt; Introduced in v9.5. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>20</panic_id>
+      <panic_description>&lt;p&gt;Debug: Raised when trying to use an interface that is not initialised. &lt;/p&gt; &lt;p&gt; Introduced in v9.5. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>21</panic_id>
+      <panic_description>&lt;p&gt;Debug: Raised when returned data does not match expected sizes or granularity. &lt;/p&gt; &lt;p&gt; Introduced in v9.5. &lt;/p&gt;</panic_description>
+    </panic>
   </panics>
 </panic_category>

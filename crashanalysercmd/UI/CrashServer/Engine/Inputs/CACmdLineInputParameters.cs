@@ -116,7 +116,7 @@ namespace CrashAnalyserServerExe.Engine
                     }
                     if (paramId == "-t")
                     {
-                        TestWithoutMovingFiles = true;
+                        NotMovingFiles = true;
                     }
                     if (paramId == "-x")
                     {
@@ -139,6 +139,7 @@ namespace CrashAnalyserServerExe.Engine
                     // Crash files
                     if (paramId == "-b")
                     {
+                        CommandLineUsage = true;
                         FileInfo fi = new FileInfo(paramContent);
                         CACmdLineFSEntityList<CACmdLineFileSource> fileList = new CACmdLineFSEntityList<CACmdLineFileSource>();
 
@@ -164,6 +165,7 @@ namespace CrashAnalyserServerExe.Engine
                             FileInfo fi = new FileInfo(fileName);
                             if(fi.Exists)
                             {
+                                SymbolsGiven = true;
                                 fileList.Add(fi);
                             }
                         }
@@ -187,6 +189,37 @@ namespace CrashAnalyserServerExe.Engine
             }
 
             //Parameter scanning finished - validate content
+            if (CommandLineUsage)
+            {
+                if (iMetaData.Count == 0 && DecodeWithoutSymbols == false)
+                {
+                    System.Console.WriteLine("Error: No symbol files given. Give symbol files with parameter -m");
+                    retval = false;
+                }
+
+                if (!UseXmlSink)
+                {
+                    // Plain text output as default in command line usage.
+                    UseXmlSink = true;
+                    iSinkParams.PlainTextOutput = true;
+                }
+                    
+                // When used in command line mode set current directory as default archive, 
+                // error and skipped path (just some valid dir as it is not really used).
+                if (ArchivePath == String.Empty || SkippedPath == String.Empty)
+                {
+                    if (ArchivePath != String.Empty || SkippedPath != String.Empty)
+                    {
+                        System.Console.WriteLine("Please give either both the archive path and the skipped path, or neither of them.");
+                        System.Console.WriteLine("Not moving any files.");
+                    }
+                    NotMovingFiles = true;
+                    ArchivePath = Directory.GetCurrentDirectory();
+                    SkippedPath = ArchivePath;
+                    ErrorPath = SkippedPath + @"\errors";
+                }
+            }            
+                
             if (ArchivePath == string.Empty)
             {
                 System.Console.WriteLine("Error: No archive path given");
@@ -210,7 +243,7 @@ namespace CrashAnalyserServerExe.Engine
             }
             else //skipped path exists, create error path if not there
             {
-                if (!Directory.Exists(ErrorPath))
+                if (!Directory.Exists(ErrorPath) && !NotMovingFiles)
                 {
                     Directory.CreateDirectory(ErrorPath);
                 }
@@ -245,10 +278,9 @@ namespace CrashAnalyserServerExe.Engine
             iErrorPath = iErrorPath + @"\" + year + "_" + weekNum.ToString().PadLeft(2, '0');
 
 
-            if (TestWithoutMovingFiles)
+            if (NotMovingFiles)
             {
-                System.Console.WriteLine("Test mode parameter -t given: Not moving any files!" );
-                retval = true;
+                System.Console.WriteLine("Not moving any files!" );
             }
             else if (retval) //Archive & skipped directories exsits, clean up paths and add week numbers
             {
@@ -270,24 +302,36 @@ namespace CrashAnalyserServerExe.Engine
             {
                 PrintCommandHelp();
             }
-            System.Console.WriteLine("Using archive path " + ArchivePath + ", skipped path " + SkippedPath + " and error path " + ErrorPath);
-    
+            
+            if (!NotMovingFiles)
+            {
+                System.Console.WriteLine("Using archive path " + ArchivePath + ", skipped path " + SkippedPath + " and error path " + ErrorPath);
+            }
 
             return retval;
         }
 
         private void PrintCommandHelp()
         {
+            System.Console.WriteLine("Usage example:");
+            System.Console.WriteLine("CrashAnalyserServerExe.exe -b crashfile.bin -m mapfiles.zip,rom.symbol");
+            System.Console.WriteLine();
             System.Console.WriteLine("Command line parameters:");
-            System.Console.WriteLine("-a C:\\folderarchive\\   Location where to move files to permanent archive.");
-            System.Console.WriteLine("-s C:\\folder\\skipped\\  Location where to put skipped files to wait reprocessing.");
-            System.Console.WriteLine("-c C:\\folder\\output\\ Location where to put output files. Defaults to current working dir.");
-            System.Console.WriteLine("-b crashfile.bin   Crash file to be decoded.");
+            System.Console.WriteLine("-b crashfile.bin            Crash file to be decoded.");
             System.Console.WriteLine("-m crash.symbol,crash.map   Symbol/map/dictionary files.");
-            System.Console.WriteLine("-f Force decoding even if files are without symbols.");
-            System.Console.WriteLine("-t Test mode, will not move any files, ignores -a and -s.");
-            System.Console.WriteLine("-x Prints output in Xml format");
-            System.Console.WriteLine("-p Prints output in plain text format");
+            System.Console.WriteLine("-f                          Force decoding even if files are without symbols.");
+            System.Console.WriteLine("-x                          Prints output in Xml format");
+            System.Console.WriteLine("-p                          Prints output in plain text format (default)");
+            System.Console.WriteLine();
+            System.Console.WriteLine("For server usage:");
+            System.Console.WriteLine("-a C:\\folderarchive\\        Location where to move files to permanent archive.");
+            System.Console.WriteLine("-s C:\\folder\\skipped\\       Location where to put skipped");
+            System.Console.WriteLine("                            files to wait reprocessing.");
+            System.Console.WriteLine("-c C:\\folder\\output\\        Location where to put output files.");
+            System.Console.WriteLine("                            Defaults to current working dir.");
+            System.Console.WriteLine("-t                          Will not move any files,");
+            System.Console.WriteLine("                            ignores -a and -s.");
+            System.Console.WriteLine();
         }
 
         #endregion
@@ -337,17 +381,26 @@ namespace CrashAnalyserServerExe.Engine
             get { return iDecodeWithoutSymbols; }
             set { iDecodeWithoutSymbols = value; }
         }
-        public bool TestWithoutMovingFiles
+        public bool NotMovingFiles
         {
-            get { return iTestWithoutMovingFiles; }
-            set { iTestWithoutMovingFiles = value; }
+            get { return iNotMovingFiles; }
+            set { iNotMovingFiles = value; }
+        }
+        public bool SymbolsGiven
+        {
+            get { return iSymbolsGiven; }
+            set { iSymbolsGiven = value; }
         }
         public bool UseXmlSink
         {
             get { return iUseXmlSink; }
             set { iUseXmlSink = value; }
         }
-
+        public bool CommandLineUsage
+        {
+            get { return iCommandLineUsage; }
+            set { iCommandLineUsage = value; }
+        }
         #endregion
 
         #region Internal constants
@@ -396,9 +449,11 @@ namespace CrashAnalyserServerExe.Engine
         private string iArchivePath = string.Empty;       
         private string iSkippedPath = string.Empty;      
         private string iErrorPath = string.Empty;    
-        private bool iTestWithoutMovingFiles = false;
+        private bool iNotMovingFiles = false;
+        private bool iSymbolsGiven = false;
         private bool iUseXmlSink = false;
         private bool iDecodeWithoutSymbols = false;
+        private bool iCommandLineUsage = false;
 
 
 

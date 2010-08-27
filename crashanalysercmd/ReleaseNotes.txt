@@ -1,7 +1,7 @@
 ===============================================================================
 
 RELEASE NOTES - CrashAnalyser
-RELEASED 20th April 2010 
+RELEASED 29th June 2010 
 
 
 
@@ -25,13 +25,11 @@ Main Features:
 
 What's New 
 ===================
-Version 1.0.9 20th April 2010 
+Version 1.0.13 29th June 2010 
 --------------------------------
-  - Changes in selge.ini file handling
-  - Added support for kern-common and kern-heap panic descriptions
-  - Added .nosync files and NOKIA START/END tags to support SF releasing
-  - Changed hash-code calculation so that similar crashes have same hash code
-  - Support for paged out code segments added
+  - Moved testset under report_details in XML file
+  - Changed supported crash file version number from 10 to 12
+  - Simplified command line usage
 
 ===============================================================================
 
@@ -66,7 +64,31 @@ Bugs
 
 Version History:
 ================
-Version 1.0.8 12th March 2010
+Version 1.0.12 21th June 2010 
+--------------------------------
+  - Moved crash description under traces tag in XML file
+  - Support for zip symbol files added
+
+Version 1.0.11 12th May 2010 
+--------------------------------
+  - Updated crash description XML files
+  - Changed the registers to human readable format in output XML files
+
+Version 1.0.10 7th May 2010 
+--------------------------------
+  - Performance improvements
+  - Two level defect hash implementation
+
+Version 1.0.9 20th April 2010 
+--------------------------------
+  - Changes in selge.ini file handling
+  - Added support for kern-common and kern-heap panic descriptions
+  - Added .nosync files and NOKIA START/END tags to support SF releasing
+  - Changed hash-code calculation so that similar crashes have same hash code
+  - Support for paged out code segments added
+
+Version 1.0.8 12th December 2010 
+--------------------------------
   - VersionHistory.bin support
   - Many other features
 

@@ -128,6 +128,10 @@
       <panic_description>&lt;p&gt; This panic is raised by the &lt;code&gt;Set(TDesC8&amp;amp;)&lt;/code&gt; member function of &lt;code&gt;TCheckedUid&lt;/code&gt; when the length of the descriptor passed to the function is not equal to the size of a &lt;code&gt;TCheckedUid&lt;/code&gt; object. &lt;/p&gt;</panic_description>
     </panic>
     <panic>
+      <panic_id>39</panic_id>
+      <panic_description>&lt;p&gt;This panic is raised when the size of a new heap is smaller than the permitted minimum. It must be at least the size of an RHeap object. &lt;/p&gt; &lt;p&gt; On the user side this is associated with the USER category. On the kernel side this is associated with the KERN-HEAP category. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
       <panic_id>41</panic_id>
       <panic_description>&lt;p&gt; This panic is caused by the &lt;code class="ApiItem"&gt;UserHeap::ChunkHeap()&lt;/code&gt; static function when the value defining the minimum length of the heap is greater than the value defining the maximum length to which the heap can grow. &lt;/p&gt;</panic_description>
     </panic>
@@ -153,7 +157,7 @@
     </panic>
     <panic>
       <panic_id>47</panic_id>
-      <panic_description>&lt;p&gt; This panic is raised by the &lt;code&gt;Alloc()&lt;/code&gt;, &lt;code&gt;AllocL()&lt;/code&gt; or &lt;code&gt;AllocLC()&lt;/code&gt; member functions of &lt;code class="ApiItem"&gt;RHeap&lt;/code&gt;. It is caused by trying to allocate a cell from a heap, specifying an unsigned size value which is greater than or equal to the value of &lt;code&gt;KMaxTInt/2&lt;/code&gt;. The constant &lt;code&gt;KMaxTInt&lt;/code&gt; is defined in &lt;code class="filename"&gt;e32std.h&lt;/code&gt;. &lt;/p&gt; &lt;p&gt; This panic may also be raised by the heap walker when it finds a bad allocated heap cell size. &lt;/p&gt;</panic_description>
+      <panic_description>&lt;p&gt;This panic is raised by the &lt;code&gt;Alloc()&lt;/code&gt;, &lt;code&gt;AllocL()&lt;/code&gt; or &lt;code&gt;AllocLC()&lt;/code&gt; member functions of &lt;code class="ApiItem" &gt;RHeap&lt;/code&gt;. It is caused by trying to allocate a cell from a heap, specifying an unsigned size value which is greater than or equal to the value of &lt;code&gt;KMaxTInt/2&lt;/code&gt;. The constant &lt;code&gt;KMaxTInt&lt;/code&gt; is defined in &lt;code class="filename"&gt;e32const.h&lt;/code&gt;. &lt;/p&gt; &lt;p&gt; This panic may also be raised by the heap walker when it finds a bad allocated heap cell size. &lt;/p&gt;</panic_description>
     </panic>
     <panic>
       <panic_id>48</panic_id>
@@ -237,7 +241,7 @@
     </panic>
     <panic>
       <panic_id>72</panic_id>
-      <panic_description>&lt;p&gt; &lt;em&gt;Withdrawn in 6.0:&lt;/em&gt; This panic is raised by the &lt;code&gt;SetRetry()&lt;/code&gt; member function of &lt;code class="ApiItem"&gt;RSessionBase&lt;/code&gt;, the client interface for communication with a server, when the specified operation code identifying the required service is either negative or a value greater than &lt;code&gt;KMaxTint&lt;/code&gt; (defined in &lt;code class="filename"&gt;e32std.h&lt;/code&gt;). &lt;/p&gt; &lt;p&gt; &lt;em&gt;Introduced in 6.0:&lt;/em&gt; This panic is raised by the &lt;code&gt;Send()&lt;/code&gt; and &lt;code&gt;SendReceive()&lt;/code&gt; member functions of &lt;code class="ApiItem"&gt;RSessionBase&lt;/code&gt;, the client interface for communication with a server, when the specified operation code identifying the required service is either negative or a value greater than &lt;code&gt;KMaxTint&lt;/code&gt; (defined in &lt;code class="filename"&gt;e32std.h&lt;/code&gt;). &lt;/p&gt;</panic_description>
+      <panic_description>&lt;p&gt;&lt;em&gt;Withdrawn in 6.0:&lt;/em&gt; This panic is raised by the &lt;code&gt;SetRetry()&lt;/code&gt; member function of &lt;code class="ApiItem" &gt;RSessionBase&lt;/code&gt;, the client interface for communication with a server, when the specified operation code identifying the required service is either negative or a value greater than &lt;code&gt;KMaxTInt&lt;/code&gt; (defined in &lt;code class="filename"&gt;e32const.h&lt;/code&gt;). &lt;/p&gt; &lt;p&gt; &lt;em&gt;Introduced in 6.0:&lt;/em&gt; This panic is raised by the &lt;code&gt;Send()&lt;/code&gt; and &lt;code&gt;SendReceive()&lt;/code&gt; member functions of &lt;code class="ApiItem" &gt;RSessionBase&lt;/code&gt;, the client interface for communication with a server, when the specified operation code identifying the required service is either negative or a value greater than &lt;code&gt;KMaxTInt&lt;/code&gt; (defined in &lt;code class="filename"&gt;e32const.h&lt;/code&gt;). &lt;/p&gt;</panic_description>
     </panic>
     <panic>
       <panic_id>73</panic_id>
@@ -381,7 +385,7 @@
     </panic>
     <panic>
       <panic_id>110</panic_id>
-      <panic_description>&lt;p&gt; This panic is raised when creating a thread using the &lt;code&gt;Create()&lt;/code&gt; member functions of &lt;code class="ApiItem"&gt;RThread&lt;/code&gt;. The panic is only raised by those variants of &lt;code&gt;Create()&lt;/code&gt; which create a new heap for the new thread. The panic occurs if the minimum heap size specified is less than &lt;code&gt;KMinHeapSize&lt;/code&gt; , defined in &lt;code class="filename"&gt;e32std.h&lt;/code&gt;. &lt;/p&gt;</panic_description>
+      <panic_description>&lt;p&gt;This panic is raised when creating a thread using the &lt;code&gt;Create()&lt;/code&gt; member functions of &lt;code class="ApiItem" &gt;RThread&lt;/code&gt;. The panic is only raised by those variants of &lt;code&gt;Create()&lt;/code&gt; which create a new heap for the new thread. The panic occurs if the minimum heap size specified is less than &lt;code&gt;KMinHeapSize&lt;/code&gt; , defined in &lt;code class="filename"&gt;e32const.h&lt;/code&gt;. &lt;/p&gt;</panic_description>
     </panic>
     <panic>
       <panic_id>111</panic_id>
@@ -393,15 +397,15 @@
     </panic>
     <panic>
       <panic_id>113</panic_id>
-      <panic_description>&lt;p&gt; This panic is raised by: &lt;/p&gt; &lt;p&gt; the constructor of a time representation object, a &lt;code class="ApiItem"&gt;TTime&lt;/code&gt;, which takes a text string, when the format of that text string is incorrect or represents an invalid date/time. &lt;/p&gt; &lt;p&gt; the &lt;code&gt;Parse()&lt;/code&gt; member function of a time representation object, a &lt;code class="ApiItem"&gt;TTime&lt;/code&gt;, if the century offset value is either negative or is greater than or equal to 100. &lt;/p&gt; &lt;p&gt; the &lt;code class="ApiItem"&gt;Time::DaysInMonth()&lt;/code&gt; function, if an invalid month value is passed. &lt;/p&gt;</panic_description>
+      <panic_description>&lt;p&gt;This panic is raised by: &lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt; the constructor of a time representation object, a &lt;code class="ApiItem" &gt;TTime&lt;/code&gt;, which takes a text string, when the format of that text string is incorrect or represents an invalid date/time. &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; the &lt;code&gt;Parse()&lt;/code&gt; member function of a time representation object, a &lt;code class="ApiItem" &gt;TTime&lt;/code&gt;, if the century offset value is either negative or is greater than or equal to 100. &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; the &lt;code class="ApiItem" &gt;Time::DaysInMonth()&lt;/code&gt; function, if an invalid month value is passed. &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt;</panic_description>
     </panic>
     <panic>
       <panic_id>114</panic_id>
-      <panic_description>&lt;p&gt;This panic is raised in debug builds only. &lt;/p&gt; &lt;p&gt; This panic is raised by member functions of a &lt;code&gt;TBusLocalDrive&lt;/code&gt; when no connection has been made to a local drive. &lt;/p&gt;</panic_description>
+      <panic_description>&lt;p&gt;&lt;em&gt;This panic is raised in debug builds only.&lt;/em&gt; &lt;/p&gt; &lt;p&gt; This panic is raised by member functions of a &lt;code&gt;TBusLocalDrive&lt;/code&gt; when no connection has been made to a local drive. &lt;/p&gt;</panic_description>
     </panic>
     <panic>
       <panic_id>115</panic_id>
-      <panic_description>&lt;p&gt; This panic is raised when attempting to connect to a local drive using the &lt;code&gt;Connect()&lt;/code&gt; member function of &lt;code&gt;TBusLocalDrive&lt;/code&gt; and the specified drive number is out of range, i.e. the drive number is negative or is greater than or equal to &lt;code&gt;KMaxLocalDrives&lt;/code&gt;, defined in &lt;code class="filename"&gt;e32std.h&lt;/code&gt;. &lt;/p&gt;</panic_description>
+      <panic_description>&lt;p&gt;This panic is raised when attempting to connect to a local drive using the &lt;code&gt;Connect()&lt;/code&gt; member function of &lt;code&gt;TBusLocalDrive&lt;/code&gt; and the specified drive number is out of range, i.e. the drive number is negative or is greater than or equal to &lt;code&gt;KMaxLocalDrives&lt;/code&gt;, defined in &lt;code class="filename"&gt;e32const.h&lt;/code&gt;. &lt;/p&gt;</panic_description>
     </panic>
     <panic>
       <panic_id>116</panic_id>
@@ -409,7 +413,7 @@
     </panic>
     <panic>
       <panic_id>119</panic_id>
-      <panic_description>&lt;p&gt; This panic is raised when setting a new currency symbol using the &lt;code class="ApiItem"&gt;User::SetCurrencySymbol()&lt;/code&gt; function. The panic occurs when the length of the descriptor containing the new symbol is greater than &lt;code&gt;KMaxCurrencySymbol&lt;/code&gt;, defined in &lt;code class="filename"&gt;e32std.h&lt;/code&gt;. &lt;/p&gt;</panic_description>
+      <panic_description>&lt;p&gt;This panic is raised when setting a new currency symbol using the &lt;code class="ApiItem" &gt;User::SetCurrencySymbol()&lt;/code&gt; function. The panic occurs when the length of the descriptor containing the new symbol is greater than &lt;code&gt;KMaxCurrencySymbol&lt;/code&gt;, defined in &lt;code class="filename"&gt;e32const.h&lt;/code&gt;. &lt;/p&gt;</panic_description>
     </panic>
     <panic>
       <panic_id>120</panic_id>
@@ -441,15 +445,15 @@
     </panic>
     <panic>
       <panic_id>127</panic_id>
-      <panic_description>&lt;p&gt; This panic is raised when constructing an array of pointers, an &lt;code class="ApiItem"&gt;RPointerArray&lt;/code&gt;, and specifying a granularity value which is one of the following: &lt;/p&gt; &lt;p&gt; zero &lt;/p&gt; &lt;p&gt; negative &lt;/p&gt; &lt;p&gt; greater than &lt;code&gt;0x10000000&lt;/code&gt;. &lt;/p&gt;</panic_description>
+      <panic_description>&lt;p&gt;This panic is raised when constructing an array of pointers, an &lt;code class="ApiItem" &gt;RPointerArray&lt;/code&gt;, and specifying a granularity value which is one of the following: &lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt; zero &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; negative &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; greater than &lt;code&gt;0x10000000&lt;/code&gt;. &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt;</panic_description>
     </panic>
     <panic>
       <panic_id>128</panic_id>
-      <panic_description>&lt;p&gt; This panic is raised when constructing an array of fixed length objects, an &lt;code class="ApiItem"&gt;RArray&lt;/code&gt;, and specifying a key offset value which is one of the following: &lt;/p&gt; &lt;p&gt; negative &lt;/p&gt; &lt;p&gt; not a multiple of 4 &lt;/p&gt; &lt;p&gt; greater than or equal to the size of the array elements. &lt;/p&gt;</panic_description>
+      <panic_description>&lt;p&gt;This panic is raised when constructing an array of fixed length objects, an &lt;code class="ApiItem" &gt;RArray&lt;/code&gt;, and specifying a key offset value which is one of the following: &lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt; negative &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; not a multiple of 4 &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; greater than or equal to the size of the array elements. &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt;</panic_description>
     </panic>
     <panic>
       <panic_id>129</panic_id>
-      <panic_description>&lt;p&gt; This panic is raised when constructing an array of fixed length objects, an &lt;code class="ApiItem"&gt;RArray&lt;/code&gt;, and the length of the array elements is one of the following: &lt;/p&gt; &lt;p&gt; zero &lt;/p&gt; &lt;p&gt; negative &lt;/p&gt; &lt;p&gt; greater than 640. &lt;/p&gt;</panic_description>
+      <panic_description>&lt;p&gt;This panic is raised when constructing an array of fixed length objects, an &lt;code class="ApiItem" &gt;RArray&lt;/code&gt;, and the length of the array elements is one of the following: &lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt; zero &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; negative &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; greater than 640. &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt;</panic_description>
     </panic>
     <panic>
       <panic_id>130</panic_id>
@@ -521,7 +525,7 @@
     </panic>
     <panic>
       <panic_id>147</panic_id>
-      <panic_description>&lt;/p&gt; &lt;p&gt; This panic is raised internally by the descriptor formatting functions during the handling of the variable parameter lists. &lt;/p&gt;</panic_description>
+      <panic_description>&lt;p&gt;This panic is raised internally by the descriptor formatting functions during the handling of the variable parameter lists. &lt;/p&gt;</panic_description>
     </panic>
     <panic>
       <panic_id>148</panic_id>
@@ -649,7 +653,7 @@
     </panic>
     <panic>
       <panic_id>179</panic_id>
-      <panic_description>&lt;p&gt;This panic is raised in debug builds only. &lt;/p&gt; &lt;p&gt; This panic is raised when converting and appending numbers in descriptors, and buffers are not aligned on even addresses. &lt;/p&gt;</panic_description>
+      <panic_description>&lt;p&gt;&lt;em&gt;This panic is raised in debug builds only.&lt;/em&gt; &lt;/p&gt; &lt;p&gt; This panic is raised when converting and appending numbers in descriptors, and buffers are not aligned on even addresses. &lt;/p&gt;</panic_description>
     </panic>
     <panic>
       <panic_id>180</panic_id>
@@ -665,7 +669,7 @@
     </panic>
     <panic>
       <panic_id>183</panic_id>
-      <panic_description>&lt;p&gt; This panic is raised by member functions of the internal classes &lt;code&gt;RArrayBase&lt;/code&gt; and &lt;code&gt;RPointerArrayBase&lt;/code&gt;; specifically: &lt;/p&gt; &lt;p&gt; &lt;code&gt; RArrayBase::BinarySearch() &lt;/code&gt; &lt;/p&gt; &lt;p&gt; &lt;code&gt;RArrayBase::BinarySearchUnsigned() &lt;/code&gt; &lt;/p&gt; &lt;p&gt; &lt;code&gt;RArrayBase::BinarySearchSigned() &lt;/code&gt; &lt;/p&gt; &lt;p&gt; &lt;code&gt;RPointerArrayBase::BinarySearch() &lt;/code&gt; &lt;/p&gt; &lt;p&gt; &lt;code&gt;RPointerArrayBase::BinarySearchUnsigned() &lt;/code&gt; &lt;/p&gt; &lt;p&gt; &lt;code&gt;RPointerArrayBase::BinarySearchSigned() &lt;/code&gt; &lt;/p&gt; &lt;p&gt; when the find mode passed to these functions is not recognised. &lt;/p&gt;</panic_description>
+      <panic_description>&lt;p&gt;This panic is raised by member functions of the internal classes &lt;code&gt;RArrayBase&lt;/code&gt; and &lt;code&gt;RPointerArrayBase&lt;/code&gt;; specifically: &lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt; RArrayBase::BinarySearch()&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;RArrayBase::BinarySearchUnsigned()&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;RArrayBase::BinarySearchSigned()&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;RPointerArrayBase::BinarySearch()&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;RPointerArrayBase::BinarySearchUnsigned()&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;RPointerArrayBase::BinarySearchSigned()&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt; when the find mode passed to these functions is not recognised. &lt;/p&gt;</panic_description>
     </panic>
     <panic>
       <panic_id>184</panic_id>
@@ -673,7 +677,7 @@
     </panic>
     <panic>
       <panic_id>185</panic_id>
-      <panic_description>&lt;p&gt; This panic is raised by the following functions when the month or day value is outside its permitted range of values: &lt;/p&gt; &lt;p&gt; &lt;code class="ApiItem"&gt;TMonthName::Set()&lt;/code&gt; &lt;/p&gt; &lt;p&gt; &lt;code class="ApiItem"&gt;TMonthNameAbb::Set()&lt;/code&gt; &lt;/p&gt; &lt;p&gt; &lt;code class="ApiItem"&gt;TDayName::Set()&lt;/code&gt; &lt;/p&gt; &lt;p&gt; &lt;code class="ApiItem"&gt; TDayNameAbb::Set()&lt;/code&gt; &lt;/p&gt; &lt;p&gt; See also: &lt;code class="ApiItem"&gt;TMonthName&lt;/code&gt;, &lt;code class="ApiItem"&gt;TMonthNameAbb&lt;/code&gt;, &lt;code class="ApiItem"&gt;TDayName&lt;/code&gt; and &lt;code class="ApiItem"&gt;TDayNameAbb&lt;/code&gt;. &lt;/p&gt;</panic_description>
+      <panic_description>&lt;p&gt;This panic is raised by the following functions when the month or day value is outside its permitted range of values: &lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code class="ApiItem" &gt;TMonthName::Set()&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code class="ApiItem" &gt;TMonthNameAbb::Set()&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code class="ApiItem" &gt;TDayName::Set()&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code class="ApiItem" &gt; TDayNameAbb::Set()&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt; See also: &lt;code class="ApiItem" &gt;TMonthName&lt;/code&gt;, &lt;code class="ApiItem" &gt;TMonthNameAbb&lt;/code&gt;, &lt;code class="ApiItem" &gt;TDayName&lt;/code&gt; and &lt;code class="ApiItem" &gt;TDayNameAbb&lt;/code&gt;. &lt;/p&gt;</panic_description>
     </panic>
     <panic>
       <panic_id>186</panic_id>
@@ -761,7 +765,7 @@
     </panic>
     <panic>
       <panic_id>207</panic_id>
-      <panic_description>&lt;/p&gt; &lt;p&gt; This panic is raised by the member function &lt;code&gt;ConsistencyCheck()&lt;/code&gt; of the internal class &lt;code&gt;RHashTableBase&lt;/code&gt;. It indicates an error in the hash table implementation. &lt;/p&gt;</panic_description>
+      <panic_description>&lt;p&gt;This panic is raised by the member function &lt;code&gt;ConsistencyCheck()&lt;/code&gt; of the internal class &lt;code&gt;RHashTableBase&lt;/code&gt;. It indicates an error in the hash table implementation. &lt;/p&gt;</panic_description>
     </panic>
     <panic>
       <panic_id>208</panic_id>
@@ -782,6 +786,18 @@
     <panic>
       <panic_id>212</panic_id>
       <panic_description>&lt;p&gt; This panic is raised if a negative valued argument is passed to the &lt;code&gt;Reserve()&lt;/code&gt; member function of the &lt;code class="ApiItem"&gt;RArray&lt;/code&gt; or &lt;code class="ApiItem"&gt;RPointerArray&lt;/code&gt; classes . &lt;/p&gt; 	   </panic_description>
+    </panic>
+    <panic>
+      <panic_id>213</panic_id>
+      <panic_description>&lt;p&gt;This panic is raised when attempting to set a new debug failure mode on a heap with an invalid argument. &lt;/p&gt; &lt;p&gt; For example, if &lt;code&gt;aBurst &amp;gt; KMaxTUint6&lt;/code&gt; when invoking &lt;code&gt;__UHEAP_BURSTFAILNEXT&lt;/code&gt;, when an RHeap object is used for the user heap. &lt;/p&gt; &lt;p&gt; On the user side this is associated with the USER category. On the kernel side this is associated with the KERN-HEAP category. &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>214</panic_id>
+      <panic_description>&lt;p&gt;This panic is raised when an invalid chunk attribute has been passed to the method RChunk::Create(). &lt;/p&gt;</panic_description>
+    </panic>
+    <panic>
+      <panic_id>215</panic_id>
+      <panic_description>&lt;p&gt;This panic is raised when a &lt;code class="ApiItem" &gt;TChunkCreateInfo&lt;/code&gt; object with an invalid version number has been passed to the method &lt;code class="ApiItem" &gt;RChunk::Create()&lt;/code&gt;. &lt;/p&gt;</panic_description>
     </panic>
   </panics>
 </panic_category>

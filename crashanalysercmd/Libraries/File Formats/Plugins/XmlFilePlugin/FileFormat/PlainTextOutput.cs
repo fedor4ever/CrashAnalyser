@@ -122,6 +122,16 @@ namespace XmlFilePlugin.PluginImplementations.FileFormat
                 writer.Write(PrettyString(XmlConsts.Kxml_defect_hash, datablock.Hash()));
             }
 
+            if (datablock.DetailedHash() != string.Empty)
+            {
+                writer.Write(PrettyString(XmlConsts.Kxml_detailed_defect_hash, datablock.DetailedHash()));
+            }
+
+            if (datablock.TestSet() != string.Empty)
+            {
+                writer.Write(PrettyString(XmlConsts.Kxml_testset, datablock.TestSet()));
+            }
+
             WriteDictionaryValues(writer, datablock);
 
             // Codesegments
@@ -276,7 +286,6 @@ namespace XmlFilePlugin.PluginImplementations.FileFormat
             if (datablock.UID() != null)
                writer.Write(PrettyString(XmlConsts.Kxml_uid, "0x" + datablock.UID().Value.ToString("X8")));
             
-            writer.Write(PrettyString(XmlConsts.Kxml_testset, datablock.TestSet()));
             writer.Write(PrettyString(XmlConsts.Kxml_diskinfo, datablock.DiskInfo()));
             writer.Write(PrettyString(XmlConsts.Kxml_phone_number, datablock.PhoneNumber()));
 

@@ -48,6 +48,8 @@ namespace XmlFilePlugin.PluginImplementations.FileFormat
         public const string Kxml_report_type = "report_type";
         public const string Kxml_crashed_module = "crashed_module";
         public const string Kxml_defect_hash = "defect_hash";
+        public const string Kxml_detailed_defect_hash = "detailed_defect_hash";
+        public const string Kxml_testset = "testset";
         public const string Kxml_loaded_dlls = "loaded_dlls";
         public const string Kxml_loaded_dll = "loaded_dll";
         public const string Kxml_name = "name";
@@ -84,7 +86,6 @@ namespace XmlFilePlugin.PluginImplementations.FileFormat
         public const string Kxml_cellid = "CELLID";
         public const string Kxml_psninfo = "PSNINFO";
         public const string Kxml_uid = "UID";
-        public const string Kxml_testset = "TESTSET";
         public const string Kxml_diskinfo = "DISKINFO";
         public const string Kxml_phone_number = "PHONE_NUMBER";
         public const string Kxml_register = "REGISTER";

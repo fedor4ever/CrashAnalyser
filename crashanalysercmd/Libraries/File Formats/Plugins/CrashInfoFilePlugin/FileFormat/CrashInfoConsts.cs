@@ -100,6 +100,7 @@ namespace CrashInfoFilePlugin.PluginImplementations.FileFormat
         public const string Kregister_extra = "REGISTER_EXTRA";
         public const string Kcall_stack_text = "CALL_STACK_TEXT";
         public const string Kcrash_hash = "DEFECT_HASH"; // New crash hash that DbMover used to create itself.
+        public const string Kcrash_detailedhash = "DETAILED_DEFECT_HASH";
         public const string Kbinfile_name = "BIN_FILE_NAME";
         public const string Ksymbolfile_names = "SYMBOL_FILE_NAME";
 

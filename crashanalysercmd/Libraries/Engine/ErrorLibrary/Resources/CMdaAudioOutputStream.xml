@@ -29,7 +29,7 @@
     </panic>
     <panic>
       <panic_id>12</panic_id>
-      <panic_description>&lt;p&gt;&lt;code&gt;CMdaAudioOutputStream::Open()&lt;/code&gt; was called with an incorrect audio package type&amp;#0160;&amp;#8212; it must be of type &lt;code&gt;TMdaAudioDataSettings&lt;/code&gt;.&lt;/p&gt;</panic_description>
+      <panic_description>&lt;p&gt;&lt;code&gt;CMdaAudioOutputStream::Open()&lt;/code&gt; was called with an incorrect audio package type &amp;mdash; it must be of type &lt;code&gt;TMdaAudioDataSettings&lt;/code&gt;.&lt;/p&gt;</panic_description>
     </panic>
   </panics>
 </panic_category>

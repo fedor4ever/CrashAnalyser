@@ -48,9 +48,14 @@ namespace CrashXmlPlugin.FileFormat.Document
         {
             string nodeName = XmlNodeName;
             //
+            aParameters.Writer.WriteStartDocument();
+            aParameters.Writer.WriteDocType(nodeName, null, Constants.DocType, null);
+
+
             aParameters.Writer.WriteStartElement( null, nodeName, null );
             XmlSerializeChildren( aParameters );
             aParameters.Writer.WriteEndElement();
+            aParameters.Writer.WriteEndDocument();
         }
         #endregion
 

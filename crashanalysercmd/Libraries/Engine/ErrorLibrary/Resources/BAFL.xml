@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <panic_category>
   <category_name>BAFL</category_name>
-  <category_description> &lt;p&gt;Basic Application Framework Library (BFL.lib) panics. A number of APIs raise these panics. &lt;/p&gt; &lt;p&gt;These are:&lt;/p&gt; &lt;p&gt;Application Utilities &lt;/p&gt; &lt;p&gt;Command Line Parsing &lt;/p&gt; &lt;p&gt;Environment Change Notifier &lt;/p&gt; &lt;p&gt;Incremental Matcher &lt;/p&gt; &lt;p&gt;Interface to Resource Files &lt;/p&gt;</category_description>
+  <category_description> &lt;p&gt;Basic Application Framework Library (BFL.lib) panics. A number of APIs raise these panics. These are:&lt;/p&gt;&lt;p&gt;&amp;#183; Application Utilities&lt;/p&gt;&lt;p&gt; &amp;#183; Command Line Parsing &lt;/p&gt;&lt;p&gt; &amp;#183; Environment Change Notifier&lt;/p&gt;&lt;p&gt; &amp;#183; Incremental Matcher&lt;/p&gt;&lt;p&gt; &amp;#183; Interface to Resource Files&lt;/p&gt;</category_description>
   <panics>
     <panic>
       <panic_id>1</panic_id>

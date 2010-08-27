@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <panic_category>
   <category_name>Etel Server</category_name>
-  <category_description> &lt;p&gt;Panic caused by incorrect use of the ETel Core API- e.g. passing bad or contradictory values to class constructors or member functions.&lt;/p&gt; &lt;p&gt;The client thread causing the panic is terminated.&lt;/p&gt;</category_description>
+  <category_description> &lt;p&gt;Panic caused by incorrect use of the ETel Core API&amp;#160;- e.g. passing bad or contradictory values to class constructors or member functions. &lt;/p&gt;&lt;p&gt;The client thread causing the panic is terminated.&lt;/p&gt;</category_description>
   <panics>
     <panic>
       <panic_id>0</panic_id>
@@ -13,7 +13,7 @@
     </panic>
     <panic>
       <panic_id>2</panic_id>
-      <panic_description>&lt;p&gt;The message type- sent by the client- is not recognised by the server.&lt;/p&gt;</panic_description>
+      <panic_description>&lt;p&gt;The message type&amp;#160;- sent by the client&amp;#160;- is not recognised by the server.&lt;/p&gt;</panic_description>
     </panic>
     <panic>
       <panic_id>3</panic_id>

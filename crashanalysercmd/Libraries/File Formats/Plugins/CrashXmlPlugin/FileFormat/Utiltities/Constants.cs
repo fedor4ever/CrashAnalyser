@@ -24,6 +24,9 @@ namespace CrashXmlPlugin.FileFormat
     internal static class Constants
     {
         #region Node names
+        
+        // DTD
+        public const string DocType = "../../MobileCrashXmlSchema.dtd";
 
         // Root node name
         public const string RootNode = "crash_root";

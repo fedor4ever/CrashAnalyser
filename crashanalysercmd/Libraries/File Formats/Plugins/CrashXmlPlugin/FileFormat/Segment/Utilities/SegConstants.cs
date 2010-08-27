@@ -67,6 +67,7 @@ namespace CrashXmlPlugin.FileFormat.Segment.Entries
         public const string Stacks_Stack = "stack";
         public const string Stacks_Stack_Data = "stack_data";
         public const string Stacks_Stack_Hash = "hash";
+        public const string Stacks_Stack_Detailed_Hash = "detailed_hash";
         public const string Stacks_Stack_Attributes_Accurate = "accurate";
         public const string Stacks_Stack_Attributes_Heuristic = "heuristic";
         public const string Stacks_Stack_Data_Entry = "stack_entry";
